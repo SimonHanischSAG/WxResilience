@@ -9,7 +9,9 @@
   </record>
   <null name="shutdown_services"/>
   <null name="replication_services"/>
-  <null name="requires"/>
+  <record name="requires" javaclass="com.wm.util.Values">
+    <value name="WxResilience">*.*</value>
+  </record>
   <value name="listACL">Default</value>
   <value name="webappLoad">yes</value>
 </Values>
