@@ -31,6 +31,7 @@ public final class flow
 	// ---( server methods )---
 
 	public static final void getCallingService(IData pipeline) throws ServiceException {
+		// --- <<IS-START(getCallingService)>> ---
 		IDataCursor cursor = pipeline.getCursor();
 		String level = IDataUtil.getString(cursor, "level");
 		int lev;
@@ -47,6 +48,7 @@ public final class flow
 			IDataUtil.put(cursor, "callingServiceName", ((NSService) callStack.elementAt(index - lev)).toString());
 		}
 		cursor.destroy();
+		// --- <<IS-END>> ---
 	}
 	
 	// --- <<IS-START-SHARED>> ---
