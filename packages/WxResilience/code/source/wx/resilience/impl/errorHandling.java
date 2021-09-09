@@ -168,6 +168,7 @@ public final class errorHandling
 			IDataUtil.put(cursor, "callingServiceName", ((NSService) callStack.elementAt(index - lev)).toString());
 		}
 		cursor.destroy();
+		// --- <<IS-END>> ---
 	}
 
 	
@@ -622,6 +623,33 @@ public final class errorHandling
 
                 
 	}
+	
+	public static final void initializeHandlings (IData pipeline)
+	        throws ServiceException
+	{
+		// --- <<IS-START(initializeHandlings)>> ---
+		// @sigtype java 3.5
+		Log.logInfo("Initializing error handling framework...");
+		//TODO
+		File eHDFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_ERROR_HANDLING_FILE);
+		if (!eHDFile.isFile()) {
+			createSummarizedErrorHandling();
+		}
+		final URL url;
+		try {
+			url = eHDFile.toURI().toURL();
+		} catch (IOException e) {
+			throw new ServiceException(e);
+		}
+		final SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser");
+		initHandlings(url, builder);
+			
+			
+		// --- <<IS-END>> ---
+
+                
+	}
+
 
 	// --- <<IS-START-SHARED>> ---
 	@FunctionalInterface
@@ -1388,31 +1416,6 @@ public final class errorHandling
 			}
 		}
 	
-		public static final void initializeHandlings (IData pipeline)
-		        throws ServiceException
-		{
-			// --- <<IS-START(initializeHandlings)>> ---
-			// @sigtype java 3.5
-			Log.logInfo("Initializing error handling framework...");
-			//TODO
-			File eHDFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_ERROR_HANDLING_FILE);
-			if (!eHDFile.isFile()) {
-				createSummarizedErrorHandling();
-			}
-			final URL url;
-			try {
-				url = eHDFile.toURI().toURL();
-			} catch (IOException e) {
-				throw new ServiceException(e);
-			}
-			final SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser");
-			initHandlings(url, builder);
-				
-				
-			// --- <<IS-END>> ---
-	
-	                
-		}
 	
 		private static String asString(String[] tempParts) {
 			StringBuilder builder = new StringBuilder();
