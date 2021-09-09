@@ -1,0 +1,18 @@
+<errorHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="errorHandling.xsd">
+	<location name="wx">
+		<location name="resilienceTest">
+			<location name="pub">	 
+                 <location name="test_handleErrorNestedService">
+                     <exception type="all" errorToBeThrown="NONE"  errorHandlingId="WxResilienceTest.top.001">
+                         <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                     </exception>
+                 </location>
+                 <location name="subService">
+                     <exception type="all" errorToBeThrown="FATAL"  errorHandlingId="WxResilienceTest.top.002">
+                         <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                     </exception>
+                 </location>
+			</location>
+		</location>
+	</location>
+</errorHandling>

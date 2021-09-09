@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="errorHandling">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="location" type="exceptionLocation"/>
+				<xs:element name="globalException" type="exceptionType"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="exceptionLocation">
+		<xs:sequence>
+			<xs:element name="location" type="exceptionLocation" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="exception" type="exceptionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required">
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="exceptionType">
+		<xs:sequence>
+			<xs:element name="handling" type="handling" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="callerType" type="xs:string" use="optional"/>
+		<xs:attribute name="errorToBeThrown" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="FATAL|TRANSIENT|NONE|continue|retry|abort"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="errorHandlingId" type="xs:string" use="required"/>
+		<xs:attribute name="errorMessageRegex" type="xs:string" use="optional"/>
+		<xs:attribute name="errorMessageContains" type="xs:string" use="optional"/>		
+		<xs:attribute name="maxRetryAttempts" type="xs:integer" use="optional"/>
+		<xs:attribute name="printBusinessObject" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:simpleType name="handling">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+</xs:schema>

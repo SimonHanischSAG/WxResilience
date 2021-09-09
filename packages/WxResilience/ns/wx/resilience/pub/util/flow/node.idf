@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">DQpwcml2YXRlIHN0YXRpYyBTdHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZywgU3Ry
+aW5nIHNlcGFyYXRvcikNCnsNCiAgaWYgKGlucHV0U3RyaW5nID09IG51bGwpDQogICAgcmV0dXJu
+ICIiOw0KICBlbHNlDQogICAgcmV0dXJuIHNlcGFyYXRvciArIGlucHV0U3RyaW5nOw0KfQ0KDQpw
+dWJsaWMgc3RhdGljIHZvaWQgbG9nKFN0cmluZyBtZXNzYWdlKSB7DQoJLy8gaW5wdXQNCglJRGF0
+YSBpbnB1dCA9IElEYXRhRmFjdG9yeS5jcmVhdGUoKTsNCglJRGF0YUN1cnNvciBpbnB1dEN1cnNv
+ciA9IGlucHV0LmdldEN1cnNvcigpOw0KCUlEYXRhVXRpbC5wdXQoaW5wdXRDdXJzb3IsICJtZXNz
+YWdlIiwgbWVzc2FnZSk7DQoJaW5wdXRDdXJzb3IuZGVzdHJveSgpOw0KDQoJdHJ5IHsNCgkJU2Vy
+dmljZS5kb0ludm9rZSgicHViLmZsb3ciLCAiZGVidWdMb2ciLCBpbnB1dCk7DQoJfSBjYXRjaCAo
+RXhjZXB0aW9uIGUpIHsNCgl9DQp9CQ0KCQ0KCQ0KCQ0KCQ0KCQ0K</value>
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>com.wm.app.b2b.server.ns.Namespace</value>
+    <value>com.softwareag.util.IDataMap</value>
+    <value>com.wm.app.b2b.server.*</value>
+    <value>com.wm.lang.flow.FlowElement</value>
+    <value>com.wm.lang.flow.FlowState</value>
+    <value>com.wm.lang.ns.NSName</value>
+    <value>com.wm.lang.ns.NSService</value>
+    <value>java.util.Stack</value>
+  </array>
+</Values>
