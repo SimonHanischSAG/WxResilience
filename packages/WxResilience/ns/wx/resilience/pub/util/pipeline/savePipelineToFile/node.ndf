@@ -129,27 +129,27 @@ Input Parameters:
 
 Examples:
 
-Suggest, that the calling service is "com.lidl.foo.pub:Service". If this service invokes savePipelineToFile with the following input parameters, then the created file name will be
+Suggest, that the calling service is "com.system.foo.pub:Service". If this service invokes savePipelineToFile with the following input parameters, then the created file name will be
 
     Input Parameters          File name
-    None                              com.lidl.foo.pub.Service.xml
+    None                              com.system.foo.pub.Service.xml
 
-   subFolder=jwi                jwi/com.lidl.foo.pub.Service.xml
+   subFolder=jwi                jwi/com.system.foo.pub.Service.xml
 
-    fileNameSuffix=tmp      com.lidl.foo.pub.Service-tmp.xml
+    fileNameSuffix=tmp      com.system.foo.pub.Service-tmp.xml
 
-    fileNameSuffix=/tmp     com.lidl.foo.pub.Service-/tmp.xml
-
-    subFolder=jwi
-    fileNameSuffix=tmp      jwi/com.lidl.foo.pub.Service-tmp.xml
-
+    fileNameSuffix=/tmp     com.system.foo.pub.Service-/tmp.xml
 
     subFolder=jwi
-    fileNameSuffix=/tmp      jwi/com.lidl.foo.pub.Service-/tmp.xml
+    fileNameSuffix=tmp      jwi/com.system.foo.pub.Service-tmp.xml
 
-    subFolder=jwi                jwi/com.lidl.foo.pub.Service-tmp-20190726-122705.000 
-    fileNameSuffix=tmp       jwi/com.lidl.foo.pub.Service-tmp-20190726-122705.001
-    addTimestamp=true      jwi/com.lidl.foo.pub.Service-tmp-20190726-122705.002
+
+    subFolder=jwi
+    fileNameSuffix=/tmp      jwi/com.system.foo.pub.Service-/tmp.xml
+
+    subFolder=jwi                jwi/com.system.foo.pub.Service-tmp-20190726-122705.000 
+    fileNameSuffix=tmp       jwi/com.system.foo.pub.Service-tmp-20190726-122705.001
+    addTimestamp=true      jwi/com.system.foo.pub.Service-tmp-20190726-122705.002
 
 
 *Note* As shown in the latest example, the service will avoid to create the same timestamp twice.
