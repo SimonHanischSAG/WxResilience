@@ -9,6 +9,8 @@ import com.wm.data.IDataUtil;
 
 public class Log {
 
+	private static final String LOG_SVC_PATH = "wx.resilience.impl.log";
+
 	public static void logInfo(String message) {
 		IData input = IDataFactory.create();
 		IDataMap inputMap = new IDataMap(input);
@@ -16,7 +18,7 @@ public class Log {
 		inputMap.put("level", "Info");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}
@@ -29,7 +31,7 @@ public class Log {
 		inputMap.put("level", "Warn");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}
@@ -42,7 +44,7 @@ public class Log {
 		inputMap.put("level", "Error");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}
@@ -55,7 +57,7 @@ public class Log {
 		inputMap.put("level", "Trace");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}
@@ -72,7 +74,7 @@ public class Log {
 		inputMap.put("level", "Debug");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}
@@ -85,7 +87,7 @@ public class Log {
 		inputMap.put("level", "Fatal");
 		
 		try {
-			Service.doInvoke("wx.resilience.impl", "log", input);
+			Service.doInvoke(LOG_SVC_PATH, "log", input);
 		} 
 		catch (Exception e) {
 		}

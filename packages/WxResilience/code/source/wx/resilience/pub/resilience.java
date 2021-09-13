@@ -25,10 +25,10 @@ public final class resilience
 
 
 
-	public static final void throwDocumentDiscardedWithWarningException (IData pipeline)
+	public static final void throwDocumentDiscardedException (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(throwDocumentDiscardedWithWarningException)>> ---
+		// --- <<IS-START(throwDocumentDiscardedException)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required message
 		IDataCursor pipelineCursor = pipeline.getCursor();
@@ -39,7 +39,8 @@ public final class resilience
 		{
 			msg = "The Document is discarded.";	 	
 		}		
-		throw new DocumentDiscardedWithWarningException(msg);	 
+		throw new DocumentDiscardedException(msg);	 
+			
 		// --- <<IS-END>> ---
 
                 
@@ -67,15 +68,16 @@ public final class resilience
 	}
 
 	// --- <<IS-START-SHARED>> ---
-	public static final class DocumentDiscardedWithWarningException extends ServiceException {
+	public static final class DocumentDiscardedException extends ServiceException {
 		
-		public DocumentDiscardedWithWarningException(String arg0) {
+		public DocumentDiscardedException(String arg0) {
 			super(arg0);
 		}
 		
 		private static final long serialVersionUID = 1L;
 	
 	}	
+		
 	// --- <<IS-END-SHARED>> ---
 }
 

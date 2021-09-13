@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.resilience.impl.util.string</value>
+  <value name="is_public">false</value>
+  <value name="shared">DQpwcml2YXRlIHN0YXRpYyBTdHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZywgU3Ry
+aW5nIHNlcGFyYXRvcikNCnsNCiAgaWYgKGlucHV0U3RyaW5nID09IG51bGwpDQogICAgcmV0dXJu
+ICIiOw0KICBlbHNlDQogICAgcmV0dXJuIHNlcGFyYXRvciArIGlucHV0U3RyaW5nOw0KfQ0KDQoJ
+DQo=</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.util.IDataMap</value>
+    <value>com.wm.app.b2b.server.*</value>
+    <value>com.wm.lang.ns.NSService</value>
+    <value>java.util.Stack</value>
+  </array>
+</Values>

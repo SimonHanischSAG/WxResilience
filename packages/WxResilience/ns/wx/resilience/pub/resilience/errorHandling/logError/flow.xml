@@ -1869,7 +1869,7 @@ Failed business object:
 </MAPSET>
 </MAP>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.util.string:flipList" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.util.string:flipList" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 
@@ -2380,7 +2380,7 @@ Failed business object:
 </INVOKE>
 </LOOP>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl:log" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.log:log" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->

@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Values version="2.0">
-  <value name="node_type">interface</value>
-  <value name="node_subtype">unknown</value>
-  <value name="node_nsName">wx.resilience.pub.resilience</value>
-  <value name="is_public">false</value>
+  <value name="shared">cHVibGljIHN0YXRpYyBmaW5hbCBjbGFzcyBEb2N1bWVudERpc2NhcmRlZEV4Y2VwdGlvbiBleHRl
+bmRzIFNlcnZpY2VFeGNlcHRpb24gewoJCglwdWJsaWMgRG9jdW1lbnREaXNjYXJkZWRFeGNlcHRp
+b24oU3RyaW5nIGFyZzApIHsKCQlzdXBlcihhcmcwKTsKCX0KCQoJcHJpdmF0ZSBzdGF0aWMgZmlu
+YWwgbG9uZyBzZXJpYWxWZXJzaW9uVUlEID0gMUw7Cgp9CQoJ</value>
   <value name="encodeutf8">true</value>
-  <value name="shared">cHVibGljIHN0YXRpYyBmaW5hbCBjbGFzcyBEb2N1bWVudERpc2NhcmRlZFdpdGhXYXJuaW5nRXhj
-ZXB0aW9uIGV4dGVuZHMgU2VydmljZUV4Y2VwdGlvbiB7CgkKCXB1YmxpYyBEb2N1bWVudERpc2Nh
-cmRlZFdpdGhXYXJuaW5nRXhjZXB0aW9uKFN0cmluZyBhcmcwKSB7CgkJc3VwZXIoYXJnMCk7Cgl9
-CgkKCXByaXZhdGUgc3RhdGljIGZpbmFsIGxvbmcgc2VyaWFsVmVyc2lvblVJRCA9IDFMOwoKfQk=
-</value>
   <value name="extends"></value>
   <array name="implements" type="value" depth="1">
   </array>

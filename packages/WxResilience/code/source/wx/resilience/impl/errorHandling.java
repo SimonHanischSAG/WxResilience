@@ -56,21 +56,6 @@ public final class errorHandling
 
 
 
-	public static final void TEST_LOGGING (IData pipeline)
-        throws ServiceException
-	{
-		// --- <<IS-START(TEST_LOGGING)>> ---
-		// @sigtype java 3.5
-		// [i] field:0:required message
-		IDataMap pipeMap = new IDataMap(pipeline);
-		Log.logInfo(pipeMap.getAsString("message"));
-		// --- <<IS-END>> ---
-
-                
-	}
-
-
-
 	public static final void assembleErrorHandlings (IData pipeline)
         throws ServiceException
 	{
@@ -121,28 +106,6 @@ public final class errorHandling
 
 
 
-	public static final void calculateDuration (IData pipeline)
-        throws ServiceException
-	{
-		// --- <<IS-START(calculateDuration)>> ---
-		// @sigtype java 3.5
-		// [i] object:0:required start
-		// [i] object:0:required end
-		// [o] field:0:required duration
-		IDataMap pipeMap = new IDataMap(pipeline);
-		
-		Date start = (Date) pipeMap.get("start");
-		Date end = (Date) pipeMap.get("end");
-		
-		pipeMap.put("duration", String.format("%.3f", (end.getTime() - start.getTime())/1000.0));
-			
-		// --- <<IS-END>> ---
-
-                
-	}
-
-
-
 	public static final void getCallingService (IData pipeline)
         throws ServiceException
 	{
@@ -169,13 +132,20 @@ public final class errorHandling
 		}
 		cursor.destroy();
 		// --- <<IS-END>> ---
+
+                
 	}
 
-	
+
+
 	public static final void getDocumentAttribute (IData pipeline)
         throws ServiceException
 	{
 		// --- <<IS-START(getDocumentAttribute)>> ---
+		// @sigtype java 3.5
+		// [i] record:0:required document
+		// [i] field:0:required attributeName
+		// [o] object:0:optional attributeValue
 		final IDataMap map = new IDataMap(pipeline);
 		final String attributeName = map.getAsString("attributeName");
 		if (attributeName == null) {
@@ -209,6 +179,7 @@ public final class errorHandling
 		// [i] recref:0:required metaData schwarz.common.icl.doc:metaData
 		// [i] record:0:optional businessObject
 		// [o] field:0:required errorToBeThrown
+		// [o] field:0:optional errorCode
 		Log.write("handleErrorSvc: -->");
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		
@@ -611,21 +582,8 @@ public final class errorHandling
 
 
 
-	public static final void isInternalLoggingEnabled (IData pipeline)
-        throws ServiceException
-	{
-		// --- <<IS-START(isInternalLoggingEnabled)>> ---
-		// @sigtype java 3.5
-		// [o] field:0:required internalLoggingEnabled
-		final IDataCursor crsr = pipeline.getCursor();
-		//IDataUtil.put(crsr, "internalLoggingEnabled", String.valueOf(Log.isLogging()));
-		// --- <<IS-END>> ---
-
-                
-	}
-	
 	public static final void initializeHandlings (IData pipeline)
-	        throws ServiceException
+        throws ServiceException
 	{
 		// --- <<IS-START(initializeHandlings)>> ---
 		// @sigtype java 3.5
@@ -649,7 +607,6 @@ public final class errorHandling
 
                 
 	}
-
 
 	// --- <<IS-START-SHARED>> ---
 	@FunctionalInterface

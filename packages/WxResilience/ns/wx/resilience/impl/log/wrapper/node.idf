@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.resilience.impl.log.wrapper</value>
+  <value name="is_public">false</value>
+  <value name="shared">DQpwcml2YXRlIHN0YXRpYyB2b2lkIHJlbmFtZVZhcmlhYmxlKElEYXRhTWFwIG1hcCwgU3RyaW5n
+IG9sZE5hbWUsIFN0cmluZyBuZXdOYW1lKSB7DQoJbWFwLnB1dChuZXdOYW1lLCBtYXAuZ2V0KG9s
+ZE5hbWUpKTsNCgltYXAucmVtb3ZlKG9sZE5hbWUpOw0KfQ0KDQpwcml2YXRlIHN0YXRpYyB2b2lk
+IHRvVXBwZXIoSURhdGFNYXAgbWFwLCBTdHJpbmcgdmFyaWFibGVOYW1lKSB7DQoJU3RyaW5nIHZh
+cmlhYmxlID0gbWFwLmdldEFzU3RyaW5nKHZhcmlhYmxlTmFtZSk7DQoJdmFyaWFibGUgPSB2YXJp
+YWJsZS50b1VwcGVyQ2FzZSgpOw0KCW1hcC5wdXQodmFyaWFibGVOYW1lLCB2YXJpYWJsZSk7DQp9
+DQoNCnByaXZhdGUgc3RhdGljIHZvaWQgYWRkUHJlZml4QW5kU3VmZml4KElEYXRhTWFwIHBpcGVN
+YXApIHsNCgkNCglJRGF0YSBtZXRhRGF0YSA9IHBpcGVNYXAuZ2V0QXNJRGF0YSgibWV0YURhdGEi
+KTsNCglpZiAobWV0YURhdGEgIT0gbnVsbCkgew0KCQlTdHJpbmdCdWlsZGVyIGJ1aWxkZXIgPSBu
+ZXcgU3RyaW5nQnVpbGRlcigpOw0KCQlJRGF0YU1hcCBtZXRhRGF0YU1hcCA9IG5ldyBJRGF0YU1h
+cChtZXRhRGF0YSk7DQoNCgkJU3RyaW5nIHV1aWQgPSBtZXRhRGF0YU1hcC5nZXRBc1N0cmluZygi
+dXVpZCIpOw0KCQlTdHJpbmcgdHlwZSA9IG1ldGFEYXRhTWFwLmdldEFzU3RyaW5nKCJ0eXBlIik7
+DQoJCVN0cmluZyBzb3VyY2UgPSBtZXRhRGF0YU1hcC5nZXRBc1N0cmluZygic291cmNlIik7DQoJ
+CVN0cmluZyBkZXN0aW5hdGlvbiA9IG1ldGFEYXRhTWFwLmdldEFzU3RyaW5nKCJkZXN0aW5hdGlv
+biIpOw0KCQkNCgkJYnVpbGRlci5hcHBlbmQoc291cmNlKS5hcHBlbmQoIl90b18iKS5hcHBlbmQo
+ZGVzdGluYXRpb24pOw0KCQlidWlsZGVyLmFwcGVuZCgifHR5cGU6IikuYXBwZW5kKHR5cGUpOw0K
+CQlidWlsZGVyLmFwcGVuZCgifHV1aWQ6IikuYXBwZW5kKHV1aWQpLmFwcGVuZCgifCAiKTsNCgkJ
+DQoJCWJ1aWxkZXIuYXBwZW5kKHBpcGVNYXAuZ2V0QXNTdHJpbmcoIm1lc3NhZ2UiKSk7DQoNCgkJ
+SURhdGFbXSBjdXN0b21Qcm9wZXJ0aWVzID0gbWV0YURhdGFNYXAuZ2V0QXNJRGF0YUFycmF5KCJj
+dXN0b21Qcm9wZXJ0aWVzIik7DQoJCWlmIChjdXN0b21Qcm9wZXJ0aWVzICE9IG51bGwpIHsNCgkJ
+CWJ1aWxkZXIuYXBwZW5kKCJcclxuQ1A6Iik7DQoJCQlmb3IgKElEYXRhIHByb3BlcnR5IDogY3Vz
+dG9tUHJvcGVydGllcykgew0KCQkJCUlEYXRhTWFwIHByb3BlcnR5TWFwID0gbmV3IElEYXRhTWFw
+KHByb3BlcnR5KTsNCgkJCQlTdHJpbmcga2V5ID0gcHJvcGVydHlNYXAuZ2V0QXNTdHJpbmcoImtl
+eSIpOw0KCQkJCVN0cmluZyB2YWx1ZSA9IHByb3BlcnR5TWFwLmdldEFzU3RyaW5nKCJ2YWx1ZSIp
+Ow0KCQkJCWJ1aWxkZXIuYXBwZW5kKCJ8IikuYXBwZW5kKGtleSkuYXBwZW5kKCI6IikuYXBwZW5k
+KHZhbHVlKTsNCgkJCX0JDQoJCQlidWlsZGVyLmFwcGVuZCgifCIpOw0KCQl9DQoJCQ0KCQlwaXBl
+TWFwLnB1dCgibWVzc2FnZSIsIGJ1aWxkZXIudG9TdHJpbmcoKSk7DQoJfQ0KfQ0KDQoNCgkNCgkN
+Cg==</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.util.IDataMap</value>
+    <value>com.wm.app.b2b.server.ISRuntimeException</value>
+  </array>
+</Values>

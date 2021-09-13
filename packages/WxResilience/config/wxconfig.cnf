@@ -4,8 +4,8 @@
 # Log service for pub.flow:debugLog (IS server.log)
 logging.service=pub.flow:debugLog
 # Log service for WxLog (Logback)
-#logging.service=wx.resilience.impl.util.log.wrapper:logWxLog
+#logging.service=wx.resilience.impl.log.wrapper:logWxLog
 # Log service for WxLog2 (log4j)
-#logging.service=wx.resilience.impl.util.log.wrapper:logWxLog2
+#logging.service=wx.resilience.impl.log.wrapper:logWxLog2
 
 metaData.timestampFormat=yyyy-MM-dd'T'HH:mm:ss.SSSZ

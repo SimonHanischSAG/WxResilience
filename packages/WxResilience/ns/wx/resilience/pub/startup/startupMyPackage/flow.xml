@@ -246,7 +246,7 @@
 </INVOKE>
 </BRANCH>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.startup:initErrorHandling" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:initErrorHandling" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 
