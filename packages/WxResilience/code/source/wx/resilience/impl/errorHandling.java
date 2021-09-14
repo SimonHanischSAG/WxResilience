@@ -702,7 +702,7 @@ public final class errorHandling
 				return _errorHandling;
 			}
 		}
-		initializeHandlings(null);
+		initializeErrorHandlings(null);
 		synchronized (errorHandlingLock) {
 			if (_errorHandling == null) {
 				throw new IllegalStateException("Unable to initialize errorHandling. Did you assemble it?");
