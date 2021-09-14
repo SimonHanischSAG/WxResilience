@@ -193,8 +193,8 @@ public final class errorHandling
 		
 		// Extract inputs from pipeline and check for null values
 		IData businessObject = IDataUtil.getIData(pipelineCursor, BUSINESS_DOC_ID);
-		/*Log.write("handleErrorSvc: businessObject=" + businessObject);
-		if (businessObject == null) {
+		Log.logDebug("handleErrorSvc: businessObject=" + businessObject);
+		/*if (businessObject == null) {
 			logMessageFromCatalog("200", "0020", new String[] {});
 		}*/
 		
@@ -510,6 +510,8 @@ public final class errorHandling
 				if (businessObject != null  &&  handlingInfo.isPrintBusinessObject()) {
 					IDataUtil.put(serviceInputCursor, BUSINESS_DOC_ID,
 							businessObject);
+					IDataUtil.put(serviceInputCursor, PRINT_BUSINESS_OBJECT_ID,
+							handlingInfo.isPrintBusinessObject());
 				}
 				IDataUtil.put(serviceInputCursor,
 						HANDLED_ERROR_INFO_ID, handledErrorInfo);
@@ -1459,6 +1461,7 @@ public final class errorHandling
 		// -------------------GENERIC DOC FIELD ID DEFINITIONS----------------
 		// *******************************************************************
 		private static final String BUSINESS_DOC_ID = "businessObject";
+		private static final String PRINT_BUSINESS_OBJECT_ID = "printBusinessObject";
 	
 		// *******************************************************************
 		// --------------------EXCEPTION HANDLING DEFINITION------------------

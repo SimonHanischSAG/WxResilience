@@ -25,7 +25,7 @@
 		<xs:attribute name="errorToBeThrown" use="optional">
 			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<xs:pattern value="FATAL|TRANSIENT|NONE|continue|retry|abort"/>
+					<xs:pattern value="FATAL|TRANSIENT|NONE"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
