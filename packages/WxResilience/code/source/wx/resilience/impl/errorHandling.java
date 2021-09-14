@@ -176,7 +176,6 @@ public final class errorHandling
 		// @sigtype java 3.5
 		// [i] recref:0:required exceptionInfo pub.event:exceptionInfo
 		// [i] field:0:optional genericErrorMessage
-		// [i] recref:0:required metaData schwarz.common.icl.doc:metaData
 		// [i] record:0:optional businessObject
 		// [o] field:0:required errorToBeThrown
 		// [o] field:0:optional errorCode
@@ -329,51 +328,7 @@ public final class errorHandling
 					handlingLocation = handlingLocation.substring(0,
 							handlingLocation.length() - 1);
 		
-					// here find corresponding LogMessage with log-id equal to exception ID
-					// example: DTS.100.0003
-					String tempErrorHandlingId = handlingInfo.getErrorCode();
-					String [] tempParts = tempErrorHandlingId.split("\\.");
-					// input
-					IData tInput = IDataFactory.create();
-					IDataCursor inputCursor = tInput.getCursor();
-					IDataUtil.put(inputCursor, "componentKey", tempParts[0]);
-					IDataUtil.put(inputCursor, "facilityKey", tempParts[1]);
-					IDataUtil.put(inputCursor, "messageKey", tempParts[2]);
-				
-					// message-params: UID, localizedErrorMessage
 					
-					// extract UID
-					if(messageUID != null) {
-						
-						// extract localizedError
-						String tempLocalizedErrorMessage = (String) IDataUtil.get(exceptionInfo.getCursor(), "localizedError");
-						String [] tempMessageParams = new String [] {messageUID, tempLocalizedErrorMessage};
-						IDataUtil.put(inputCursor, "messageParams", tempMessageParams);
-					}
-		
-					Log.write("handleErrorSvc: Creating output");
-					IData output = IDataFactory.create();
-					try {
-						//Check whether log messages exists in logging framework, if not do not log
-						boolean exists;
-						try {
-							output = Service.doInvoke("schwarz.common.icl.utils.log", "checkLogMessageExists", tInput);
-							IDataCursor outputCursor = output.getCursor();
-							exists = IDataUtil.getBoolean(outputCursor, "exists");
-							outputCursor.destroy();
-						} catch (Throwable t) {
-							exists = false;
-						}
-						if (exists) {
-							Log.write("handleErrorSvc: Logging message: " + asString(tempParts));
-							Service.doInvoke("schwarz.common.icl.utils.log", "logMessageFromCatalog", tInput);
-						} else {
-							Log.write("handleErrorSvc: Log message not found: " + asString(tempParts));
-						}
-					} 
-					catch (Exception e) {
-						Log.write("handleErrorSvc: Exception: " + e.getMessage());
-					}
 					break;
 				}
 			}

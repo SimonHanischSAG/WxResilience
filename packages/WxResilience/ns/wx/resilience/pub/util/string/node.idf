@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.resilience.pub.util.string</value>
+  <value name="is_public">false</value>
+  <value name="shared">LyoqDQogKiBVc2VkIGJ5ICJtdWx0aUNvbmNhdCINCiAqIA0KICovDQpwcml2YXRlIHN0YXRpYyBT
+dHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZykNCnsNCiAgaWYgKGlucHV0U3RyaW5n
+ID09IG51bGwpDQogICAgcmV0dXJuICIiOw0KICBlbHNlDQogICAgcmV0dXJuIGlucHV0U3RyaW5n
+Ow0KfQ0KDQpwcml2YXRlIHN0YXRpYyBTdHJpbmcgc2hvcnRlblR5cGUoU3RyaW5nIHR5cGUpew0K
+CXR5cGUgPSB0eXBlLnJlcGxhY2VBbGwoIl5aV1BEIiwgIloiKTsNCgl0eXBlID0gdHlwZS5yZXBs
+YWNlQWxsKCJeWldQIiwgIloiKTsNCgl0eXBlID0gdHlwZS5yZXBsYWNlQWxsKCJeV1BEIiwgIiIp
+Ow0KCXR5cGUgPSB0eXBlLnJlcGxhY2VBbGwoIl5XUCIsICIiKTsNCgl0eXBlID0gdHlwZS5yZXBs
+YWNlQWxsKCJfIiwgIiIpOw0KCXR5cGUgPSB0eXBlLnJlcGxhY2VBbGwoIjEiLCAiIik7DQoJdHlw
+ZSA9IHR5cGUucmVwbGFjZUFsbCgiMiIsICIiKTsNCgl0eXBlID0gdHlwZS5yZXBsYWNlQWxsKCIz
+IiwgIiIpOw0KCXR5cGUgPSB0eXBlLnJlcGxhY2VBbGwoIjQiLCAiIik7DQoJdHlwZSA9IHR5cGUu
+cmVwbGFjZUFsbCgiNSIsICIiKTsNCgl0eXBlID0gdHlwZS5yZXBsYWNlQWxsKCI2IiwgIiIpOw0K
+CXR5cGUgPSB0eXBlLnJlcGxhY2VBbGwoIjciLCAiIik7DQoJdHlwZSA9IHR5cGUucmVwbGFjZUFs
+bCgiOCIsICIiKTsNCgl0eXBlID0gdHlwZS5yZXBsYWNlQWxsKCI5IiwgIiIpOw0KCXR5cGUgPSB0
+eXBlLnJlcGxhY2VBbGwoIjAiLCAiIik7DQoJdHlwZSA9IHR5cGUudG9Mb3dlckNhc2UoKTsNCgly
+ZXR1cm4gdHlwZTsNCn0NCg0KcHJpdmF0ZSBzdGF0aWMgU3RyaW5nIGpvaW4oU3RyaW5nW10gbGlz
+dCwgU3RyaW5nIGpvaW5TdHJpbmcpIHsNCiAgIGlmIChsaXN0ID09IG51bGwgfHwgbGlzdC5sZW5n
+dGggPT0gMCkgew0KCSAgIHJldHVybiAiIjsNCiAgIH0NCiAgIA0KICAgU3RyaW5nQnVpbGRlciBz
+YiA9IG5ldyBTdHJpbmdCdWlsZGVyKCk7CSAgIA0KICAgYm9vbGVhbiBmaXJzdCA9IHRydWU7DQog
+ICBmb3IgKFN0cmluZyBpdGVtIDogbGlzdCkgew0KICAgICAgaWYgKGZpcnN0KSB7DQogICAgICAg
+ICBmaXJzdCA9IGZhbHNlOw0KICAgICAgfQ0KICAgICAgZWxzZSB7DQogICAgICAgICBzYi5hcHBl
+bmQoam9pblN0cmluZyk7DQogICAgICB9DQogICAgICBzYi5hcHBlbmQoaXRlbSk7DQogICB9DQog
+ICANCiAgIHJldHVybiBzYi50b1N0cmluZygpOw0KfQkNCg0KcHJpdmF0ZSBzdGF0aWMgU3RyaW5n
+IGNyZWF0ZU1lc1R5cGUoU3RyaW5nIElEb2NUeXBlKXsNCglJRG9jVHlwZSA9IElEb2NUeXBlLnJl
+cGxhY2VBbGwoIjEiLCAiIik7DQoJSURvY1R5cGUgPSBJRG9jVHlwZS5yZXBsYWNlQWxsKCIyIiwg
+IiIpOw0KCUlEb2NUeXBlID0gSURvY1R5cGUucmVwbGFjZUFsbCgiMyIsICIiKTsNCglJRG9jVHlw
+ZSA9IElEb2NUeXBlLnJlcGxhY2VBbGwoIjQiLCAiIik7DQoJSURvY1R5cGUgPSBJRG9jVHlwZS5y
+ZXBsYWNlQWxsKCI1IiwgIiIpOw0KCUlEb2NUeXBlID0gSURvY1R5cGUucmVwbGFjZUFsbCgiNiIs
+ICIiKTsNCglJRG9jVHlwZSA9IElEb2NUeXBlLnJlcGxhY2VBbGwoIjciLCAiIik7DQoJSURvY1R5
+cGUgPSBJRG9jVHlwZS5yZXBsYWNlQWxsKCI4IiwgIiIpOw0KCUlEb2NUeXBlID0gSURvY1R5cGUu
+cmVwbGFjZUFsbCgiOSIsICIiKTsNCglJRG9jVHlwZSA9IElEb2NUeXBlLnJlcGxhY2VBbGwoIjAi
+LCAiIik7DQoJcmV0dXJuIElEb2NUeXBlOw0KfQ0KCQ0KDQpwcml2YXRlIHN0YXRpYyBib29sZWFu
+IGlzcmZjKElEYXRhIGRvYyl7DQoJYm9vbGVhbiBpc3JmYyA9IGZhbHNlOw0KCWlmICggZG9jICE9
+IG51bGwpDQoJew0KCQlJRGF0YUN1cnNvciBkb2NDdXJzb3IgPSBkb2MuZ2V0Q3Vyc29yKCk7DQoJ
+CWlmIChJRGF0YVV0aWwuZ2V0U3RyaW5nKCBkb2NDdXJzb3IsICIkcmZjbmFtZSIgKSE9bnVsbCl7
+DQoJCQlpc3JmYyA9IHRydWU7DQoJCX0NCgkJZG9jQ3Vyc29yLmRlc3Ryb3koKTsNCgl9DQoJcmV0
+dXJuIGlzcmZjOw0KfQ0KCQkNCg==</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>com.softwareag.util.IDataMap</value>
+    <value>java.io.ByteArrayInputStream</value>
+    <value>java.io.ByteArrayOutputStream</value>
+    <value>java.io.IOException</value>
+    <value>java.io.InputStream</value>
+    <value>java.io.OutputStream</value>
+    <value>java.io.UncheckedIOException</value>
+    <value>java.io.UnsupportedEncodingException</value>
+    <value>java.util.ArrayList</value>
+    <value>java.util.Arrays</value>
+    <value>java.util.List</value>
+    <value>java.util.Date</value>
+    <value>java.util.function.BiConsumer</value>
+    <value>java.util.function.Consumer</value>
+    <value>java.util.function.Supplier</value>
+    <value>java.util.regex.Matcher</value>
+    <value>java.util.regex.Pattern</value>
+    <value>java.util.regex.PatternSyntaxException</value>
+    <value>java.text.SimpleDateFormat</value>
+    <value>java.nio.charset.Charset</value>
+    <value>java.nio.charset.IllegalCharsetNameException</value>
+    <value>java.nio.charset.StandardCharsets</value>
+    <value>java.nio.charset.UnsupportedCharsetException</value>
+    <value>java.util.Collections</value>
+    <value>java.util.HashMap</value>
+  </array>
+</Values>

@@ -7441,7 +7441,7 @@
 <MAPDELETE FIELD="/document;2;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData;4;0;schwarz.common.icl.doc:metaData">
+<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:metaData">
 </MAPDELETE>
 </MAP>
 </SEQUENCE>
