@@ -46,7 +46,10 @@
 	</globalException> 
 	<globalException type="com.wm.app.b2b.server.ServiceException" callerType="JMS" errorMessageContains="Missing required parameter" errorToBeThrown="FATAL" maxRetryAttempts="0" errorHandlingId="WxResilience.global.052">
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
-	</globalException> 
+	</globalException>
+	<globalException type="wx.resilience.pub.resilience$DocumentDiscardedException" errorToBeThrown="NONE" maxRetryAttempts="0" errorHandlingId="WxResilience.global.053">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+	</globalException>
 	<!-- Global fallbacks for all callerTypes -->
 	<globalException type="all" callerType="JMS" errorToBeThrown="FATAL" maxRetryAttempts="3" errorHandlingId="WxResilience.global.002">
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
