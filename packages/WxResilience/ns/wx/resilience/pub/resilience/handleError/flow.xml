@@ -2399,7 +2399,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaData;4;0;schwarz.common.icl.doc:metaData" TO="/metaData;4;0;schwarz.common.icl.doc:metaData">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData" TO="/metaData;4;0;wx.resilience.doc:metaData">
 </MAPCOPY>
 
 <MAPCOPY FROM="/exceptionInfo;4;0;pub.event:exceptionInfo" TO="/exceptionInfo;4;0;pub.event:exceptionInfo">
