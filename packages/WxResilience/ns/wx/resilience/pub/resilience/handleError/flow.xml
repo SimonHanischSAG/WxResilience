@@ -2233,7 +2233,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">schwarz.common.icl.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:metaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>

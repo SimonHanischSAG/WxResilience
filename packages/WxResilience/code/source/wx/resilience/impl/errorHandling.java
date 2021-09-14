@@ -381,13 +381,13 @@ public final class errorHandling
 						hierachicalErrorInfo.get(hierachyLevel).getService(),
 						hierachicalErrorInfo.get(hierachyLevel).getFlowStep()));
 				
-				int lidlServiceLevel = getDeepestApplicationServiceLevel(hierachicalErrorInfo);
+				int applicationServiceLevel = getDeepestApplicationServiceLevel(hierachicalErrorInfo);
 				IDataUtil.put(
 					handledErrorInfoCursor,
-					HANDLED_ERROR_INFO_LIDLSERVICE_ID,
+					HANDLED_ERROR_INFO_APPLICATION_SERVICE_ID,
 					buildCompactErrorInfo(
-						hierachicalErrorInfo.get(lidlServiceLevel).getService(),
-						hierachicalErrorInfo.get(lidlServiceLevel).getFlowStep()));
+						hierachicalErrorInfo.get(applicationServiceLevel).getService(),
+						hierachicalErrorInfo.get(applicationServiceLevel).getFlowStep()));
 		
 				int originLevel = hierachicalErrorInfo.size() - 1;
 				IDataUtil.put(
@@ -1395,7 +1395,7 @@ public final class errorHandling
 		
 		private static final String HANDLED_ERROR_INFO_ROOT_ID = "topServiceError";
 		private static final String HANDLED_ERROR_INFO_HANDLED_ID = "handledServiceError";
-		private static final String HANDLED_ERROR_INFO_LIDLSERVICE_ID = "applicationServiceError";
+		private static final String HANDLED_ERROR_INFO_APPLICATION_SERVICE_ID = "applicationServiceError";
 		private static final String HANDLED_ERROR_INFO_ORIGIN_ID = "rootServiceError";
 	
 		private static final String HANDLED_ERROR_INFO_HANDLING_LOCATION_ID = "handlingLocation";
