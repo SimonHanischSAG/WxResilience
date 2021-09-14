@@ -1534,14 +1534,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2046,14 +2047,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2093,27 +2095,27 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/value;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/timestamp;1;0">
+<MAPCOPY FROM="/value;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/source;2;0/parameter;1;0">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData/uuid;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/uuid;1;0">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData/uuid;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/id;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/errorCode;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorCode;1;0">
+<MAPCOPY FROM="/errorMessage;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/title;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/errorType;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorType;1;0">
+<MAPCOPY FROM="/errorCode;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/code;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/errorMessage;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorMessage;1;0">
+<MAPCOPY FROM="/errorType;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/detail;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/httpResponseCode;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/httpStatusCode;1;0">
+<MAPCOPY FROM="/lastError;4;0;pub.event:exceptionInfo/service;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/source;2;0/pointer;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/lastError;4;0;pub.event:exceptionInfo/service;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorService;1;0">
+<MAPCOPY FROM="/httpResponseCode;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/status;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -2279,14 +2281,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2389,14 +2392,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2472,14 +2476,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2631,14 +2636,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2713,7 +2719,7 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorMessage;1;0" TO="/inString;1;0">
+<MAPCOPY FROM="/errors[0];4;1;pub.rest.jsonapi:errorTemplate/title;1;0" TO="/inString;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -2787,14 +2793,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2834,7 +2841,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/value;1;0" TO="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorMessage;1;0">
+<MAPCOPY FROM="/value;1;0" TO="/errors[0];4;1;pub.rest.jsonapi:errorTemplate/title;1;0">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>
@@ -2999,14 +3006,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -3022,7 +3030,7 @@
 <MAPDELETE FIELD="/httpResponseCode;1;0">
 </MAPDELETE>
 
-<MAPCOPY FROM="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice/errorMessage;1;0" TO="/reasonPhrase;1;0">
+<MAPCOPY FROM="/errors;4;1;pub.rest.jsonapi:errorTemplate/title;1;0" TO="/reasonPhrase;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -3107,14 +3115,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -3165,19 +3174,6 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">errorResponse</value>
-        <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
-      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -3266,14 +3262,15 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">errorResponseWebservice</value>
+        <value name="field_name">errors</value>
         <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
+        <value name="field_dim">1</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:errorResponseWebservice</value>
+        <value name="rec_ref">pub.rest.jsonapi:errorTemplate</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -3290,12 +3287,6 @@
 </MAPDELETE>
 
 <MAPDELETE FIELD="/metaData;4;0;schwarz.common.icl.doc:metaData">
-</MAPDELETE>
-
-<MAPCOPY FROM="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice" TO="/errorResponse;4;0;wx.resilience.doc:errorResponseWebservice">
-</MAPCOPY>
-
-<MAPDELETE FIELD="/errorResponseWebservice;4;0;wx.resilience.doc:errorResponseWebservice">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/genericErrorMessage;1;0">
