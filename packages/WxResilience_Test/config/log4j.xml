@@ -5,21 +5,21 @@
 
 <!DOCTYPE log4j:configuration SYSTEM "../../WxConfig/code/jars/log4j.dtd">
 <log4j:configuration>
-  <appender name="WxResilienceTest"
+  <appender name="WxResilience_Test"
     class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="10MB" />
       <param name="MaxBackupIndex" value="10" />
       <param name="DatePattern" value="'.'yyyyMMdd" />
       <param name="Append" value="true" />
-      <param name="File" value="./logs/WxResilienceTest.log" />
+      <param name="File" value="./logs/WxResilience_Test.log" />
       <param name="threshold" value="info"/>
       <layout class="org.apache.log4j.PatternLayout">
         <param name="ConversionPattern" value="%d %-5p - %m%n" />
       </layout>
   </appender>
 
-  <category name="WxResilienceTest">
-    <appender-ref ref="WxResilienceTest"/>
+  <category name="WxResilience_Test">
+    <appender-ref ref="WxResilience_Test"/>
   </category>
 
 </log4j:configuration>
