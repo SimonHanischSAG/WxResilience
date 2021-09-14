@@ -608,7 +608,7 @@ eG1sIjsNCglwcml2YXRlIHN0YXRpYyBmaW5hbCBTdHJpbmcgRVhDRVBUSU9OX0hBTkRMSU5HX1hT
 RF9GSUxFID0gIkVycm9ySGFuZGxpbmcueHNkIjsNCglwcml2YXRlIHN0YXRpYyBmaW5hbCBTdHJp
 bmcgV1hfUkVTSUxJRU5DRSA9ICJXeFJlc2lsaWVuY2UiOw0KCXByaXZhdGUgc3RhdGljIGZpbmFs
 IFN0cmluZyBFUlJPUl9IQU5ETElOR19YTUxfRklMRSA9ICJFcnJvckhhbmRsaW5nLnhtbCI7DQoN
-Cg0KCQ0KCQ0K</value>
+Cg0KCQ0KCQ0KCQ0K</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
     <value>com.softwareag.util.IDataMap</value>
@@ -642,8 +642,5 @@ Cg0KCQ0KCQ0K</value>
     <value>java.nio.file.StandardCopyOption</value>
     <value>com.wm.lang.ns.NSService</value>
     <value>java.util.function.Supplier</value>
-  </array>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
   </array>
 </Values>

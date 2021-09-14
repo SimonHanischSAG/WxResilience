@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Values version="2.0">
-  <value name="node_type">interface</value>
-  <value name="node_subtype">unknown</value>
-  <value name="node_nsName">wx.resilience.impl.log.wrapper</value>
-  <value name="is_public">false</value>
   <value name="shared">DQpwcml2YXRlIHN0YXRpYyB2b2lkIHJlbmFtZVZhcmlhYmxlKElEYXRhTWFwIG1hcCwgU3RyaW5n
 IG9sZE5hbWUsIFN0cmluZyBuZXdOYW1lKSB7DQoJbWFwLnB1dChuZXdOYW1lLCBtYXAuZ2V0KG9s
 ZE5hbWUpKTsNCgltYXAucmVtb3ZlKG9sZE5hbWUpOw0KfQ0KDQpwcml2YXRlIHN0YXRpYyB2b2lk
@@ -34,9 +30,6 @@ KHZhbHVlKTsNCgkJCX0JDQoJCQlidWlsZGVyLmFwcGVuZCgifCIpOw0KCQl9DQoJCQ0KCQlwaXBl
 TWFwLnB1dCgibWVzc2FnZSIsIGJ1aWxkZXIudG9TdHJpbmcoKSk7DQoJfQ0KfQ0KDQoNCgkNCgkN
 Cg==</value>
   <value name="encodeutf8">true</value>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
-  </array>
   <array name="imports" type="value" depth="1">
     <value>com.softwareag.util.IDataMap</value>
     <value>com.wm.app.b2b.server.ISRuntimeException</value>

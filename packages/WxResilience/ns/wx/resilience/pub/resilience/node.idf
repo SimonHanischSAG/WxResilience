@@ -2,13 +2,8 @@
 
 <Values version="2.0">
   <value name="shared">cHVibGljIHN0YXRpYyBmaW5hbCBjbGFzcyBEb2N1bWVudERpc2NhcmRlZEV4Y2VwdGlvbiBleHRl
-bmRzIFNlcnZpY2VFeGNlcHRpb24gewoJCglwdWJsaWMgRG9jdW1lbnREaXNjYXJkZWRFeGNlcHRp
-b24oU3RyaW5nIGFyZzApIHsKCQlzdXBlcihhcmcwKTsKCX0KCQoJcHJpdmF0ZSBzdGF0aWMgZmlu
-YWwgbG9uZyBzZXJpYWxWZXJzaW9uVUlEID0gMUw7Cgp9CQoJ</value>
+bmRzIFNlcnZpY2VFeGNlcHRpb24gew0KCQ0KCXB1YmxpYyBEb2N1bWVudERpc2NhcmRlZEV4Y2Vw
+dGlvbihTdHJpbmcgYXJnMCkgew0KCQlzdXBlcihhcmcwKTsNCgl9DQoJDQoJcHJpdmF0ZSBzdGF0
+aWMgZmluYWwgbG9uZyBzZXJpYWxWZXJzaW9uVUlEID0gMUw7DQoNCn0JDQoJDQo=</value>
   <value name="encodeutf8">true</value>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
-  </array>
-  <array name="imports" type="value" depth="1">
-  </array>
 </Values>

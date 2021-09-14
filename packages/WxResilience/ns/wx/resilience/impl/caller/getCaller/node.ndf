@@ -54,7 +54,19 @@
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment"></value>
+  <value name="node_comment">Possible outputs:
+- REST
+- RESTv2
+- RAD
+- SOAP
+- FTP
+- FILEPOLLING
+- JMS
+- STARTUP_SHUTDOWN
+- SCHEDULER
+- MFT
+- OTHER
+</value>
   <value name="stateless">yes</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

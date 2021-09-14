@@ -582,10 +582,10 @@ public final class errorHandling
 
 
 
-	public static final void initializeHandlings (IData pipeline)
+	public static final void initializeErrorHandlings (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(initializeHandlings)>> ---
+		// --- <<IS-START(initializeErrorHandlings)>> ---
 		// @sigtype java 3.5
 		Log.logInfo("Initializing error handling framework...");
 		//TODO
@@ -601,6 +601,7 @@ public final class errorHandling
 		}
 		final SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser");
 		initHandlings(url, builder);
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -1502,6 +1503,7 @@ public final class errorHandling
 		private static final String ERROR_HANDLING_XML_FILE = "ErrorHandling.xml";
 	
 	
+		
 		
 		
 	// --- <<IS-END-SHARED>> ---
