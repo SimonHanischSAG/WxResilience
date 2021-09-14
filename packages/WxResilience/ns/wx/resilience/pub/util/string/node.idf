@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Values version="2.0">
-  <value name="node_type">interface</value>
-  <value name="node_subtype">unknown</value>
-  <value name="node_nsName">wx.resilience.pub.util.string</value>
-  <value name="is_public">false</value>
   <value name="shared">LyoqDQogKiBVc2VkIGJ5ICJtdWx0aUNvbmNhdCINCiAqIA0KICovDQpwcml2YXRlIHN0YXRpYyBT
 dHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZykNCnsNCiAgaWYgKGlucHV0U3RyaW5n
 ID09IG51bGwpDQogICAgcmV0dXJuICIiOw0KICBlbHNlDQogICAgcmV0dXJuIGlucHV0U3RyaW5n
@@ -42,9 +38,6 @@ CWlmIChJRGF0YVV0aWwuZ2V0U3RyaW5nKCBkb2NDdXJzb3IsICIkcmZjbmFtZSIgKSE9bnVsbCl7
 DQoJCQlpc3JmYyA9IHRydWU7DQoJCX0NCgkJZG9jQ3Vyc29yLmRlc3Ryb3koKTsNCgl9DQoJcmV0
 dXJuIGlzcmZjOw0KfQ0KCQkNCg==</value>
   <value name="encodeutf8">true</value>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
-  </array>
   <array name="imports" type="value" depth="1">
     <value>com.softwareag.util.IDataMap</value>
     <value>java.io.ByteArrayInputStream</value>
