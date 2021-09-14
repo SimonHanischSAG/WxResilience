@@ -57,6 +57,9 @@
 	<globalException type="all" callerType="RESTV2" errorToBeThrown="NONE" maxRetryAttempts="0" errorHandlingId="WxResilience.global.004">
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
 	</globalException>
+	<globalException type="all" callerType="RAD" errorToBeThrown="NONE" maxRetryAttempts="0" errorHandlingId="WxResilience.global.005">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+	</globalException>
     <globalException type="all" errorToBeThrown="FATAL" maxRetryAttempts="0" errorHandlingId="WxResilience.global.001">
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
 	</globalException>
