@@ -533,6 +533,7 @@ public final class errorHandling
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -929,6 +930,7 @@ public final class errorHandling
 			propertyValue = IDataUtil
 					.getString(configOutputCursor, "propertyValue");
 			configOutputCursor.destroy();
+			Log.logDebug("getValueConf for " + key + " returns: " + propertyValue);
 			return propertyValue;
 		}
 		
@@ -1290,12 +1292,8 @@ public final class errorHandling
 		
 		private static final String getMessageUID(IData metaData) {
 			if(metaData != null) {
-				IDataCursor tempCursor = metaData.getCursor();
-				IData messageIdentifier = IDataUtil.getIData(tempCursor,MESSAGEIDENTIFIER_ID);
-				if (messageIdentifier != null) {
-					IDataCursor messageIdentifierCursor = messageIdentifier.getCursor();
-					return (String) IDataUtil.get(messageIdentifierCursor, UID_ID);
-				}
+				IDataMap metaDataMap = new IDataMap(metaData);
+				return metaDataMap.getAsString(UID_ID);
 			}
 			return null;
 		}
@@ -1423,8 +1421,7 @@ public final class errorHandling
 		// --------------------EXCEPTION HANDLING DEFINITION------------------
 		// *******************************************************************
 		private static final String METADATA_ID = "metaData";
-		private static final String MESSAGEIDENTIFIER_ID = "MessageIdentifier";
-		private static final String UID_ID = "UID";
+		private static final String UID_ID = "uuid";
 	
 		// *******************************************************************
 		// --------------------EXCEPTION HANDLING DEFINITION------------------
@@ -1462,6 +1459,7 @@ public final class errorHandling
 		private static final String ERROR_HANDLING_XML_FILE = "ErrorHandling.xml";
 	
 	
+		
 		
 		
 		
