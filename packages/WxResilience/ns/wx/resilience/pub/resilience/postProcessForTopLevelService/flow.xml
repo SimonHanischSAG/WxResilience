@@ -1488,7 +1488,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing discarded for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
+  <value name="xml">Processing discarded for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -2047,7 +2047,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing finished for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:SUCCESS|duration:%duration%</value>
+  <value name="xml">Processing finished for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:SUCCESS|duration:%duration%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -2568,7 +2568,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing canceled for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
+  <value name="xml">Processing canceled for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -3089,7 +3089,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing will be retried for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
+  <value name="xml">Processing will be retried for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -3612,7 +3612,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing canceled for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
+  <value name="xml">Processing canceled for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:%errorToBeThrown%|duration:%duration%|error:%lastError/error%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
@@ -4133,7 +4133,7 @@
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
-  <value name="xml">Processing finished for type:%metaData/type%|id:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:UNKNOWN|duration:%duration%</value>
+  <value name="xml">Processing finished for type:%metaData/type%|uuid:%metaData/uuid%|%correlationUuidString%service:%callingServiceName%|status:UNKNOWN|duration:%duration%</value>
   <record name="type" javaclass="com.wm.util.Values">
     <value name="node_type">field</value>
     <value name="node_subtype">unknown</value>
