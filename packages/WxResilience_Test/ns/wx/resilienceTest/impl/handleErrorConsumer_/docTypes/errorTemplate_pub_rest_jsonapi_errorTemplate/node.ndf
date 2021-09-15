@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:errorTemplate_pub_rest_jsonapi_errorTemplate</value>
+    <value name="node_pkg">WxResilience_Test</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">4593b15e98af4b07960c4dc9c6a1ed20</value>
+    <value name="originURI">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.ws.testApiSoap.v1:handleError?WSDL</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">tns:errorTemplate</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:docTypeRef_tns_errorTemplate</value>
+      </record>
+    </array>
+    <value name="modifiable">false</value>
+  </record>
+</Values>

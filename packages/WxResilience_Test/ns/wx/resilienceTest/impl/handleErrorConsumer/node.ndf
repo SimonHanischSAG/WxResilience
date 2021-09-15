@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webServiceDescriptor</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">wx.resilienceTest.impl:handleErrorConsumer</value>
+  <value name="node_pkg">WxResilience_Test</value>
+  <value name="is_public">false</value>
+  <Boolean name="inbound">false</Boolean>
+  <Boolean name="WSICompliant">false</Boolean>
+  <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+  <value name="targetNamespace">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError</value>
+  <Boolean name="attachmentEnabled">false</Boolean>
+  <number name="mtomThreshold" type="Integer">0</number>
+  <array name="externalWSDLSources" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="contextURI">http://localhost:5555/</value>
+      <value name="locationURI">wx.resilienceTest.impl.handleErrorConsumer?wsdl=wsdl0</value>
+      <byte name="source">
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjx3c2RsOmRlZmluaXRpb25zIG5hbWU9ImhhbmRsZUVycm9yIiB0YXJnZXROYW1lc3BhY2U9Imh0dHA6Ly9kYWVpZ2NzNTQ0OTguZXVyLmFkLnNhZy93eC5yZXNpbGllbmNlVGVzdC53cy50ZXN0QXBpU29hcC52MTpoYW5kbGVFcnJvciIgeG1sbnM6d3NkbD0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3NkbC8iIHhtbG5zOnNvYXBqbXM9Imh0dHA6Ly93d3cudzMub3JnLzIwMTAvc29hcGptcy8iIHhtbG5zOm1pbWU9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzZGwvbWltZS8iIHhtbG5zOnRucz0iaHR0cDovL2RhZWlnY3M1NDQ5OC5ldXIuYWQuc2FnL3d4LnJlc2lsaWVuY2VUZXN0LndzLnRlc3RBcGlTb2FwLnYxOmhhbmRsZUVycm9yIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpodHRwPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93c2RsL2h0dHAvIiB4bWxuczpzb2FwMTI9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzZGwvc29hcDEyLyIgeG1sbnM6c29hcD0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3NkbC9zb2FwLyIgeG1sbnM6c29hcGVuYz0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbmNvZGluZy8iPg0KICA8d3NkbDp0eXBlcz4NCiAgICA8eHNkOnNjaGVtYSB0YXJnZXROYW1lc3BhY2U9Imh0dHA6Ly9kYWVpZ2NzNTQ0OTguZXVyLmFkLnNhZy93eC5yZXNpbGllbmNlVGVzdC53cy50ZXN0QXBpU29hcC52MTpoYW5kbGVFcnJvciIgeG1sbnM6dG5zPSJodHRwOi8vZGFlaWdjczU0NDk4LmV1ci5hZC5zYWcvd3gucmVzaWxpZW5jZVRlc3Qud3MudGVzdEFwaVNvYXAudjE6aGFuZGxlRXJyb3IiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiPg0KICAgICAgICAgIDx4c2Q6ZWxlbWVudCBuYW1lPSJ0ZXN0X2hhbmRsZUVycm9yIiB0eXBlPSJ0bnM6dGVzdF9oYW5kbGVFcnJvciIvPg0KICAgICAgICAgIDx4c2Q6ZWxlbWVudCBuYW1lPSJ0ZXN0X2hhbmRsZUVycm9yUmVzcG9uc2UiIHR5cGU9InRuczp0ZXN0X2hhbmRsZUVycm9yUmVzcG9uc2UiLz4NCiAgICAgICAgICA8eHNkOmVsZW1lbnQgbmFtZT0iZXJyb3JUZW1wbGF0ZSIgdHlwZT0idG5zOmVycm9yVGVtcGxhdGUiLz4NCiAgICAgICAgICA8eHNkOmNvbXBsZXhUeXBlIG5hbWU9InRlc3RfaGFuZGxlRXJyb3IiPg0KICAgICAgICAgICAgPHhzZDpzZXF1ZW5jZT4NCiAgICAgICAgICAgIDwveHNkOnNlcXVlbmNlPg0KICAgICAgICAgIDwveHNkOmNvbXBsZXhUeXBlPg0KICAgICAgICAgIDx4c2Q6Y29tcGxleFR5cGUgbmFtZT0idGVzdF9oYW5kbGVFcnJvclJlc3BvbnNlIj4NCiAgICAgICAgICAgIDx4c2Q6c2VxdWVuY2U+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtYXhPY2N1cnM9InVuYm91bmRlZCIgbWluT2NjdXJzPSIwIiBuYW1lPSJlcnJvcnMiIG5pbGxhYmxlPSJ0cnVlIiB0eXBlPSJ0bnM6ZXJyb3JUZW1wbGF0ZSIvPg0KICAgICAgICAgICAgPC94c2Q6c2VxdWVuY2U+DQogICAgICAgICAgPC94c2Q6Y29tcGxleFR5cGU+DQogICAgICAgICAgPHhzZDpjb21wbGV4VHlwZSBuYW1lPSJlcnJvclRlbXBsYXRlIj4NCiAgICAgICAgICAgIDx4c2Q6c2VxdWVuY2U+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImlkIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0ieHNkOnN0cmluZyIvPg0KICAgICAgICAgICAgICA8eHNkOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJsaW5rcyIgbmlsbGFibGU9InRydWUiIHR5cGU9InRuczpsaW5rcyIvPg0KICAgICAgICAgICAgICA8eHNkOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJzdGF0dXMiIG5pbGxhYmxlPSJ0cnVlIiB0eXBlPSJ4c2Q6c3RyaW5nIi8+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImNvZGUiIG5pbGxhYmxlPSJ0cnVlIiB0eXBlPSJ4c2Q6c3RyaW5nIi8+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InRpdGxlIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0ieHNkOnN0cmluZyIvPg0KICAgICAgICAgICAgICA8eHNkOmVsZW1lbnQgbWluT2NjdXJzPSIwIiBuYW1lPSJkZXRhaWwiIG5pbGxhYmxlPSJ0cnVlIiB0eXBlPSJ4c2Q6c3RyaW5nIi8+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9InNvdXJjZSIgbmlsbGFibGU9InRydWUiIHR5cGU9InRuczpzb3VyY2UiLz4NCiAgICAgICAgICAgICAgPHhzZDplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0ibWV0YSIgbmlsbGFibGU9InRydWUiIHR5cGU9InhzZDphbnlUeXBlIi8+DQogICAgICAgICAgICA8L3hzZDpzZXF1ZW5jZT4NCiAgICAgICAgICA8L3hzZDpjb21wbGV4VHlwZT4NCiAgICAgICAgICA8eHNkOmNvbXBsZXhUeXBlIG5hbWU9ImxpbmtzIj4NCiAgICAgICAgICAgIDx4c2Q6c2VxdWVuY2U+DQogICAgICAgICAgICAgIDx4c2Q6ZWxlbWVudCBtaW5PY2N1cnM9IjAiIG5hbWU9ImFib3V0IiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0ieHNkOnN0cmluZyIvPg0KICAgICAgICAgICAgPC94c2Q6c2VxdWVuY2U+DQogICAgICAgICAgPC94c2Q6Y29tcGxleFR5cGU+DQogICAgICAgICAgPHhzZDpjb21wbGV4VHlwZSBuYW1lPSJzb3VyY2UiPg0KICAgICAgICAgICAgPHhzZDpzZXF1ZW5jZT4NCiAgICAgICAgICAgICAgPHhzZDplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icG9pbnRlciIgbmlsbGFibGU9InRydWUiIHR5cGU9InhzZDpzdHJpbmciLz4NCiAgICAgICAgICAgICAgPHhzZDplbGVtZW50IG1pbk9jY3Vycz0iMCIgbmFtZT0icGFyYW1ldGVyIiBuaWxsYWJsZT0idHJ1ZSIgdHlwZT0ieHNkOnN0cmluZyIvPg0KICAgICAgICAgICAgPC94c2Q6c2VxdWVuY2U+DQogICAgICAgICAgPC94c2Q6Y29tcGxleFR5cGU+DQogICAgICAgIAk8L3hzZDpzY2hlbWE+DQogIDwvd3NkbDp0eXBlcz4NCiAgPHdzZGw6bWVzc2FnZSBuYW1lPSJlcnJvclRlbXBsYXRlX3B1Yl9yZXN0X2pzb25hcGlfZXJyb3JUZW1wbGF0ZSI+DQogICAgPHdzZGw6cGFydCBuYW1lPSJwYXJhbWV0ZXJzIiBlbGVtZW50PSJ0bnM6ZXJyb3JUZW1wbGF0ZSI+DQogICAgPC93c2RsOnBhcnQ+DQogIDwvd3NkbDptZXNzYWdlPg0KICA8d3NkbDptZXNzYWdlIG5hbWU9ImhhbmRsZUVycm9yX1BvcnRUeXBlX3Rlc3RfaGFuZGxlRXJyb3IiPg0KICAgIDx3c2RsOnBhcnQgbmFtZT0icGFyYW1ldGVycyIgZWxlbWVudD0idG5zOnRlc3RfaGFuZGxlRXJyb3IiPg0KICAgIDwvd3NkbDpwYXJ0Pg0KICA8L3dzZGw6bWVzc2FnZT4NCiAgPHdzZGw6bWVzc2FnZSBuYW1lPSJoYW5kbGVFcnJvcl9Qb3J0VHlwZV90ZXN0X2hhbmRsZUVycm9yUmVzcG9uc2UiPg0KICAgIDx3c2RsOnBhcnQgbmFtZT0icGFyYW1ldGVycyIgZWxlbWVudD0idG5zOnRlc3RfaGFuZGxlRXJyb3JSZXNwb25zZSI+DQogICAgPC93c2RsOnBhcnQ+DQogIDwvd3NkbDptZXNzYWdlPg0KICA8d3NkbDpwb3J0VHlwZSBuYW1lPSJoYW5kbGVFcnJvcl9Qb3J0VHlwZSI+DQogICAgPHdzZGw6b3BlcmF0aW9uIG5hbWU9InRlc3RfaGFuZGxlRXJyb3IiPg0KICAgICAgPHdzZGw6aW5wdXQgbWVzc2FnZT0idG5zOmhhbmRsZUVycm9yX1BvcnRUeXBlX3Rlc3RfaGFuZGxlRXJyb3IiPg0KICAgIDwvd3NkbDppbnB1dD4NCiAgICAgIDx3c2RsOm91dHB1dCBtZXNzYWdlPSJ0bnM6aGFuZGxlRXJyb3JfUG9ydFR5cGVfdGVzdF9oYW5kbGVFcnJvclJlc3BvbnNlIj4NCiAgICA8L3dzZGw6b3V0cHV0Pg0KICAgICAgPHdzZGw6ZmF1bHQgbmFtZT0iZXJyb3JUZW1wbGF0ZSIgbWVzc2FnZT0idG5zOmVycm9yVGVtcGxhdGVfcHViX3Jlc3RfanNvbmFwaV9lcnJvclRlbXBsYXRlIj4NCiAgICA8L3dzZGw6ZmF1bHQ+DQogICAgPC93c2RsOm9wZXJhdGlvbj4NCiAgPC93c2RsOnBvcnRUeXBlPg0KICA8d3NkbDpiaW5kaW5nIG5hbWU9Ind4X3Jlc2lsaWVuY2VUZXN0X3dzX3Rlc3RBcGlTb2FwX3YxX2hhbmRsZUVycm9yX0JpbmRlciIgdHlwZT0idG5zOmhhbmRsZUVycm9yX1BvcnRUeXBlIj4NCiAgICA8c29hcDEyOmJpbmRpbmcgc3R5bGU9ImRvY3VtZW50IiB0cmFuc3BvcnQ9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvaHR0cCIvPg0KICAgIDx3c2RsOm9wZXJhdGlvbiBuYW1lPSJ0ZXN0X2hhbmRsZUVycm9yIj4NCiAgICAgIDxzb2FwMTI6b3BlcmF0aW9uIHNvYXBBY3Rpb249Ind4X3Jlc2lsaWVuY2VUZXN0X3dzX3Rlc3RBcGlTb2FwX3YxX2hhbmRsZUVycm9yX0JpbmRlcl90ZXN0X2hhbmRsZUVycm9yIiBzdHlsZT0iZG9jdW1lbnQiLz4NCiAgICAgIDx3c2RsOmlucHV0Pg0KICAgICAgICA8c29hcDEyOmJvZHkgcGFydHM9InBhcmFtZXRlcnMiIHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2RsOmlucHV0Pg0KICAgICAgPHdzZGw6b3V0cHV0Pg0KICAgICAgICA8c29hcDEyOmJvZHkgcGFydHM9InBhcmFtZXRlcnMiIHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2RsOm91dHB1dD4NCiAgICAgIDx3c2RsOmZhdWx0IG5hbWU9ImVycm9yVGVtcGxhdGUiPg0KICAgICAgICA8c29hcDEyOmZhdWx0IG5hbWU9ImVycm9yVGVtcGxhdGUiIHVzZT0ibGl0ZXJhbCIvPg0KICAgICAgPC93c2RsOmZhdWx0Pg0KICAgIDwvd3NkbDpvcGVyYXRpb24+DQogIDwvd3NkbDpiaW5kaW5nPg0KICA8d3NkbDpzZXJ2aWNlIG5hbWU9Ind4LnJlc2lsaWVuY2VUZXN0LndzLnRlc3RBcGlTb2FwLnYxLmhhbmRsZUVycm9yIj4NCiAgICA8d3NkbDpwb3J0IG5hbWU9Ind4X3Jlc2lsaWVuY2VUZXN0X3dzX3Rlc3RBcGlTb2FwX3YxX2hhbmRsZUVycm9yX1BvcnQiIGJpbmRpbmc9InRuczp3eF9yZXNpbGllbmNlVGVzdF93c190ZXN0QXBpU29hcF92MV9oYW5kbGVFcnJvcl9CaW5kZXIiPg0KICAgICAgPHNvYXAxMjphZGRyZXNzIGxvY2F0aW9uPSJodHRwOi8vZGFlaWdjczU0NDk4LmV1ci5hZC5zYWc6NTU1NS93cy93eC5yZXNpbGllbmNlVGVzdC53cy50ZXN0QXBpU29hcC52MTpoYW5kbGVFcnJvci93eF9yZXNpbGllbmNlVGVzdF93c190ZXN0QXBpU29hcF92MV9oYW5kbGVFcnJvcl9Qb3J0Ii8+DQogICAgPC93c2RsOnBvcnQ+DQogIDwvd3NkbDpzZXJ2aWNlPg0KPC93c2RsOmRlZmluaXRpb25zPg0K      </byte>
+      <number name="type" type="Integer">1</number>
+    </record>
+  </array>
+  <value name="externalWSDLURL">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.ws.testApiSoap.v1:handleError?WSDL</value>
+  <value name="WSDLURL">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.pub:handleErrorConsumer?WSDL</value>
+  <value name="definitionName">handleErrorConsumer</value>
+  <value name="version">V_10_11</value>
+  <value name="schemaDomain">4593b15e98af4b07960c4dc9c6a1ed20</value>
+  <Boolean name="rawArray">true</Boolean>
+  <array name="handlerList" type="record" depth="1">
+  </array>
+  <array name="binderList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="binderName">wx_resilienceTest_ws_testApiSoap_v1_handleError_Binder</value>
+      <value name="portAddress">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.ws.testApiSoap.v1:handleError/wx_resilienceTest_ws_testApiSoap_v1_handleError_Port</value>
+      <value name="bindingName">wx_resilienceTest_ws_testApiSoap_v1_handleError_Binder</value>
+      <value name="bindingStyle">document</value>
+      <value name="bindingUse">literal</value>
+      <value name="bindingType">SOAP</value>
+      <value name="portName">wx_resilienceTest_ws_testApiSoap_v1_handleError_Port</value>
+      <value name="portTypeName">handleError_PortType</value>
+      <value name="bindingTransport">http://schemas.xmlsoap.org/soap/http</value>
+      <value name="transportType">http</value>
+      <record name="operationMap" javaclass="com.wm.util.Values">
+        <value name="wx_resilienceTest_ws_testApiSoap_v1_handleError_Binder_test_handleError">test_handleError</value>
+      </record>
+      <value name="SOAPProtocol">SOAP 1.2 Protocol</value>
+      <value name="SOAPDirective">ws</value>
+      <Boolean name="useCSQ">false</Boolean>
+    </record>
+  </array>
+  <array name="operationList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">test_handleError</value>
+      <value name="serviceName">wx.resilienceTest.impl.handleErrorConsumer_.connectors:handleError_PortType_test_handleError</value>
+      <value name="originalMEPType">MEP_URI_IN_OUT</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError:handleError_PortType_test_handleError_Input</value>
+          <value name="docType">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:handleError_PortType_test_handleError_Input</value>
+          <value name="nsOwner">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:handleError_PortType_test_handleError_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError:handleError_PortType_test_handleError_Output</value>
+          <value name="docType">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:handleError_PortType_test_handleError_Output</value>
+          <value name="nsOwner">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:handleError_PortType_test_handleError_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="name">errorTemplate</value>
+            <value name="docType">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:errorTemplate_pub_rest_jsonapi_errorTemplate</value>
+            <value name="nsOwner">wx.resilienceTest.impl.handleErrorConsumer_.docTypes:errorTemplate_pub_rest_jsonapi_errorTemplate</value>
+            <number name="nsOwnerType" type="Integer">3</number>
+            <Boolean name="addedByClient">false</Boolean>
+          </record>
+        </array>
+      </record>
+    </record>
+  </array>
+  <record name="namespaces" javaclass="com.wm.util.Values">
+    <value name="wsdl">http://schemas.xmlsoap.org/wsdl/</value>
+    <value name="soapjms">http://www.w3.org/2010/soapjms/</value>
+    <value name="mime">http://schemas.xmlsoap.org/wsdl/mime/</value>
+    <value name="tns">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError</value>
+    <value name="xsd">http://www.w3.org/2001/XMLSchema</value>
+    <value name="http">http://schemas.xmlsoap.org/wsdl/http/</value>
+    <value name="soap12">http://schemas.xmlsoap.org/wsdl/soap12/</value>
+    <value name="soap">http://schemas.xmlsoap.org/wsdl/soap/</value>
+    <value name="soapenc">http://schemas.xmlsoap.org/soap/encoding/</value>
+  </record>
+  <Boolean name="HeadersInPipelineEnabled">false</Boolean>
+  <Boolean name="validateSOAPResponse">true</Boolean>
+  <Boolean name="validateSchemaUsingXerces">true</Boolean>
+  <Boolean name="enableCompatibility">false</Boolean>
+  <Boolean name="omitXSDAny">true</Boolean>
+  <record name="userDefinedURIReferencePrefixes" javaclass="com.wm.util.Values">
+  </record>
+  <Boolean name="registerDoctypes">true</Boolean>
+  <Boolean name="allTypes">false</Boolean>
+  <Boolean name="generateXOPObjectForBase64Binary">false</Boolean>
+  <value name="originURI">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.ws.testApiSoap.v1:handleError?WSDL</value>
+  <value name="modifiable">false</value>
+  <value name="externalServiceName">{http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError}wx.resilienceTest.ws.testApiSoap.v1.handleError</value>
+  <null name="policyAttachmentList"/>
+  <Boolean name="filterLoginCredentials">false</Boolean>
+</Values>
