@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">wx.resilienceTest.pub.handleErrorConsumer_.docTypes:docTypeRef_tns_test_handleError</value>
+    <value name="node_pkg">WxResilience_Test</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">4593b15e98af4b07960c4dc9c6a1ed20</value>
+    <value name="docTypeDomain">5234094d1e9b4f948e301d86d68ea9e4</value>
+    <value name="originURI">http://daeigcs54498.eur.ad.sag:5555/ws/wx.resilienceTest.ws.testApiSoap.v1:handleError?WSDL</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+    <record name="schemaType" javaclass="com.wm.util.Values">
+      <value name="xmlns">http://daeigcs54498.eur.ad.sag/wx.resilienceTest.ws.testApiSoap.v1:handleError</value>
+      <value name="ncName">test_handleError</value>
+    </record>
+    <value name="schemaRegistered">true</value>
+    <value name="modifiable">false</value>
+  </record>
+</Values>

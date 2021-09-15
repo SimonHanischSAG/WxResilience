@@ -73,7 +73,7 @@
           <value name="is_global">false</value>
           <value name="rec_closed">true</value>
           <value name="modifiable">true</value>
-          <value name="rec_ref">wx.resilience.doc:handledError</value>
+          <value name="rec_ref">wx.resilience.doc.error:handledError</value>
         </record>
         <record javaclass="com.wm.util.Values">
           <value name="node_type">unknown</value>

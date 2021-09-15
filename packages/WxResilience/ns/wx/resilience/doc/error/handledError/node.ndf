@@ -4,7 +4,7 @@
   <record name="record" javaclass="com.wm.util.Values">
     <value name="node_type">record</value>
     <value name="node_subtype">unknown</value>
-    <value name="node_nsName">wx.resilience.doc:handledError</value>
+    <value name="node_nsName">wx.resilience.doc.error:handledError</value>
     <value name="node_pkg">WxResilience</value>
     <value name="node_comment"></value>
     <value name="is_public">false</value>
@@ -154,7 +154,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:handledCallStack</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledCallStack</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -174,7 +174,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:handledCallStack</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledCallStack</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -194,7 +194,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:handledCallStack</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledCallStack</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -214,7 +214,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:handledCallStack</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledCallStack</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>

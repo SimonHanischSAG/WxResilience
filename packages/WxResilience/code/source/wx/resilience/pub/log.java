@@ -32,7 +32,7 @@ public final class log
         throws ServiceException
 	{
 		// --- <<IS-START(log)>> ---
-		// @specification wx.resilience.impl.util.log.wrapper:logSpec
+		// @specification wx.resilience.impl.log.wrapper:logSpec
 		// @sigtype java 3.5
 		// strip pipeline in order to avoid overhead for next calls:
 		IDataMap pipeMap = new IDataMap(pipeline);

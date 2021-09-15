@@ -218,7 +218,7 @@
 </MAPDELETE>
 </MAP>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.metaData:getDefaultTimestampPattern" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.util.date:getDefaultTimestampPattern" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 
