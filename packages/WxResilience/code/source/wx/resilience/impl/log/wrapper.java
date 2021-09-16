@@ -103,6 +103,10 @@ public final class wrapper
 		// Rename for WxLog2
 		renameVariable(pipeMap, "message", "logMessage");
 		renameVariable(pipeMap, "function", "logger");
+		String level = pipeMap.getAsString("level");
+		if (level == null || level.equals("")) {
+			pipeMap.put("level", "Info");
+		}
 		renameVariable(pipeMap, "level", "severity");
 		toUpper(pipeMap, "severity");
 		
@@ -120,6 +124,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} 
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -175,6 +180,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 	// --- <<IS-END-SHARED>> ---
