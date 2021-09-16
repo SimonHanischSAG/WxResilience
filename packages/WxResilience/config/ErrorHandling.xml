@@ -69,7 +69,7 @@
 	
 	 <!-- Fully configured example for location exception:
 	<location name="abc">
-		<exception type="all" callerType="JMS" errorToBeThrown="TRANSIENT" errorMessageContains="MessageProducerImpl.send failed" errorMessageRegex=".*JMS.*" maxRetryAttempts="-1" errorHandlingId="WxResilience.jms.996">
+		<exception type="all" callerType="JMS" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" errorMessageRegex=".*JMS.*" maxRetryAttempts="-1" errorHandlingId="WxResilience.jms.996">
 			<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
 		</exception>
 	</location>-->

@@ -33,6 +33,7 @@ public final class log
 	{
 		// --- <<IS-START(getLoggingConfig)>> ---
 		// @sigtype java 3.5
+		// [o] field:1:required loggingServices
 		IDataMap pipeMap = new IDataMap(pipeline);
 		pipeMap.put("loggingServices", loggingServices);
 		// --- <<IS-END>> ---
@@ -84,6 +85,7 @@ public final class log
 	{
 		// --- <<IS-START(resetLoggingConfig)>> ---
 		// @sigtype java 3.5
+		// [o] field:1:required loggingServices
 		loggingServices = null;
 		initLogging();
 		IDataMap pipeMap = new IDataMap(pipeline);

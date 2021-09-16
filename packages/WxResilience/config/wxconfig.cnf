@@ -1,4 +1,10 @@
 ################################################################################
+# General
+################################################################################
+timestampPattern=yyyy-MM-dd'T'HH:mm:ss.SSSZ
+
+
+################################################################################
 # Logging
 ################################################################################
 # Log service for pub.flow:debugLog (IS server.log)
@@ -8,4 +14,14 @@ logging.service=pub.flow:debugLog
 # Log service for WxLog2 (log4j)
 #logging.service=wx.resilience.impl.log.wrapper:logWxLog2
 
-metaData.timestampFormat=yyyy-MM-dd'T'HH:mm:ss.SSSZ
+
+################################################################################
+# Error Handling
+################################################################################
+# default retry count for TRANSIENT:
+maxRetryAttemptsDefault=3
+# retries for maxRetryAttempts="-1"
+maxRetryAttemptsBeforeCancelRetry=20000
+
+# Configure an uuid temporarily in order to break an (endless) retry loop:
+#break.retry.loop.for.id=987987987
