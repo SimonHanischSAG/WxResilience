@@ -258,6 +258,10 @@
 </MAPCOPY>
 </MAP>
 </INVOKE>
+
+<MAP NAME="$default" TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>do nothing</COMMENT>
+</MAP>
 </BRANCH>
 
 <INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:initializeErrorHandling" VALIDATE-IN="$none" VALIDATE-OUT="$none">

@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.softwareag.is.log.Log;
 import com.softwareag.util.IDataMap;
 import com.wm.app.b2b.server.ISRuntimeException;
 // --- <<IS-END-IMPORTS>> ---
@@ -107,6 +108,7 @@ public final class wrapper
 		if (level == null || level.equals("")) {
 			pipeMap.put("level", "Info");
 		}
+		
 		renameVariable(pipeMap, "level", "severity");
 		toUpper(pipeMap, "severity");
 		
@@ -124,6 +126,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} 
+			
 			
 			
 			
@@ -180,6 +183,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

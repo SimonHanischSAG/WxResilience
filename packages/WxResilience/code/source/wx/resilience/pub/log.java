@@ -28,6 +28,20 @@ public final class log
 
 
 
+	public static final void getLoggingConfig (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(getLoggingConfig)>> ---
+		// @sigtype java 3.5
+		IDataMap pipeMap = new IDataMap(pipeline);
+		pipeMap.put("loggingServices", loggingServices);
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
 	public static final void log (IData pipeline)
         throws ServiceException
 	{
@@ -38,23 +52,7 @@ public final class log
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
 		if (loggingServices == null) {
-			IData input = IDataFactory.create();
-			IDataMap inputMap = new IDataMap(input);
-			inputMap.put("key", "logging.service");
-			inputMap.put("wxConfigPkgName", "WxResilience");
-			inputMap.put("noServiceException", "true");
-			try{
-				IData output = Service.doInvoke( "wx.config.pub", "getValueList", input);
-				IDataMap outputMap = new IDataMap(output);
-				loggingServices = outputMap.getAsStringArray("propertyValueList");
-				
-			} catch(ISRuntimeException anISRuntimeException) {
-				throw anISRuntimeException;
-			} catch(ServiceException aServiceException) {
-				throw aServiceException;
-			} catch( Exception anException){
-				throw new ServiceException(anException);
-			} 
+			initLogging();
 		}
 		
 		if (loggingServices != null) {
@@ -73,6 +71,7 @@ public final class log
 		}
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -86,6 +85,10 @@ public final class log
 		// --- <<IS-START(resetLoggingConfig)>> ---
 		// @sigtype java 3.5
 		loggingServices = null;
+		initLogging();
+		IDataMap pipeMap = new IDataMap(pipeline);
+		pipeMap.put("loggingServices", loggingServices);
+			
 		// --- <<IS-END>> ---
 
                 
@@ -101,6 +104,25 @@ public final class log
 			"metaData"
 		};
 	
+	private static void initLogging() throws ServiceException {
+		IData input = IDataFactory.create();
+		IDataMap inputMap = new IDataMap(input);
+		inputMap.put("key", "logging.service");
+		inputMap.put("wxConfigPkgName", "WxResilience");
+		inputMap.put("noServiceException", "true");
+		try{
+			IData output = Service.doInvoke( "wx.config.pub", "getValueList", input);
+			IDataMap outputMap = new IDataMap(output);
+			loggingServices = outputMap.getAsStringArray("propertyValueList");
+			
+		} catch(ISRuntimeException anISRuntimeException) {
+			throw anISRuntimeException;
+		} catch(ServiceException aServiceException) {
+			throw aServiceException;
+		} catch( Exception anException){
+			throw new ServiceException(anException);
+		} 
+	}
 	private static void stripPipeline(IDataMap pipelineMap, IDataMap strippedMap) {
 		for ( String key : parmNames) {
 			
@@ -179,6 +201,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 	// --- <<IS-END-SHARED>> ---
