@@ -1081,10 +1081,6 @@
 
   <!-- nodes -->
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.util.pipeline:savePipelineToFile" VALIDATE-IN="$none" VALIDATE-OUT="$none">
-  <COMMENT></COMMENT>
-</INVOKE>
-
 <INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:postProcessForTopLevelService" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
