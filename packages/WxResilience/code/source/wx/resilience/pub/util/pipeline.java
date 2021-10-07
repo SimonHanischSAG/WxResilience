@@ -30,8 +30,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-import javax.jms.JMSException;
-import javax.jms.MapMessage;
+//import javax.jms.JMSException;
+//import javax.jms.MapMessage;
 import javax.print.attribute.standard.Severity;
 import com.wm.lang.xml.Node;
 import com.softwareag.util.IDataMap;
@@ -105,7 +105,7 @@ public final class pipeline
 		for (String key : keySet) {
 			Object object = iDataMap.get(key);
 			
-			if (object instanceof MapMessage) {
+			/*if (object instanceof MapMessage) {
 				log(object.getClass().getCanonicalName());
 				MapMessage mapMessage = (MapMessage) object;
 				try {
@@ -122,7 +122,7 @@ public final class pipeline
 					duplicateObjectsAsDocsImpl(mapMessageDoc);
 				} catch (JMSException e) {
 				}
-			} else if (object instanceof Hashtable) {
+			} else*/ if (object instanceof Hashtable) {
 				IData hashtableDoc = IDataFactory.create();
 				IDataMap hashtableMap = new IDataMap(hashtableDoc);
 				Hashtable<String, Object> hashTable = (Hashtable<String, Object>) object;
