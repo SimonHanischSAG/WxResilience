@@ -97,7 +97,7 @@
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment">This service is the central logic in the exception handling framework. It interprets the configuration provided in summarizederrorHandling.xml and calls error handler specified there.</value>
+  <value name="node_comment">This service is the central logic in the exception handling framework. It interprets the configuration provided in ExceptionHandlingSummarized.xml and calls error handler specified there.</value>
   <value name="stateless">no</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

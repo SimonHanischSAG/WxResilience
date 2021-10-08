@@ -61,7 +61,7 @@ public final class errorHandling
 	{
 		// --- <<IS-START(assembleExceptionHandlings)>> ---
 		// @sigtype java 3.5
-		Log.logInfo("Scanning all packages for ErrorHandling.xml files");
+		Log.logInfo("Scanning all packages for ExceptionHandling.xml files");
 		createSummarizedExceptionHandling();
 	
 		// --- <<IS-END>> ---
