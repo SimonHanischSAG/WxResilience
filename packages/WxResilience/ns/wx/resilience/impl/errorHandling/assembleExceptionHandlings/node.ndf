@@ -36,7 +36,7 @@
       <value name="modifiable">true</value>
     </record>
   </record>
-  <value name="node_comment">Assembles all ErrorHandlingDefinition.xml which are placed in the config folder of any package. The result is persisted as a "ErrorHandlingSummarized.xml" in WxResilience.</value>
+  <value name="node_comment">Assembles all ExceptionHandling.xml which are placed in the config folder of any package. The result is persisted as a "ExceptionHandlingSummarized.xml" in WxResilience.</value>
   <value name="stateless">no</value>
   <value name="caching">no</value>
   <value name="prefetch">no</value>

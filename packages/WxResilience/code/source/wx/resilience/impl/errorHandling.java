@@ -10,8 +10,8 @@ import com.wm.app.b2b.server.ServiceException;
 import com.softwareag.util.IDataMap;
 import com.wm.app.audit.IAuditRuntime;
 import wx.resilience.impl.ErrorInfo;
-import wx.resilience.impl.SummarizedErrorHandlingHandler;
-import wx.resilience.impl.SummarizedErrorHandlingHandler.Creator;
+import wx.resilience.impl.SummarizedExceptionHandlingHandler;
+import wx.resilience.impl.SummarizedExceptionHandlingHandler.Creator;
 import wx.resilience.impl.Exceptions;
 import wx.resilience.impl.Paths;
 import com.wm.lang.ns.NSName;
@@ -56,13 +56,13 @@ public final class errorHandling
 
 
 
-	public static final void assembleErrorHandlings (IData pipeline)
+	public static final void assembleExceptionHandlings (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(assembleErrorHandlings)>> ---
+		// --- <<IS-START(assembleExceptionHandlings)>> ---
 		// @sigtype java 3.5
 		Log.logInfo("Scanning all packages for ErrorHandling.xml files");
-		createSummarizedErrorHandling();
+		createSummarizedExceptionHandling();
 	
 		// --- <<IS-END>> ---
 
@@ -541,16 +541,16 @@ public final class errorHandling
 
 
 
-	public static final void initializeErrorHandlings (IData pipeline)
+	public static final void initializeExceptionHandlings (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(initializeErrorHandlings)>> ---
+		// --- <<IS-START(initializeExceptionHandlings)>> ---
 		// @sigtype java 3.5
 		Log.logInfo("Initializing error handling framework...");
 		//TODO
-		File eHDFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_ERROR_HANDLING_FILE);
+		File eHDFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_EXCEPTION_HANDLING_FILE);
 		if (!eHDFile.isFile()) {
-			createSummarizedErrorHandling();
+			createSummarizedExceptionHandling();
 		}
 		final URL url;
 		try {
@@ -570,7 +570,7 @@ public final class errorHandling
 
 	// --- <<IS-START-SHARED>> ---
 	@FunctionalInterface
-	public static interface ErrorHandlingListener {
+	public static interface ExceptionHandlingListener {
 		public void accept(String pServiceName, IData pPipeline);
 	}
 	
@@ -579,12 +579,12 @@ public final class errorHandling
 		public String get();
 	}
 	
-	private static Path createSummarizedErrorHandling() throws ServiceException {
-		synchronized(createSummarizedErrorHandlingLock) {
-			return createSummarizedErrorHandling(SUMMARIZED_ERROR_HANDLING_FILE);
+	private static Path createSummarizedExceptionHandling() throws ServiceException {
+		synchronized(createSummarizedExceptionHandlingLock) {
+			return createSummarizedExceptionHandling(SUMMARIZED_EXCEPTION_HANDLING_FILE);
 		}
 	}
-	private static Path createSummarizedErrorHandling(String pFileName)
+	private static Path createSummarizedExceptionHandling(String pFileName)
 			throws ServiceException {
 		File ISDir = ServerAPI.getServerConfigDir().getParentFile();
 		File ISPackages = new java.io.File(ISDir, "packages");
@@ -593,7 +593,7 @@ public final class errorHandling
 		Paths.assertParentDirExists(outputFile);
 	
 		try {
-			try (Creator creator = SummarizedErrorHandlingHandler.newCreator(outputFile)) {
+			try (Creator creator = SummarizedExceptionHandlingHandler.newCreator(outputFile)) {
 				for (File packageDir : ISPackages.listFiles()) {
 					if (packageDir.isDirectory()) {
 						final String packageName = packageDir.getName();
@@ -618,7 +618,7 @@ public final class errorHandling
 		return outputFile;
 	}
 	
-	private static final ErrorHandlingListener DEFAULT_ERROR_HANDLER = new ErrorHandlingListener() {
+	private static final ExceptionHandlingListener DEFAULT_ERROR_HANDLER = new ExceptionHandlingListener() {
 		public void accept(String s, IData d) {
 			Log.logDebug("DefaultErrorHandler: --> " + s);
 			try {
@@ -630,24 +630,24 @@ public final class errorHandling
 			Log.logDebug("DefaultErrorHandler: <--");
 		}
 	};
-	private static ErrorHandlingListener getErrorHandler() {
-		synchronized (errorHandlingListenerLock) {
-			if (_errorHandlingListener == null) {
+	private static ExceptionHandlingListener getErrorHandler() {
+		synchronized (exceptionHandlingListenerLock) {
+			if (_exceptionHandlingListener == null) {
 				return DEFAULT_ERROR_HANDLER;
 			} else {
-				return _errorHandlingListener;
+				return _exceptionHandlingListener;
 			}
 		}
 	}
-	public static void setErrorHandler(ErrorHandlingListener pErrorHandlingListener) {
-		synchronized (errorHandlingListenerLock) {
-			_errorHandlingListener = pErrorHandlingListener;
+	public static void setErrorHandler(ExceptionHandlingListener pErrorHandlingListener) {
+		synchronized (exceptionHandlingListenerLock) {
+			_exceptionHandlingListener = pErrorHandlingListener;
 		}
 	}
 	private static void invokeErrorHandler(IData pHandlingServiceInput,
 			final String pServiceName) throws Exception {
 		Log.logDebug("invokeErrorHandler: --> ");
-		final ErrorHandlingListener ehl = getErrorHandler();
+		final ExceptionHandlingListener ehl = getErrorHandler();
 		Log.logDebug("invokeErrorHandler: eh=" + ehl);
 		ehl.accept(pServiceName, pHandlingServiceInput);
 		Log.logDebug("invokeErrorHandler: <--");
@@ -656,17 +656,17 @@ public final class errorHandling
 	}
 	
 	private static Document geterrorHandlings() throws ServiceException {
-		synchronized(errorHandlingLock) {
-			if (_errorHandling != null) {
-				return _errorHandling;
+		synchronized(exceptionHandlingLock) {
+			if (_exceptionHandling != null) {
+				return _exceptionHandling;
 			}
 		}
-		initializeErrorHandlings(null);
-		synchronized (errorHandlingLock) {
-			if (_errorHandling == null) {
+		initializeExceptionHandlings(null);
+		synchronized (exceptionHandlingLock) {
+			if (_exceptionHandling == null) {
 				throw new IllegalStateException("Unable to initialize errorHandling. Did you assemble it?");
 			} else {
-				return _errorHandling;
+				return _exceptionHandling;
 			}
 		}
 	}
@@ -878,7 +878,7 @@ public final class errorHandling
 		
 		private static void validateXML() throws ServiceException {
 			Log.logInfo("Validating the summarized error handling");
-			File xmlFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_ERROR_HANDLING_FILE);
+			File xmlFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_EXCEPTION_HANDLING_FILE);
 			File schemaFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + EXCEPTION_HANDLING_XSD_FILE);
 			
 			try {
@@ -1257,11 +1257,11 @@ public final class errorHandling
 		private static ExceptionHandlingInfo getRetVal(Element exceptionNode, String exceptionType) {	
 			final String errorToBeThrown = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_RETURN_VALUE_ID);
 			final String type = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_TYPE_ID);
-			final String errorHandlingId = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID);
+			final String exceptionHandlingId = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID);
 			final String maxRetryAttempts = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS);
 			final String printBusinessObjectStr = exceptionNode.getAttributeValue(EHD_PRINT_BUSINESS_OBJECT_ID);
 			final boolean printBusinessObject = printBusinessObjectStr == null ? false : Boolean.parseBoolean(printBusinessObjectStr);
-			return new ExceptionHandlingInfo(errorToBeThrown, type, errorHandlingId, exceptionType, maxRetryAttempts, printBusinessObject);
+			return new ExceptionHandlingInfo(errorToBeThrown, type, exceptionHandlingId, exceptionType, maxRetryAttempts, printBusinessObject);
 		}
 		
 	
@@ -1306,8 +1306,8 @@ public final class errorHandling
 				builder = pBuilder;
 			}
 			final Document doc = loadHandlings(pUrl, builder);
-			synchronized(errorHandlingLock) {
-				_errorHandling = doc;
+			synchronized(exceptionHandlingLock) {
+				_exceptionHandling = doc;
 			}
 		}
 		
@@ -1343,7 +1343,7 @@ public final class errorHandling
 		// *******************************************************************
 		// ---------------------XML NODE NAME DEFINITIONS---------------------
 		// *******************************************************************
-		private static final String EHD_NODE_DOC_ROOT_ID = "errorHandling";
+		private static final String EHD_NODE_DOC_ROOT_ID = "exceptionHandling";
 		private static final String EHD_NODE_GLOBAL_ERROR_TYPE_ID = "globalException";
 		private static final String EHD_NODE_ERROR_LOCATION_ID = "location";
 		private static final String EHD_NODE_ERROR_TYPE_ID = "exception";
@@ -1357,7 +1357,7 @@ public final class errorHandling
 		private static final String EHD_ATTRIBUTE_ERROR_MESSAGE_REGEX_ID = "errorMessageRegex";		
 		private static final String EHD_ATTRIBUTE_LOCATION_NAME_ID = "name";
 		private static final String EHD_ATTRIBUTE_RETURN_VALUE_ID = "errorToBeThrown";
-		private static final String EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID = "errorHandlingId";
+		private static final String EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID = "exceptionHandlingId";
 		private static final String EHD_ATTRIBUTE_HANDLING= "handling";
 		private static final String EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS = "maxRetryAttempts";
 		private static final String EHD_ATTRIBUTE_RETRY_COUNT = "retryCount";
@@ -1426,9 +1426,9 @@ public final class errorHandling
 		// *******************************************************************
 		// --------------------EXCEPTION HANDLING DEFINITION------------------
 		// *******************************************************************
-		private static Document _errorHandling;
-		private static final Object errorHandlingLock = new Object();
-		private static ErrorHandlingListener _errorHandlingListener;
+		private static Document _exceptionHandling;
+		private static final Object exceptionHandlingLock = new Object();
+		private static ExceptionHandlingListener _exceptionHandlingListener;
 		private static CallerTypeSupplier DEFAULT_CALLER_TYPE_SUPPLIER = new CallerTypeSupplier() {
 			@Override
 			public String get() {
@@ -1437,8 +1437,8 @@ public final class errorHandling
 		};
 		private static CallerTypeSupplier callerTypeSupplier = null;
 		private static final Object callerTypeSupplierLock = new Object();
-		private static final Object errorHandlingListenerLock = new Object();
-		private static final Object createSummarizedErrorHandlingLock = new Object();
+		private static final Object exceptionHandlingListenerLock = new Object();
+		private static final Object createSummarizedExceptionHandlingLock = new Object();
 		// *******************************************************************
 		// --------------------INPUT GET VALUE DEFINITION---------------------
 		// *******************************************************************
@@ -1453,10 +1453,10 @@ public final class errorHandling
 		private static final String ABORT = "FATAL";
 		private static final String CONTINUE = "NONE";	
 		
-		private static final String SUMMARIZED_ERROR_HANDLING_FILE = "ErrorHandlingSummarized.xml";
-		private static final String EXCEPTION_HANDLING_XSD_FILE = "ErrorHandling.xsd";
+		private static final String SUMMARIZED_EXCEPTION_HANDLING_FILE = "ExceptionHandlingSummarized.xml";
+		private static final String EXCEPTION_HANDLING_XSD_FILE = "ExceptionHandling.xsd";
 		private static final String WX_RESILIENCE = "WxResilience";
-		private static final String ERROR_HANDLING_XML_FILE = "ErrorHandling.xml";
+		private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
 	
 	
 		

@@ -264,7 +264,7 @@
 </MAP>
 </BRANCH>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:initializeErrorHandling" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:initializeExceptionHandling" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 

@@ -48,10 +48,10 @@ public final class resilience
 
 
 
-	public static final void throwError (IData pipeline)
+	public static final void throwException (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(throwError)>> ---
+		// --- <<IS-START(throwException)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required message
 		// pipeline

@@ -34,16 +34,16 @@ import org.xml.sax.helpers.AttributesImpl;
  * This class is responsible for the maintenance of the file
  * {@code WxResilience/config/ErrorHandlingSummarized.xml,
  * which contains the assembled information from all the files
- * {@code PKG_NAME/config/errorHandling.xml}.
+ * {@code PKG_NAME/config/ExceptionHandling.xml}.
  */
-public class SummarizedErrorHandlingHandler {
+public class SummarizedExceptionHandlingHandler {
 	private static final String NS = XMLConstants.NULL_NS_URI;
 	private static final String NS_XSI = "http://www.w3.org/2001/XMLSchema-instance";
-	private static final String SUMMARIZED_ERROR_HANDLING_FILE = "ErrorHandlingSummarized.xml";
-	private static final String EXCEPTION_HANDLING_XSD_FILE = "ErrorHandling.xsd";
+	private static final String SUMMARIZED_ERROR_HANDLING_FILE = "ExceptionHandlingSummarized.xml";
+	private static final String EXCEPTION_HANDLING_XSD_FILE = "ExceptionHandling.xsd";
 	private static final String WX_RESILIENCE = "WxResilience";
-	private static final String ERROR_HANDLING_XML_FILE = "ErrorHandling.xml";
-	private static final String EXCEPTION_HANDLING_DEFINITION = "errorHandling";
+	private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
+	private static final String EXCEPTION_HANDLING_DEFINITION = "exceptionHandling";
 
 	/** This class is used to create the summarized file.
 	 * Basically, you create an instance of {@link Creator},

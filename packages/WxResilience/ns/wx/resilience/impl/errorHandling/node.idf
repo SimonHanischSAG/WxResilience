@@ -641,4 +641,7 @@ DQo=</value>
     <value>com.wm.lang.ns.NSService</value>
     <value>java.util.function.Supplier</value>
   </array>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
 </Values>

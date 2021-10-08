@@ -4533,7 +4533,7 @@
 </SEQUENCE>
 </BRANCH>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:throwErrorIfNecessary" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.resilience:throwExceptionIfNecessary" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 </INVOKE>
 
