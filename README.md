@@ -35,7 +35,32 @@ Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 
 1. install such a package:
 
-2. Configure the related logging configuration. In case of WxLog2 WxResilience is already preconfigured
+2. Configure the related logging configuration. In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you can add the following to wxlog_default.xml:
+
+  <appender name="WxResilience" class="ch.qos.logback.core.FileAppender">
+    <file>logs/wxlog/WxResilience.log</file>
+    <append>true</append>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="WxResilience" level="INFO" >
+	<appender-ref ref="WxResilience"/>
+  </logger>
+
+  <appender name="WxResilience_Test" class="ch.qos.logback.core.FileAppender">
+    <file>logs/wxlog/WxResilience_Test.log</file>
+    <append>true</append>
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="WxResilience_Test" level="INFO" >
+	<appender-ref ref="WxResilience_Test"/>
+  </logger>
+
 
 3. Enable/comment related key under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 
