@@ -31,12 +31,16 @@ C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResili
 
 <h2>How to use (extended configuration)</h2>
 
-Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore install and configure such a package and:
+Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 
-1. Enable/comment related key under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf" and reload WxResilience
+1. install such a package:
 
-1.b. If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. WxConfig will do that automatically
+2. Configure the related logging configuration. In case of WxLog2 WxResilience is already preconfigured
 
-2. Reload WxResilience
+3. Enable/comment related key under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
+
+3.b. If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. The official WxConfig will do that automatically
+
+4. Reload WxResilience
 
 3. Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
