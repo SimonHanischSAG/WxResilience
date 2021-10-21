@@ -44,6 +44,63 @@ Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for en
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Initializing error handling framework... 
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Successfully initialized error handling 
 
+
+<h2>How to build resilent services</h2>
+
+To see the suggestion how to build a resilient service take a look on:
+
+WxResilience_Test/wx.resilienceTest.pub:genericTopLevelService
+
+It contains 4 important helper services which you should use like this in every top level service:
+
+<h3>wx.resilience.pub.metaData:initializeMetaData</h3>
+
+This service generates the so-called "metaData". These metaData will be reused for logging (also for errors) and can also help you to establish generic standards in your implementation. These are the fields:
+
+<ul>
+  <li>creationTimestamp: When the metaData were generated</li>
+  <li>uuid: Identifies the related data/message</li>
+  <li>correlationUuid: [optional] Identifies a correlated data/message (e.g. a related previous message)</li>
+  <li>type: Defines the type of the data, e.g. order, masterDataUpdate, ...</li>
+  <li>source: Where the handled data comes from</li>
+  <li>destination: [optional] Where should the handled data go</li>
+  <li>confidential: [optional] Is the data confidential -> data will not be written/sent somewhere else</li>
+  <li>customProperties: [optional] Put your own key/value pairs for identifying your business message in logging or implementing generic handlings  based on these properties</li>
+</ul>
+
+<h3>wx.resilience.pub.resilience:preProcessForTopLevelService</h3>
+
+Start logging and capturing the start timestamp
+
+<h3>wx.resilience.pub.resilience:handleError</h3>
+
+This service in the catch block has to decide if there is a need for throwing another (retry) exception or not. Therefore it is using a bunch of single predefined error scenarioes defined in WxResilience/config/ExceptionHandling.xml.
+
+Furthermore the service is writing helpful information to the log for investigating the error.
+
+Finally the service will set the standardized outputs "errors" respectively "error" if the top level service was called over REST or SOAP.
+
+<h3>wx.resilience.pub.resilience:postProcessForTopLevelService</h3>
+
+Measuring the duration, final logging and rethrowing an error if necessary (based on output of handleError).
+
+
+<h3>ExceptionHandling.xml</h3>
+
+t.b.d.
+
+Hierarchy, <globalException>, nested exception handling, type, callerType, errorMessageContains, errorMessageRegex
+	
+<h3>Break endless loop</h3>
+t.b.d.
+#break.retry.loop.for.id=987987987
+
+<h3>DocumentDiscardedException</h3>
+
+t.b.d.
+
+wx.resilience.pub.resilience:throwDocumentDiscardedException
+
 <h2>How to use WxResilience together with WxLog and/or WxLog2 (optional configuration)</h2>
 
 Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
@@ -85,7 +142,7 @@ Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instance
 <h4>Initialize in case of WxConfigLight</h4>
 If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience into the necessary Global Variables. WxConfig will do that automatically.
 
-Reload WxResilience
+Reload WxResilience (as the logging configuration is cached for better performance)
 
 <h3>Validate</h3>
 
