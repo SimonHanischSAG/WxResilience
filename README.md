@@ -29,7 +29,7 @@ C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResili
 
 Reload WxResilience
 
-<h4>Validate</h4>
+<h3>Validate</h3>
 
 Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for entries like:
 
