@@ -7,13 +7,17 @@ It is designed for usage together with the official packages WxConfig (or the fr
 
 <h2>How to use (basic configuration)</h2>
 
-1. Provide WxConfig or WxConfigLight (compare with above).
+<h3>Provide WxConfig or WxConfigLight</h3>
+compare with above
 
-2. Deploy/checkout WxResilience/WxResilience_Test. When checked out you can create a link like this:
+<h3>Deploy/checkout WxResilience/WxResilience_Test</h3>
 
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience F:\\GIT-DEV103\\WxResilience\\packages\\WxResilience
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-DEV103\\WxResilience\\packages\\WxResilience_Test
+When checked out you can create a link like this:
 
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience F:\\GIT-Repos\\WxResilience\\packages\\WxResilience
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
+
+<h4>Initialize in case of WxConfigLight</h4>
 2.b. If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. WxConfig will do that automatically
 
 3. Build:
