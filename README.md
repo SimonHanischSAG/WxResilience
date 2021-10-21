@@ -18,17 +18,20 @@ mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxRes
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
 
 <h4>Initialize in case of WxConfigLight</h4>
-2.b. If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. WxConfig will do that automatically
 
-3. Build:
+If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. WxConfig will do that automatically
+
+<h4>Build & Reload</h4>
 
 If you checkout the sources from GitHub you have to compile the source, e.g. with:
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience_Test
 
-4. Reload WxResilience
+Reload WxResilience
 
-5. Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for entries like:
+<h4>Validate</h4>
+
+Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for entries like:
 
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Scanning all packages for ErrorHandling.xml files 
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Validating the summarized error handling 
