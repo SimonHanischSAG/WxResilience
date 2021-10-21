@@ -20,7 +20,9 @@ mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxRes
 <h4>Initialize in case of WxConfigLight</h4>
 
 If you are using WxConfigLight you have to run
+
 http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience 
+
 in order to load the keys of WxResilience. WxConfig will do that automatically
 
 <h4>Build & Reload</h4>
