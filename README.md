@@ -78,7 +78,7 @@ In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you ca
 	<appender-ref ref="WxResilience_Test"/>
   </logger>
 
-<h3>Enable WxLog/WxLog2</h3>
+<h3>Enable logging using WxLog/WxLog2</h3>
 
 Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 
