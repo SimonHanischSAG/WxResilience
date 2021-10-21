@@ -19,11 +19,14 @@ mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxRes
 
 <h4>Initialize in case of WxConfigLight</h4>
 
-If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. WxConfig will do that automatically
+If you are using WxConfigLight you have to run
+http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience 
+in order to load the keys of WxResilience. WxConfig will do that automatically
 
 <h4>Build & Reload</h4>
 
 If you checkout the sources from GitHub you have to compile the source, e.g. with:
+
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience_Test
 
