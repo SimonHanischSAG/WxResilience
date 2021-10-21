@@ -23,7 +23,7 @@ If you are using WxConfigLight you have to run
 
 http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience 
 
-in order to load the keys of WxResilience. WxConfig will do that automatically
+in order to load the keys of WxResilience into the necessary Global Variables. WxConfig will do that automatically.
 
 <h4>Build & Reload</h4>
 
@@ -44,13 +44,15 @@ Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for en
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Initializing error handling framework... 
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Successfully initialized error handling 
 
-<h2>How to use (extended configuration)</h2>
+<h2>How to use WxResilience together with WxLog and/or WxLog2 (optional configuration)</h2>
 
 Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 
-1. install such a package:
+<h3>Install WxLog and/or WxLog2</h3>
 
-2. Configure the related logging configuration. In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you can add the following to wxlog_default.xml:
+<h3>Configure specific logging</h3>
+	
+In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you can add the following to wxlog_default.xml:
 
   <appender name="WxResilience" class="ch.qos.logback.core.FileAppender">
     <file>logs/wxlog/WxResilience.log</file>
@@ -76,11 +78,15 @@ Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 	<appender-ref ref="WxResilience_Test"/>
   </logger>
 
+<h3>Enable WxLog/WxLog2</h3>
 
-3. Enable/comment related key under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
+Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 
-3.b. If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience. The official WxConfig will do that automatically
+<h4>Initialize in case of WxConfigLight</h4>
+If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience into the necessary Global Variables. WxConfig will do that automatically.
 
-4. Reload WxResilience
+Reload WxResilience
 
-3. Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
+<h3>Validate</h3>
+
+Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
