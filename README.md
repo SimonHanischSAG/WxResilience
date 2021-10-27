@@ -1,6 +1,8 @@
 <h1>WxResilience</h1>
 webMethods IntegrationServer package for implementing resilient and robust services.
 
+WxResilience is hereby the "productive" package on which you may create a package dependency. WxResilience_Test contains both tests and examples how to work with WxResilience.
+
 It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally together with the official packages WxLog or WxLog2.
 
 <b>MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template for this package and make it public.</b>
@@ -137,9 +139,21 @@ Measuring the duration, final logging and rethrowing an error if necessary (base
 
 <h3>ExceptionHandling.xml</h3>
 
-t.b.d.
+Compare with
+https://github.com/SimonHanischSAG/WxResilience/blob/main/packages/WxResilience/config/ExceptionHandling.xml
+to see the predefined defaults of WxResilience for ExceptionHandling and
+https://github.com/SimonHanischSAG/WxResilience/blob/main/packages/WxResilience_Test/config/ExceptionHandling.xml
+to see what you can do additionally in your own package.
 
-Hierarchy, <globalException>, nested exception handling, type, callerType, errorMessageContains, errorMessageRegex
+<h4>Tags:</h4>
+<ul>
+  <li>location: </li>
+  <li>globalException: Define a handling independently from the location</li>
+  <li>location: Define a (hierarchical) handling for specific folders or services</li>
+  <li>exception: Define both some filter conditions and outcome for a handling</li>
+</ul>
+
+nested exception handling, type, callerType, errorMessageContains, errorMessageRegex
 	
 <h3>Break endless loop</h3>
 t.b.d.
