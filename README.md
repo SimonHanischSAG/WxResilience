@@ -156,12 +156,18 @@ to see what you can do additionally in your own package.
 nested exception handling, type, callerType, errorMessageContains, errorMessageRegex
 	
 <h3>Break endless loop</h3>
-t.b.d.
-#break.retry.loop.for.id=987987987
+On a running productive system it could be that you have a problem with a message in a endless retry loop of a trigger. If that exception for retry is thrown by WxResilience and because of a definition from a ExceptionHandling.xml file you can break this loop by adding such a key temporarily for a message with metaData/uuid=b86b6639-b026-49ca-ad01-3d19810c3cda:
+
+<h4>With official WxConfig in WxResilience/config/wxconfig.cnf</h4>
+break.retry.loop.for.id=b86b6639-b026-49ca-ad01-3d19810c3cda
+
+<h4>With unofficial WxConfigLight via Global Varialbes</h4>
+WxConfigLight__WxResilience__break.retry.loop.for.id=b86b6639-b026-49ca-ad01-3d19810c3cda
 
 <h3>DocumentDiscardedException</h3>
 
-t.b.d.
+Sometimes there is the need to drop a message within your code (maybe deep in a sub service). To do that easily and savely you can invoke the service without developing any other code, exits or whatever:
 
 wx.resilience.pub.resilience:throwDocumentDiscardedException
 
+WxResilience will catch this error, write a proper logging and do not rethrow any error.
