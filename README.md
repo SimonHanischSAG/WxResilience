@@ -56,29 +56,32 @@ Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 	
 In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you can add the following to wxlog_default.xml:
 
-  <appender name="WxResilience" class="ch.qos.logback.core.FileAppender">
-    <file>logs/wxlog/WxResilience.log</file>
-    <append>true</append>
-    <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n</pattern>
-    </encoder>
-  </appender>
+<pre><code>
+  &lt;appender name="WxResilience" class="ch.qos.logback.core.FileAppender"&gt;
+    &lt;file&gt;logs/wxlog/WxResilience.log&lt;/file&gt;
+    &lt;append&gt;true&lt;/append&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
 
-  <logger name="WxResilience" level="INFO" >
-	<appender-ref ref="WxResilience"/>
-  </logger>
+  &lt;logger name="WxResilience" level="INFO" &gt;
+	&lt;appender-ref ref="WxResilience"/&gt;
+  &lt;/logger&gt;
 
-  <appender name="WxResilience_Test" class="ch.qos.logback.core.FileAppender">
-    <file>logs/wxlog/WxResilience_Test.log</file>
-    <append>true</append>
-    <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n</pattern>
-    </encoder>
-  </appender>
+  &lt;appender name="WxResilience_Test" class="ch.qos.logback.core.FileAppender"&gt;
+    &lt;file&gt;logs/wxlog/WxResilience_Test.log&lt;/file&gt;
+    &lt;append&gt;true&lt;/append&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%d{yyyy-MM-dd HH:mm:ss} %logger{50} %3([%.-1level]): %msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
 
-  <logger name="WxResilience_Test" level="INFO" >
-	<appender-ref ref="WxResilience_Test"/>
-  </logger>
+  &lt;logger name="WxResilience_Test" level="INFO" &gt;
+	&lt;appender-ref ref="WxResilience_Test"/&gt;
+  &lt;/logger&gt;
+
+</code></pre>
 
 <h3>Enable logging using WxLog/WxLog2</h3>
 
