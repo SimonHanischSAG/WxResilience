@@ -14,7 +14,7 @@ compare with above
 
 <h3>Deploy/checkout WxResilience/WxResilience_Test</h3>
 
-When checked out you can create a link like this:
+Check under releases for a proper release and deploy it. Otherwise you can check out the latest version from GIT and create a link like this:
 
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience F:\\GIT-Repos\\WxResilience\\packages\\WxResilience
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
