@@ -612,8 +612,8 @@ DQo=</value>
     <value>com.softwareag.util.IDataMap</value>
     <value>com.wm.app.audit.IAuditRuntime</value>
     <value>wx.resilience.impl.ErrorInfo</value>
-    <value>wx.resilience.impl.SummarizedErrorHandlingHandler</value>
-    <value>wx.resilience.impl.SummarizedErrorHandlingHandler.Creator</value>
+    <value>wx.resilience.impl.SummarizedExceptionHandlingHandler</value>
+    <value>wx.resilience.impl.SummarizedExceptionHandlingHandler.Creator</value>
     <value>wx.resilience.impl.Exceptions</value>
     <value>wx.resilience.impl.Paths</value>
     <value>com.wm.lang.ns.NSName</value>
