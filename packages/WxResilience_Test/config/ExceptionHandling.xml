@@ -1,4 +1,4 @@
-<exceptionHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="errorHandling.xsd">
+<exceptionHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../WxResilience/config/ExceptionHandling.xsd">
 	<location name="wx">
 		<location name="resilienceTest">
 			<location name="pub">	 

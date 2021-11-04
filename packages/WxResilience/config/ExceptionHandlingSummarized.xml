@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <exceptionHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ExceptionHandling.xsd">
 <!--DO NOT EDIT MANUALLY: The configuration is the generated summary over all package configurations!-->
+<!-->>>>>>>>>>>>>>>>> WxIntegrationTestClient >>>>>>>>>>>>>>>>>-->
+	<location name="wx">
+		<location name="integrationTest">			
+			<location name="client">
+                    <location name="testclient">
+       					<exception type="all" errorToBeThrown="NONE" exceptionHandlingId="WxIntegrationTestClient.top.001">
+       						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+       					</exception>
+                    </location>
+			</location>
+		</location>
+	</location>
 <!-->>>>>>>>>>>>>>>>> WxResilience >>>>>>>>>>>>>>>>>-->
     
     
