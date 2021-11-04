@@ -8,7 +8,6 @@ import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
 import java.util.ArrayList;
-import com.ibm.wsdl.util.StringUtils;
 import com.softwareag.util.IDataMap;
 import com.wm.app.b2b.server.Manifest;
 import com.wm.app.b2b.server.Package;
@@ -44,7 +43,7 @@ public final class dependencyManagement
 		if (onPackages != null) {
 			Package[] packages = PackageManager.getAllPackages();
 			for (Package currentPackage : packages) {
-				if (!currentPackage.getName().startsWith("Wm") && !currentPackage.getName().startsWith("Wx")) {
+				if (!currentPackage.getName().startsWith("Wm")) {
 					boolean packageChanged = false;
 					Manifest currentManifest = currentPackage.getManifest();
 					String[] requires = currentManifest.getRequiresAsStr();
@@ -66,6 +65,7 @@ public final class dependencyManagement
 				}
 			}
 		}
+			
 			
 		// --- <<IS-END>> ---
 
@@ -97,6 +97,7 @@ public final class dependencyManagement
 
 	// --- <<IS-START-SHARED>> ---
 	public static ArrayList<String[]> dependencyCache = new ArrayList<String[]>();
+		
 		
 	// --- <<IS-END-SHARED>> ---
 }

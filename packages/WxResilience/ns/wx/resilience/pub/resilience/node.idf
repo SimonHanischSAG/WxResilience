@@ -6,9 +6,4 @@ bmRzIFNlcnZpY2VFeGNlcHRpb24gew0KCQ0KCXB1YmxpYyBEb2N1bWVudERpc2NhcmRlZEV4Y2Vw
 dGlvbihTdHJpbmcgYXJnMCkgew0KCQlzdXBlcihhcmcwKTsNCgl9DQoJDQoJcHJpdmF0ZSBzdGF0
 aWMgZmluYWwgbG9uZyBzZXJpYWxWZXJzaW9uVUlEID0gMUw7DQoNCn0JDQoJDQo=</value>
   <value name="encodeutf8">true</value>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
-  </array>
-  <array name="imports" type="value" depth="1">
-  </array>
 </Values>
