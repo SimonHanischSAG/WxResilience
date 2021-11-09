@@ -432,7 +432,7 @@ public final class errorHandling
 				tempPipelineCursor.destroy();
 		
 				
-				boolean breakRetryLoopForCurrentUID = Boolean.valueOf(getValueConf(BREAK_RETRY_LOOP + messageUID, PACKAGE_LCL_ERROR, "true", "", "", "", ""));
+				boolean breakRetryLoopForCurrentUID = Boolean.valueOf(getValueConf(BREAK_RETRY_LOOP + messageUID, WX_RESILIENCE, "true", "", "", "", ""));
 				if (breakRetryLoopForCurrentUID) {
 					Log.logWarn("Endless loop for uuid " + messageUID + " broken because of wxconfig key");
 				}
@@ -447,8 +447,8 @@ public final class errorHandling
 				
 				IDataUtil.put(handledErrorInfoCursor, EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS,
 						genericValueMap.get(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS));
-				IDataUtil.put(handledErrorInfoCursor, EHD_ATTRIBUTE_RETURN_VALUE_ID,
-						genericValueMap.get(EHD_ATTRIBUTE_RETURN_VALUE_ID));
+				IDataUtil.put(handledErrorInfoCursor, EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID,
+						genericValueMap.get(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID));
 				
 				IDataUtil.put(handledErrorInfoCursor, EHD_ATTRIBUTE_ERROR_CALLER_TYPE_ID,
 						callerType);
@@ -494,8 +494,8 @@ public final class errorHandling
 		
 				
 		
-				final String errorToBeThrown = genericValueMap.get(EHD_ATTRIBUTE_RETURN_VALUE_ID);
-				IDataUtil.put(pipelineCursor, EHD_ATTRIBUTE_RETURN_VALUE_ID,
+				final String errorToBeThrown = genericValueMap.get(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID);
+				IDataUtil.put(pipelineCursor, EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID,
 						errorToBeThrown);
 				
 				final String errorCode = handlingInfo.getErrorCode();
@@ -763,17 +763,9 @@ public final class errorHandling
 			} catch (NumberFormatException nfe) {
 			}						
 			
-			int maxRetryAttemptsDefault = 0;
-			String maxRetryAttemptsDefaultString = getValueConf(
-					MAX_RETRY_ATTEMPTS_DEFAULT, PACKAGE_LCL_ERROR, "true",
-					"", "", "", "");		
-			try {
-				maxRetryAttemptsDefault = Integer.valueOf(maxRetryAttemptsDefaultString);
-			} catch (NumberFormatException nfe) {}
-	
 			int maxRetryAttemptsBeforeAbort = 0;
 			String maxRetryAttemptsBeforeCancelRetryString = getValueConf(
-					MAX_RETRY_ATTEMPTS_BEFORE_CANCEL_RETRY, PACKAGE_LCL_ERROR, "true",
+					MAX_RETRY_ATTEMPTS_BEFORE_CANCEL_RETRY, WX_RESILIENCE, "true",
 					"", "", "", "");		
 			try {
 				maxRetryAttemptsBeforeAbort = Integer.valueOf(maxRetryAttemptsBeforeCancelRetryString);
@@ -781,30 +773,28 @@ public final class errorHandling
 	
 			// Determine errorToBeThrown and maxRetryAttempts according to retry configuration:
 			if (breakRetryLoop) {
-				genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, CONTINUE.equals(errorToBeThrown)?CONTINUE:ABORT);
+				// break endless loop --> overwrite with NONE or FATAL
+				genericValueMap.put(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID, ERROR_NONE.equals(errorToBeThrown)?ERROR_NONE:ERROR_FATAL);
 				genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, String.valueOf(retryCount));
 			} else if (maxRetryAttempts != null && maxRetryAttempts == -1 && retryCount < maxRetryAttemptsBeforeAbort) {
-				genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, RETRY);
+				// endless loop --> TRANSIENT
+				genericValueMap.put(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID, ERROR_TRANSIENT);
 				genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, maxRetryAttemptsBeforeCancelRetryString);
 			} else {
+				// less than maxRetryAttempts --> TRANSIENT
 				if (maxRetryAttempts != null && retryCount < maxRetryAttempts) {
-					genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, RETRY);
+					genericValueMap.put(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID, ERROR_TRANSIENT);
 					genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, maxRetryAttemptsString);
-				} else {
-					 if (RETRY.equals(errorToBeThrown) && maxRetryAttempts == null && retryCount < maxRetryAttemptsDefault) {
-						 genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, RETRY);
-						 genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, maxRetryAttemptsDefaultString);
+				} else {					
+					 if (ERROR_NONE.equals(errorToBeThrown)) {
+						 genericValueMap.put(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID, ERROR_NONE);
 					 } else {
-						 if (CONTINUE.equals(errorToBeThrown)) {
-							 genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, CONTINUE);
-						 } else {
-							 // Final behavior for abort and retry: abort
-							 genericValueMap.put(EHD_ATTRIBUTE_RETURN_VALUE_ID, ABORT);
-						 }
-						 // maxRetryAttempts is reached or was not defined (-> 0)
-						 String maxRetryAttemptsResult = maxRetryAttempts != null ? maxRetryAttemptsString : "0";
-						 genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, maxRetryAttemptsResult);
+						 // Final behavior for abort
+						 genericValueMap.put(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID, ERROR_FATAL);
 					 }
+					 // maxRetryAttempts is reached or was not defined (-> 0)
+					 String maxRetryAttemptsResult = maxRetryAttempts != null ? maxRetryAttemptsString : "0";
+					 genericValueMap.put(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS, maxRetryAttemptsResult);
 				}
 			}
 			return genericValueMap;
@@ -1254,7 +1244,7 @@ public final class errorHandling
 		}
 		
 		private static ExceptionHandlingInfo getRetVal(Element exceptionNode, String exceptionType) {	
-			final String errorToBeThrown = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_RETURN_VALUE_ID);
+			final String errorToBeThrown = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID);
 			final String type = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_TYPE_ID);
 			final String exceptionHandlingId = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID);
 			final String maxRetryAttempts = exceptionNode.getAttributeValue(EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS);
@@ -1355,7 +1345,7 @@ public final class errorHandling
 		private static final String EHD_ATTRIBUTE_ERROR_MESSAGE_CONTAINS = "errorMessageContains";		
 		private static final String EHD_ATTRIBUTE_ERROR_MESSAGE_REGEX_ID = "errorMessageRegex";		
 		private static final String EHD_ATTRIBUTE_LOCATION_NAME_ID = "name";
-		private static final String EHD_ATTRIBUTE_RETURN_VALUE_ID = "errorToBeThrown";
+		private static final String EHD_ATTRIBUTE_ERROR_TO_BE_THROWN_ID = "errorToBeThrown";
 		private static final String EHD_ATTRIBUTE_ERROR_HANDLING_ID_ID = "exceptionHandlingId";
 		private static final String EHD_ATTRIBUTE_HANDLING= "handling";
 		private static final String EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS = "maxRetryAttempts";
@@ -1441,16 +1431,14 @@ public final class errorHandling
 		// *******************************************************************
 		// --------------------INPUT GET VALUE DEFINITION---------------------
 		// *******************************************************************
-		private static final String MAX_RETRY_ATTEMPTS_DEFAULT = "maxRetryAttemptsDefault";
 		private static final String MAX_RETRY_ATTEMPTS_BEFORE_CANCEL_RETRY = "maxRetryAttemptsBeforeCancelRetry";
-		private static final String PACKAGE_LCL_ERROR = "WxResilience";
 		private static final String BREAK_RETRY_LOOP = "break.retry.loop.for.";
 		// *******************************************************************
 		// --------------------ERROR VALUE DEFINITION---------------------
 		// *******************************************************************
-		private static final String RETRY = "TRANSIENT";
-		private static final String ABORT = "FATAL";
-		private static final String CONTINUE = "NONE";	
+		private static final String ERROR_TRANSIENT = "TRANSIENT";
+		private static final String ERROR_FATAL = "FATAL";
+		private static final String ERROR_NONE = "NONE";	
 		
 		private static final String SUMMARIZED_EXCEPTION_HANDLING_FILE = "ExceptionHandlingSummarized.xml";
 		private static final String EXCEPTION_HANDLING_XSD_FILE = "ExceptionHandling.xsd";

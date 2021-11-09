@@ -18,8 +18,6 @@ logging.service=pub.flow:debugLog
 ################################################################################
 # Error Handling
 ################################################################################
-# default retry count for TRANSIENT:
-maxRetryAttemptsDefault=3
 # retries for maxRetryAttempts="-1"
 maxRetryAttemptsBeforeCancelRetry=20000
 
