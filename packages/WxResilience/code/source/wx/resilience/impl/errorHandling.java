@@ -1128,7 +1128,6 @@ public final class errorHandling
 				sb.append(type);
 				sb.append("errorCode=");
 				sb.append(errorCode);
-				sb.append(", project=");
 				sb.append(", exceptionType=");
 				sb.append(exceptionType);
 				sb.append(", maxRetryAttempts=");
