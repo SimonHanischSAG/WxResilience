@@ -19,14 +19,6 @@ Check under releases for a proper release and deploy it. Otherwise you can check
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience F:\\GIT-Repos\\WxResilience\\packages\\WxResilience
 mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
 
-<h4>Initialize in case of WxConfigLight</h4>
-
-If you are using WxConfigLight you have to run
-
-http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience 
-
-in order to load the keys of WxResilience into the necessary Global Variables. WxConfig will do that automatically.
-
 <h4>Build & Reload</h4>
 
 If you checkout the sources from GitHub you have to compile the source, e.g. with:
@@ -54,7 +46,7 @@ Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
 
 <h3>Configure specific logging</h3>
 	
-In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you can add the following to wxlog_default.xml:
+In case of WxLog2 WxResilience is already preconfigured **(but not enabled)**. In case of WxLog you can add the following to wxlog_default.xml:
 
 <pre><code>
   &lt;appender name="WxResilience" class="ch.qos.logback.core.FileAppender"&gt;
@@ -85,12 +77,9 @@ In case of WxLog2 WxResilience is already preconfigured. In case of WxLog you ca
 
 <h3>Enable logging using WxLog/WxLog2</h3>
 
-Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
+The fast/non-persistent way: Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 
-<h4>Initialize in case of WxConfigLight</h4>
-If you are using WxConfigLight you have to run http://localhost:5555/invoke/wx.config.admin:replaceVariablesWithGlobalFile?wxConfigPkgName=WxResilience in order to load the keys of WxResilience into the necessary Global Variables. WxConfig will do that automatically.
-
-Reload WxResilience (as the logging configuration is cached for better performance)
+The persistent way: Copy the related key(s) from "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf" to "C:\SoftwareAG105\IntegrationServer\instances\default\config\packages\WxResilience\wxconfig-<env>.cnf" where <env> is the environment which you have configured in WxConfig(Light).
 
 <h3>Validate</h3>
 
