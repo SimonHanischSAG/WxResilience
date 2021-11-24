@@ -79,7 +79,7 @@ In case of WxLog2 WxResilience is already preconfigured **(but not enabled)**. I
 
 The fast/non-persistent way: Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 
-The persistent way: Copy the related key(s) from "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf" to "C:\SoftwareAG105\IntegrationServer\instances\default\config\packages\WxResilience\wxconfig-<env>.cnf" where <env> is the environment which you have configured in WxConfig(Light).
+The persistent way: Copy the related key(s) from "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf" to "C:\SoftwareAG105\IntegrationServer\instances\default\config\packages\WxResilience\wxconfig-&lt;env&gt;.cnf" where <env> is the environment which you have configured in WxConfig(Light).
 
 <h3>Validate</h3>
 
