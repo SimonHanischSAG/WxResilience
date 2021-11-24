@@ -139,13 +139,34 @@ to see what you can do additionally in your own package.
 
 <h4>Tags:</h4>
 <ul>
-  <li>location: </li>
   <li>globalException: Define a handling independently from the location</li>
   <li>location: Define a (hierarchical) handling for specific folders or services</li>
   <li>exception: Define both some filter conditions and outcome for a handling</li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
 </ul>
 
-nested exception handling, type, callerType, errorMessageContains, errorMessageRegex
+<h4>Attributes for filtering/more specific definition:</h4>
+<ul>
+  <li>type: The name of the exception class or "all"</li>
+  <li>callerType: Over which protocal was the top level service invoked: REST, RESTv2, RAD, SOAP, HTTP, FTP, FILEPOLLING, JMS, STARTUP_SHUTDOWN, SCHEDULER, MFT, OTHER</li>
+  <li>errorMessageContains: A string which must be part of the error message</li>
+  <li>errorMessageRegex: A regex which matches the whole error message</li>
+  <li></li>
+</ul>
+
+<h4>Nested Exception Handling</h4>
+
+You can use a nested construction of try-catch blocks like this:
+<ul>
+	<li>service1: top level service with try-catch</li>
+	<li>service2: sub service with try-catch</li>
+</ul>
+You can now define an exception handling for service1 (rethrowing the error) and service2 (doing something else). Although service1 is in the callstack of the second error the service where the error is rethrown is excluded from the error handling above.
+	
 	
 <h3>Break endless loop</h3>
 On a running productive system it could be that you have a problem with a message in a endless retry loop of a trigger. If that exception for retry is thrown by WxResilience and because of a definition from a ExceptionHandling.xml file you can break this loop by adding such a key temporarily for a message with metaData/uuid=b86b6639-b026-49ca-ad01-3d19810c3cda:
