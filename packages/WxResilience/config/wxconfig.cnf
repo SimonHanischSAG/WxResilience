@@ -1,4 +1,12 @@
 ################################################################################
+# General inclusions for configuring additional stuff like logging if necessary
+################################################################################
+wx.config.env.DEV=../../../config/packages/WxResilience/wxconfig-DEV.cnf
+wx.config.env.TEST=../../../config/packages/WxResilience/wxconfig-TEST.cnf
+wx.config.env.QA=../../../config/packages/WxResilience/wxconfig-QA.cnf
+wx.config.env.PROD=../../../config/packages/WxResilience/wxconfig-PROD.cnf
+
+################################################################################
 # General
 ################################################################################
 timestampPattern=yyyy-MM-dd'T'HH:mm:ss.SSSZ

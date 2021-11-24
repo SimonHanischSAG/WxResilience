@@ -30,8 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-//import javax.jms.JMSException;
-//import javax.jms.MapMessage;
 import javax.print.attribute.standard.Severity;
 import com.wm.lang.xml.Node;
 import com.softwareag.util.IDataMap;
