@@ -2,7 +2,7 @@
 
 <Values version="2.0">
   <value name="shared">cHVibGljIHN0YXRpYyBBcnJheUxpc3Q8U3RyaW5nW10+IGRlcGVuZGVuY3lDYWNoZSA9IG5ldyBB
-cnJheUxpc3Q8U3RyaW5nW10+KCk7CgkKCQ==</value>
+cnJheUxpc3Q8U3RyaW5nW10+KCk7DQoJDQoJDQo=</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
     <value>java.util.ArrayList</value>
@@ -10,8 +10,5 @@ cnJheUxpc3Q8U3RyaW5nW10+KCk7CgkKCQ==</value>
     <value>com.wm.app.b2b.server.Manifest</value>
     <value>com.wm.app.b2b.server.Package</value>
     <value>com.wm.app.b2b.server.PackageManager</value>
-  </array>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
   </array>
 </Values>
