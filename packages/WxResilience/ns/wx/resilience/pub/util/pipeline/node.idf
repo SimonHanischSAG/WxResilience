@@ -181,8 +181,6 @@ KSB7DQoJfQ0KfQkNCgkNCgkNCgkNCg==</value>
     <value>java.util.Map</value>
     <value>java.util.Set</value>
     <value>java.util.Stack</value>
-    <value>javax.jms.JMSException</value>
-    <value>javax.jms.MapMessage</value>
     <value>javax.print.attribute.standard.Severity</value>
     <value>com.wm.lang.xml.Node</value>
     <value>com.softwareag.util.IDataMap</value>
