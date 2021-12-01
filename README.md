@@ -142,11 +142,6 @@ to see what you can do additionally in your own package.
   <li>globalException: Define a handling independently from the location</li>
   <li>location: Define a (hierarchical) handling for specific folders or services</li>
   <li>exception: Define both some filter conditions and outcome for a handling</li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
 </ul>
 
 <h4>Attributes for filtering/more specific definition:</h4>
@@ -155,7 +150,13 @@ to see what you can do additionally in your own package.
   <li>callerType: Over which protocal was the top level service invoked: REST, RESTv2, RAD, SOAP, HTTP, FTP, FILEPOLLING, JMS, STARTUP_SHUTDOWN, SCHEDULER, MFT, OTHER</li>
   <li>errorMessageContains: A string which must be part of the error message</li>
   <li>errorMessageRegex: A regex which matches the whole error message</li>
-  <li></li>
+</ul>
+
+<h4>Attributes for output:</h4>
+<ul>
+  <li>errorToBeThrown: Define if there should be an exception rethrown (FATAL) or not (NONE) after maybe finishing all retry attempts</li>
+  <li>maxRetryAttempts: Define how many TRANSIENT errors shall be thrown before errorToBeThrown comes into action in the final retry attempt. Consider that this is helpfull only under triggers which have a higher value for "Max retry attempts" than defined here. Then the retries are under the control of the ExceptionHandling.xml files (configurable during runtime) and not hard coded (at the trigger). Furthermore we suggest to define "On retry failure"="Suspend and retry later" as you can disable such triggers without message lost during a retry loop. Normally "Suspend and retry later" without resource monitoring is a dubious option, but if "Max retry attempts" is high enough it does not come into action.</li>
+  <li>exceptionHandlingId: Define a id which will be logged</li>
 </ul>
 
 <h4>Nested Exception Handling</h4>
