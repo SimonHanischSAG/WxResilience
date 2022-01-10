@@ -85,10 +85,10 @@
 			<location name="pub">	 
                 <location name="jms">
                     <location name="sendJmsWxMessage">
-                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.001">
+                        <exception callerType="JMS" type="all" errorToBeThrown="TRANSIENT" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.001">
                             <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
                         </exception>
-                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.002">
+                        <exception callerType="JMS" type="all" errorToBeThrown="TRANSIENT" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.002">
                             <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
                         </exception>
                     </location>
