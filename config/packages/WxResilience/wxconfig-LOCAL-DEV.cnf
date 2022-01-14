@@ -2,6 +2,6 @@
 # Logging
 ################################################################################
 # Log service for WxLog (Logback)
-logging.service=wx.resilience.impl.log.wrapper:logWxLog
+logging.service.env=wx.resilience.impl.log.wrapper:logWxLog
 # Log service for WxLog2 (log4j)
-logging.service=wx.resilience.impl.log.wrapper:logWxLog2
+logging.service.env=wx.resilience.impl.log.wrapper:logWxLog2

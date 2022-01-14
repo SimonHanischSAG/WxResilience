@@ -30,14 +30,10 @@ import org.jdom.input.SAXBuilder;
 import org.jdom.xpath.XPath;
 import org.xml.sax.SAXException;
 import com.wm.app.b2b.server.*;
-import java.io.*;
 import java.lang.reflect.UndeclaredThrowableException;
 import java.net.URL;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import com.wm.lang.ns.NSService;
-import java.util.function.Supplier;
 // --- <<IS-END-IMPORTS>> ---
 
 public final class errorHandling
@@ -61,7 +57,7 @@ public final class errorHandling
 	{
 		// --- <<IS-START(assembleExceptionHandlings)>> ---
 		// @sigtype java 3.5
-		Log.logInfo("Scanning all packages for ExceptionHandling.xml files");
+		logInfo("Scanning all packages for ExceptionHandling.xml files");
 		createSummarizedExceptionHandling();
 	
 		// --- <<IS-END>> ---
@@ -179,7 +175,7 @@ public final class errorHandling
 		// [i] record:0:optional businessObject
 		// [o] field:0:required errorToBeThrown
 		// [o] field:0:optional errorCode
-		Log.write("handleErrorSvc: -->");
+		logDebug("handleErrorSvc: -->");
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		
 		// *******************************************************************
@@ -188,25 +184,25 @@ public final class errorHandling
 		
 		IData MetaData = IDataUtil.getIData(pipelineCursor, METADATA_ID);
 		String messageUID = getMessageUID(MetaData);
-		Log.write("handleErrorSvc: messageUID=" + messageUID);
+		logDebug("handleErrorSvc: messageUID=" + messageUID);
 		
 		// Extract inputs from pipeline and check for null values
 		IData businessObject = IDataUtil.getIData(pipelineCursor, BUSINESS_DOC_ID);
-		Log.logDebug("handleErrorSvc: businessObject=" + businessObject);
+		logDebug("handleErrorSvc: businessObject=" + businessObject);
 		/*if (businessObject == null) {
 			logMessageFromCatalog("200", "0020", new String[] {});
 		}*/
 		
 		IData exceptionInfo = IDataUtil.getIData(pipelineCursor, ERROR_INFO_ID);
-		Log.write("handleErrorSvc: exceptionInfo=" + exceptionInfo);
+		logDebug("handleErrorSvc: exceptionInfo=" + exceptionInfo);
 		if (exceptionInfo == null) {
-			Log.logError("Failed to handle the exception. Error is null");
+			logError("Failed to handle the exception. Error is null");
 			throw new ServiceException(
 					"Was not able to handle exception. Error is null");
 		}
 		
 		String excludeServiceFromExceptionHandling = IDataUtil.getString(pipelineCursor, EXCLUDE_SERVICE);
-		Log.write("handleErrorSvc: excludeServiceFromExceptionHandling=" + excludeServiceFromExceptionHandling);
+		logDebug("handleErrorSvc: excludeServiceFromExceptionHandling=" + excludeServiceFromExceptionHandling);
 		
 		// ---Initialize and extract error hierarchy---
 		ArrayList<IDataCursor> errorInfoHierachy = new ArrayList<IDataCursor>();
@@ -220,7 +216,7 @@ public final class errorHandling
 		
 		// check if exception handling definition has been initialized
 		final Document errorHandlings = geterrorHandlings();
-		Log.write("handleErrorSvc: errorHandlings=" + errorHandlings);		
+		logDebug("handleErrorSvc: errorHandlings=" + errorHandlings);		
 		// Initialize list of handlings
 		/**
 		 * contains all handling, which have been found for the error and some
@@ -238,32 +234,32 @@ public final class errorHandling
 		
 		// Initialize callerType
 		String callerType = getCallerType();
-		Log.write("handleErrorSvc: callerType=" + callerType);
+		logDebug("handleErrorSvc: callerType=" + callerType);
 		// Initialize originalError		
 		String originalErrorMessage = hierachicalErrorInfo.get(hierachicalErrorInfo.size() - 1).getError();
-		Log.write("handleErrorSvc: originalErrorMessage=" + originalErrorMessage);
+		logDebug("handleErrorSvc: originalErrorMessage=" + originalErrorMessage);
 		// try to handle error hierarchical bottom up (from origin to root
 		// error)
 		// iteration over hierarchies
 		//for (int hierachyLevel = 0; hierachyLevel < hierachicalErrorInfo.size(); hierachyLevel++) {
 		for (int hierachyLevel = (hierachicalErrorInfo.size()-1); hierachyLevel >= 0; hierachyLevel--) {
-			Log.write("handleErrorSvc: hierarchyLevel=" + hierachyLevel);
+			logDebug("handleErrorSvc: hierarchyLevel=" + hierachyLevel);
 			// extract needed error informations of actually used hierarchy
 			String errorType = hierachicalErrorInfo.get(hierachyLevel).getErrorType();
-			Log.write("handleErrorSvc: errorType=" + errorType);
+			logDebug("handleErrorSvc: errorType=" + errorType);
 			if (errorType == null) {
 				hierachicalErrorInfo.get(hierachyLevel).setErrorType("unknown");
 				errorType = "unknown";
 			}
 		
 			String service = hierachicalErrorInfo.get(hierachyLevel).getService();
-			Log.write("handleErrorSvc: service=" + service);
+			logDebug("handleErrorSvc: service=" + service);
 			if (service == null) {
 				hierachicalErrorInfo.get(hierachyLevel).setService("unknown");
 				service = "unknown";
 			}
 		
-			Log.logDebug("Start level " + hierachyLevel + " error handling for error type " + errorType + " at location " + service);
+			logDebug("Start level " + hierachyLevel + " error handling for error type " + errorType + " at location " + service);
 		
 			// Initialize XPath expression
 			String locationXPath = "//" + EHD_NODE_DOC_ROOT_ID;
@@ -309,7 +305,7 @@ public final class errorHandling
 				}
 		
 				locationXPath = locationXPath + "/" + EHD_NODE_ERROR_TYPE_ID;
-				Log.write("handleErrorSvc: locationXPath=" + locationXPath);
+				logDebug("handleErrorSvc: locationXPath=" + locationXPath);
 		
 				// get handling for location and error type
 				handlingInfo = getHandlingsForLocation(errorHandlings,
@@ -342,7 +338,7 @@ public final class errorHandling
 			// look up for global error handling
 			// if hierarchy is root allow to use global generic handling
 			if (handlingInfo == null && hierachyLevel == 0) {
-				Log.write("handleErrorSvc: Global error handling");
+				logDebug("handleErrorSvc: Global error handling");
 				locationXPath = "//" + EHD_NODE_DOC_ROOT_ID + "/"
 						+ EHD_NODE_GLOBAL_ERROR_TYPE_ID;
 				handlingInfo = getHandlingsForLocation(errorHandlings,
@@ -359,7 +355,7 @@ public final class errorHandling
 			// *******************************************************************
 		
 			if (handlingInfo != null) {
-				Log.write("handleErrorSvc: Handling detected: " + handlingInfo.toString());
+				logDebug("handleErrorSvc: Handling detected: " + handlingInfo.toString());
 		
 				// create handled error info
 				IData handledErrorInfo = IDataFactory.create();
@@ -434,14 +430,14 @@ public final class errorHandling
 				
 				boolean breakRetryLoopForCurrentUID = Boolean.valueOf(getValueConf(BREAK_RETRY_LOOP + messageUID, WX_RESILIENCE, "true", "", "", "", ""));
 				if (breakRetryLoopForCurrentUID) {
-					Log.logWarn("Endless loop for uuid " + messageUID + " broken because of wxconfig key");
+					logWarn("Endless loop for uuid " + messageUID + " broken because of wxconfig key");
 				}
-				Log.write("handleErrorSvc: breakRetryLoopForCurrentUID=" + breakRetryLoopForCurrentUID);
+				logDebug("handleErrorSvc: breakRetryLoopForCurrentUID=" + breakRetryLoopForCurrentUID);
 				
 				// create generic value map
 				// TODO: Drop genericValueMap
 				HashMap<String, String> genericValueMap = createGenericValueMap(handlingInfo, breakRetryLoopForCurrentUID);
-				Log.write("handleErrorSvc: genericValueMap=" + genericValueMap);
+				logDebug("handleErrorSvc: genericValueMap=" + genericValueMap);
 				IDataUtil.put(handledErrorInfoCursor, EHD_ATTRIBUTE_RETRY_COUNT,
 						genericValueMap.get(EHD_ATTRIBUTE_RETRY_COUNT));
 				
@@ -478,17 +474,17 @@ public final class errorHandling
 								GENERIC_ERROR_MESSAGE_ID));
 					
 				// execute all handling
-				Log.write("handleErrorSvc: Ready to invoke error handlers");
+				logDebug("handleErrorSvc: Ready to invoke error handlers");
 				final List<String> handlingServices = handlingInfo.getHandlingServices();
 				for (final String serviceName : handlingServices) {
 					try {
-						Log.write("handleErrorSvc: Invoking error handler, serviceName=" + serviceName);
+						logDebug("handleErrorSvc: Invoking error handler, serviceName=" + serviceName);
 						invokeErrorHandler(handlingServiceInput, serviceName);
-						Log.logInfo("Successfully invoked handling service " + serviceName);
+						logInfo("Successfully invoked handling service " + serviceName);
 					} catch (ErrorHandlingException e) {
 						throw e;
 					} catch (Exception e) {
-						Log.logError("Failed to invoke handling service " + serviceName + " with error: " + e.getMessage());
+						logError("Failed to invoke handling service " + serviceName + " with error: " + e.getMessage());
 					}
 				}
 		
@@ -502,7 +498,7 @@ public final class errorHandling
 				IDataUtil.put(pipelineCursor, "errorCode", handlingInfo.getErrorCode());
 				
 				final String handlingErrorToBeThrown = handlingInfo.getErrorToBeThrown();
-				Log.write("handleErrorSvc: <-- handlingErrorToBeThrown=" + handlingErrorToBeThrown
+				logDebug("handleErrorSvc: <-- handlingErrorToBeThrown=" + handlingErrorToBeThrown
 						+ ", errorToBeThrown=" + errorToBeThrown + ", errorCode=" + errorCode);
 		
 				// abort recursive bottom-up looping over wrapped exceptions
@@ -514,11 +510,11 @@ public final class errorHandling
 		// ---------------------NO HANDLING HAS BEEN FOUND--------------------
 		// *******************************************************************
 		if (handlingInfo == null) {
-			Log.write("handleErrorSvc: No handling found");
+			logDebug("handleErrorSvc: No handling found");
 			String errorType = hierachicalErrorInfo.get(hierachicalErrorInfo.size() - 1).getErrorType();
 			String service = hierachicalErrorInfo.get(hierachicalErrorInfo.size() - 1).getService();
 		
-			Log.logError("No error handling found! Was not able to handle error of type " + errorType + " at location " + service + " (origin error, " + (hierachicalErrorInfo.size() - 1) + "-fold wrapped)");
+			logError("No error handling found! Was not able to handle error of type " + errorType + " at location " + service + " (origin error, " + (hierachicalErrorInfo.size() - 1) + "-fold wrapped)");
 			pipelineCursor.destroy();
 			throw new ServiceException(
 					"No error handling found! \n Was not able to handle error of type '"
@@ -529,7 +525,9 @@ public final class errorHandling
 		}
 		
 		pipelineCursor.destroy();
-		Log.write("handleErrorSvc: <--");
+		logDebug("handleErrorSvc: <--");
+			
+			
 			
 			
 			
@@ -546,7 +544,7 @@ public final class errorHandling
 	{
 		// --- <<IS-START(initializeExceptionHandlings)>> ---
 		// @sigtype java 3.5
-		Log.logInfo("Initializing error handling framework...");
+		logInfo("Initializing error handling framework...");
 		//TODO
 		File eHDFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_EXCEPTION_HANDLING_FILE);
 		if (!eHDFile.isFile()) {
@@ -612,7 +610,7 @@ public final class errorHandling
 			}
 			validateXML();
 		} catch (Exception e) {
-			Log.logError("Error during parsing of summarizedExceptionHandlingDefinition: " + e.getMessage());
+			logError("Error during parsing of summarizedExceptionHandlingDefinition: " + e.getMessage());
 			throw Exceptions.show(e, ServiceException.class);
 		}
 		return outputFile;
@@ -620,14 +618,14 @@ public final class errorHandling
 	
 	private static final ExceptionHandlingListener DEFAULT_ERROR_HANDLER = new ExceptionHandlingListener() {
 		public void accept(String s, IData d) {
-			Log.logDebug("DefaultErrorHandler: --> " + s);
+			logDebug("DefaultErrorHandler: --> " + s);
 			try {
 				Service.doInvoke(NSName.create(s), d);
 			} catch (Exception e) {
-				Log.logDebug("DefaultErrorHandler: " + e.getClass().getName() + ", " + e.getMessage());
+				logDebug("DefaultErrorHandler: " + e.getClass().getName() + ", " + e.getMessage());
 				throw new UndeclaredThrowableException(e);
 			}
-			Log.logDebug("DefaultErrorHandler: <--");
+			logDebug("DefaultErrorHandler: <--");
 		}
 	};
 	private static ExceptionHandlingListener getErrorHandler() {
@@ -646,11 +644,11 @@ public final class errorHandling
 	}
 	private static void invokeErrorHandler(IData pHandlingServiceInput,
 			final String pServiceName) throws Exception {
-		Log.logDebug("invokeErrorHandler: --> ");
+		logDebug("invokeErrorHandler: --> ");
 		final ExceptionHandlingListener ehl = getErrorHandler();
-		Log.logDebug("invokeErrorHandler: eh=" + ehl);
+		logDebug("invokeErrorHandler: eh=" + ehl);
 		ehl.accept(pServiceName, pHandlingServiceInput);
-		Log.logDebug("invokeErrorHandler: <--");
+		logDebug("invokeErrorHandler: <--");
 	
 		// --- <<IS-END>> ---
 	}
@@ -867,7 +865,7 @@ public final class errorHandling
 	
 		
 		private static void validateXML() throws ServiceException {
-			Log.logInfo("Validating the summarized error handling");
+			logInfo("Validating the summarized error handling");
 			File xmlFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + SUMMARIZED_EXCEPTION_HANDLING_FILE);
 			File schemaFile = new File(ServerAPI.getPackageConfigDir(WX_RESILIENCE) + "/" + EXCEPTION_HANDLING_XSD_FILE);
 			
@@ -884,7 +882,7 @@ public final class errorHandling
 				Source source = new StreamSource(xmlFile);	
 				// 5. Check the document
 				validator.validate(source);
-				Log.logInfo(xmlFile.getName() + " is valid");
+				logInfo(xmlFile.getName() + " is valid");
 			} 
 			catch (SAXException|IOException ex) {
 				String message = xmlFile.getName() + " is not valid because \n" + ex.getMessage();
@@ -920,7 +918,7 @@ public final class errorHandling
 			propertyValue = IDataUtil
 					.getString(configOutputCursor, "propertyValue");
 			configOutputCursor.destroy();
-			Log.logDebug("getValueConf for " + key + " returns: " + propertyValue);
+			logDebug("getValueConf for " + key + " returns: " + propertyValue);
 			return propertyValue;
 		}
 		
@@ -1155,7 +1153,7 @@ public final class errorHandling
 				Document pErrorHandling, String pLocationXPath,
 				String pExceptionType, String currentCallerType, String currentErrorMessage)
 				throws ServiceException {
-			Log.logDebug("getHandlingsForLocation: --> " + pLocationXPath + ", " + pExceptionType + ", " + currentCallerType + ", " + currentErrorMessage);
+			logDebug("getHandlingsForLocation: --> " + pLocationXPath + ", " + pExceptionType + ", " + currentCallerType + ", " + currentErrorMessage);
 	
 			// get exception list for location
 			List<Element> exceptionNodes = null;
@@ -1163,13 +1161,13 @@ public final class errorHandling
 				exceptionNodes = (List<Element>) XPath.selectNodes(pErrorHandling, pLocationXPath);
 			} 
 			catch (JDOMException e) {
-				Log.logError("JDOM Error during extraction of error types from exception handling definition: " + e.getMessage());
-				Log.logDebug("getHandlingsForLocation: <-- null (JDOMException: " + e.getMessage() + ")");
+				logError("JDOM Error during extraction of error types from exception handling definition: " + e.getMessage());
+				logDebug("getHandlingsForLocation: <-- null (JDOMException: " + e.getMessage() + ")");
 				return null;
 			}
 	        // check exception nodes sanity
 			if (exceptionNodes == null || exceptionNodes.isEmpty()) {
-				Log.logDebug("getHandlingsForLocation: <-- null (No exceptionNodes)");
+				logDebug("getHandlingsForLocation: <-- null (No exceptionNodes)");
 				return null;
 			}			
 			
@@ -1237,7 +1235,7 @@ public final class errorHandling
 						exceptionHandlingInfo.addServiceName(((Element) n).getText());
 				}
 	
-				Log.logDebug("getHandlingsForLocation: <-- " + exceptionHandlingInfo);
+				logDebug("getHandlingsForLocation: <-- " + exceptionHandlingInfo);
 				return exceptionHandlingInfo;
 			}
 			
@@ -1306,15 +1304,15 @@ public final class errorHandling
 			try {
 				final Document ehd = pBuilder.build(pFile);
 			
-				Log.logInfo("Successfully initialized error handling");
+				logInfo("Successfully initialized error handling");
 				return ehd;
 			} 
 			catch (JDOMException e) {
-				Log.logError("JDOM Error during initialization of error handling: " + e.getMessage());
+				logError("JDOM Error during initialization of error handling: " + e.getMessage());
 				throw new UndeclaredThrowableException(e);
 			} 
 			catch (IOException e) {
-				Log.logError("IO Error during initialization of error handling: " + e.getMessage());
+				logError("IO Error during initialization of error handling: " + e.getMessage());
 				throw new UndeclaredThrowableException(e);
 			}
 		}
@@ -1328,6 +1326,45 @@ public final class errorHandling
 			return builder.toString();
 		}
 	
+		private static final String LOG_SVC_PATH = "wx.resilience.impl.logError";
+	
+		public static void logInfo(String message) {
+			logImpl(message, "Info");
+		}
+		
+		public static void logWarn(String message) {
+			logImpl(message, "Warn");
+		}
+		
+		public static void logError(String message) {
+			logImpl(message, "Error");
+		}
+	
+		public static void logTrace(String message) {
+			logImpl(message, "Trace");
+		}
+		
+		public static void logDebug(String message) {
+			logImpl(message, "Debug");
+		}
+		
+		public static void logFatal(String message) {
+			logImpl(message, "Fatal");
+		}
+		
+		private static void logImpl(String message, String level) {
+			IData input = IDataFactory.create();
+			IDataMap inputMap = new IDataMap(input);
+			inputMap.put("message", message);
+			inputMap.put("function", WX_RESILIENCE_ERROR);
+			inputMap.put("level", level);
+			
+			try {
+				Service.doInvoke(LOG_SVC_PATH, "log", input);
+			} 
+			catch (Exception e) {
+			}
+		}
 		
 		// *******************************************************************
 		// ---------------------XML NODE NAME DEFINITIONS---------------------
@@ -1443,9 +1480,12 @@ public final class errorHandling
 		private static final String SUMMARIZED_EXCEPTION_HANDLING_FILE = "ExceptionHandlingSummarized.xml";
 		private static final String EXCEPTION_HANDLING_XSD_FILE = "ExceptionHandling.xsd";
 		private static final String WX_RESILIENCE = "WxResilience";
+		private static final String WX_RESILIENCE_ERROR = "WxResilience.Error";
 		private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
 	
 	
+		
+		
 		
 		
 		

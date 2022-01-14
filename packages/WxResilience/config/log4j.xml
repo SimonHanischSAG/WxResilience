@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!DOCTYPE log4j:configuration SYSTEM "../../WxLog/config/log4j.dtd">
 <!-- Optional definition for usage of WxLog2 -->
-
-
-<!DOCTYPE log4j:configuration SYSTEM "../../WxConfig/code/jars/log4j.dtd">
-<log4j:configuration>
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
   <appender name="WxResilience"
     class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="10MB" />
       <param name="MaxBackupIndex" value="10" />
-      <param name="DatePattern" value="'.'yyyyMMdd" />
       <param name="Append" value="true" />
       <param name="File" value="./logs/WxResilience.log" />
+      <param name="threshold" value="info"/>
+      <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d %-5p - %m%n" />
+      </layout>
+  </appender>
+  
+  <appender name="WxResilience.Error"
+    class="org.apache.log4j.RollingFileAppender">
+      <param name="MaxFileSize" value="10MB" />
+      <param name="MaxBackupIndex" value="10" />
+      <param name="Append" value="true" />
+      <param name="File" value="./logs/WxResilience.Error.log" />
       <param name="threshold" value="info"/>
       <layout class="org.apache.log4j.PatternLayout">
         <param name="ConversionPattern" value="%d %-5p - %m%n" />
@@ -20,6 +28,10 @@
 
   <category name="WxResilience">
     <appender-ref ref="WxResilience"/>
+  </category>
+  
+  <category name="WxResilience.Error">
+    <appender-ref ref="WxResilience.Error"/>
   </category>
 
 </log4j:configuration>

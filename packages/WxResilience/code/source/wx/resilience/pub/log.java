@@ -91,6 +91,7 @@ public final class log
 		IDataMap pipeMap = new IDataMap(pipeline);
 		pipeMap.put("loggingServices", loggingServices);
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -107,15 +108,27 @@ public final class log
 		};
 	
 	private static void initLogging() throws ServiceException {
+		// Try to read from logging.service.env first:
 		IData input = IDataFactory.create();
 		IDataMap inputMap = new IDataMap(input);
-		inputMap.put("key", "logging.service");
+		inputMap.put("key", "logging.service.env");
 		inputMap.put("wxConfigPkgName", "WxResilience");
 		inputMap.put("noServiceException", "true");
 		try{
 			IData output = Service.doInvoke( "wx.config.pub", "getValueList", input);
 			IDataMap outputMap = new IDataMap(output);
-			loggingServices = outputMap.getAsStringArray("propertyValueList");
+			
+			String[] servicesEnv = outputMap.getAsStringArray("propertyValueList");
+			
+			if (servicesEnv != null && servicesEnv.length > 0) {
+				loggingServices = servicesEnv;
+			} else {				
+				inputMap.put("key", "logging.service");
+				output = Service.doInvoke( "wx.config.pub", "getValueList", input);
+				outputMap = new IDataMap(output);
+				
+				loggingServices = outputMap.getAsStringArray("propertyValueList");
+			}
 			
 		} catch(ISRuntimeException anISRuntimeException) {
 			throw anISRuntimeException;
@@ -203,6 +216,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 		

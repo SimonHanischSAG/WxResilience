@@ -1,7 +1,10 @@
 ################################################################################
 # Logging
 ################################################################################
+# If logging.service.env is set then it overwrites logging.service from wxconfig.cnf completely
+# Log service for pub.flow:debugLog (IS server.log)
+logging.service.env=pub.flow:debugLog
 # Log service for WxLog (Logback)
-logging.service=wx.resilience.impl.log.wrapper:logWxLog
+logging.service.env=wx.resilience.impl.log.wrapper:logWxLog
 # Log service for WxLog2 (log4j)
-logging.service=wx.resilience.impl.log.wrapper:logWxLog2
+logging.service.env=wx.resilience.impl.log.wrapper:logWxLog2

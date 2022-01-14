@@ -9,7 +9,6 @@
     class="org.apache.log4j.RollingFileAppender">
       <param name="MaxFileSize" value="10MB" />
       <param name="MaxBackupIndex" value="10" />
-      <param name="DatePattern" value="'.'yyyyMMdd" />
       <param name="Append" value="true" />
       <param name="File" value="./logs/WxResilience_Test.log" />
       <param name="threshold" value="info"/>

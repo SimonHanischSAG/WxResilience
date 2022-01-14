@@ -2767,7 +2767,7 @@ Failed business object (as JSON):
 </INVOKE>
 </LOOP>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.log:log" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.log:logError" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
