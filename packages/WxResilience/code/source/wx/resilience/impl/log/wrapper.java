@@ -63,6 +63,9 @@ public final class wrapper
 		// @sigtype java 3.5
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
+		// Add suffixes and prefixes:
+		addPrefixAndSuffix(pipeMap);
+		
 		// Rename for WxLog
 		renameVariable(pipeMap, "message", "text");
 		renameVariable(pipeMap, "function", "logger");
@@ -72,8 +75,6 @@ public final class wrapper
 			pipeMap.put("level", "ERROR");
 		}
 		
-		// Add suffixes and prefixes:
-		addPrefixAndSuffix(pipeMap);
 				
 		try{
 			Service.doInvoke( "wx.log.services", "log", pipeline );
@@ -84,6 +85,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} 		
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -101,6 +103,9 @@ public final class wrapper
 		// @sigtype java 3.5
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
+		// Add suffixes and prefixes:
+		addPrefixAndSuffix(pipeMap);
+		
 		// Rename for WxLog2
 		renameVariable(pipeMap, "message", "logMessage");
 		renameVariable(pipeMap, "function", "logger");
@@ -111,9 +116,6 @@ public final class wrapper
 		
 		renameVariable(pipeMap, "level", "severity");
 		toUpper(pipeMap, "severity");
-		
-		// Add suffixes and prefixes:
-		addPrefixAndSuffix(pipeMap);
 		
 		// output
 		try{
@@ -126,6 +128,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} 
+			
 			
 			
 			
@@ -152,6 +155,7 @@ public final class wrapper
 		
 		IData metaData = pipeMap.getAsIData("metaData");
 		if (metaData != null) {
+			// prefix:
 			StringBuilder builder = new StringBuilder();
 			IDataMap metaDataMap = new IDataMap(metaData);
 	
@@ -160,12 +164,14 @@ public final class wrapper
 			String source = metaDataMap.getAsString("source");
 			String destination = metaDataMap.getAsString("destination");
 			
-			builder.append(source).append("_to_").append(destination);
+			builder.append("source:").append(source);
+			builder.append("|destination:").append(destination);
 			builder.append("|type:").append(type);
 			builder.append("|uuid:").append(uuid).append("| ");
 			
 			builder.append(pipeMap.getAsString("message"));
 	
+			// suffix:
 			IData[] customProperties = metaDataMap.getAsIDataArray("customProperties");
 			if (customProperties != null) {
 				builder.append("\r\nCP:");
@@ -183,6 +189,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

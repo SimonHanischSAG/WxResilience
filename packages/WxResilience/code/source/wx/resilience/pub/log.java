@@ -57,7 +57,6 @@ public final class log
 		}
 		
 		if (loggingServices != null) {
-			pipeMap.put("message", getLogIdentifier(pipeMap) + pipeMap.getAsString("message"));
 			IData strippedPipeline = IDataFactory.create();
 			IDataMap strippedMap = new IDataMap(strippedPipeline);
 			stripPipeline(pipeMap, strippedMap);
@@ -164,57 +163,6 @@ public final class log
 		}
 	}	
 	
-	private static String getLogIdentifier(IDataMap pipeMap) {
-		
-		StringBuilder sb = new StringBuilder("");
-		
-		// metaData
-		IData metaData = pipeMap.getAsIData("metaData");
-		if (metaData != null) {
-			IDataMap metaDataMap = new IDataMap(metaData);
-		
-			// i.Sender
-			String source = metaDataMap.getAsString("source");
-			String destination = metaDataMap.getAsString("destination");
-			if (source != null || destination != null) {
-				if (source != null) {
-					sb.append(source).append(ADR_DELIM);
-					
-				}
-				
-				sb.append("to").append(ADR_DELIM);
-				
-				/*					 process Receiver(s)					 */
-				
-				if (destination != null) {
-					sb.append(destination);
-				}	
-				sb.append(" ");
-			}
-			
-			IData[]	customProperties = metaDataMap.getAsIDataArray("customProperties");
-			if (customProperties != null) {
-				sb.append(BI_DELIM);
-				for (int i = 0; i < customProperties.length; i++ )
-				{
-					IDataMap propMap = new IDataMap(customProperties[i]);
-					String key = propMap.getAsString("key");
-					if(key != null && key != ""){
-						sb.append(key).append(KEY_DELIM);
-					}
-					String value = propMap.getAsString("value");
-					if(value != null && value != ""){
-						sb.append(value).append(BI_DELIM);
-					} else {
-						sb.append(BI_DELIM);
-					}
-				}
-				sb.append(" ");
-			}
-		}
-		
-		return sb.toString();
-	}
 	
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
