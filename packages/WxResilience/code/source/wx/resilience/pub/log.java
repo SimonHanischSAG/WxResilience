@@ -73,6 +73,7 @@ public final class log
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -90,6 +91,7 @@ public final class log
 		initLogging();
 		IDataMap pipeMap = new IDataMap(pipeline);
 		pipeMap.put("loggingServices", loggingServices);
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -124,6 +126,8 @@ public final class log
 				loggingServices = servicesEnv;
 			} else {				
 				inputMap.put("key", "logging.service");
+				inputMap.put("wxConfigPkgName", "WxResilience");
+				inputMap.put("noServiceException", "true");
 				output = Service.doInvoke( "wx.config.pub", "getValueList", input);
 				outputMap = new IDataMap(output);
 				
@@ -163,7 +167,6 @@ public final class log
 	private static String getLogIdentifier(IDataMap pipeMap) {
 		
 		StringBuilder sb = new StringBuilder("");
-		String interfaceId = null;
 		
 		// metaData
 		IData metaData = pipeMap.getAsIData("metaData");
@@ -216,6 +219,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 		
