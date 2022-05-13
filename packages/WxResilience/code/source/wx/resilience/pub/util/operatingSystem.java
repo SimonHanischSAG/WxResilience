@@ -12,38 +12,42 @@ import com.wm.app.b2b.server.ListenerAdmin;
 import com.wm.app.b2b.server.ServerListenerIf;
 // --- <<IS-END-IMPORTS>> ---
 
-public final class integrationServer
+public final class operatingSystem
 
 {
 	// ---( internal utility methods )---
 
-	final static integrationServer _instance = new integrationServer();
+	final static operatingSystem _instance = new operatingSystem();
 
-	static integrationServer _newInstance() { return new integrationServer(); }
+	static operatingSystem _newInstance() { return new operatingSystem(); }
 
-	static integrationServer _cast(Object o) { return (integrationServer)o; }
+	static operatingSystem _cast(Object o) { return (operatingSystem)o; }
 
 	// ---( server methods )---
 
 
 
 
-	public static final void getPrimaryPort (IData pipeline)
+	public static final void getHostname (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(getPrimaryPort)>> ---
+		// --- <<IS-START(getHostname)>> ---
 		// @sigtype java 3.5
-		// [o] field:0:required result
-		String serverPort = null;
-		ServerListenerIf listener = ListenerAdmin.getPrimaryListener();
-		if (listener != null) {
-			serverPort = Integer.toString(listener.getPort());
+		// [o] field:0:required hostname
+		String hostname = null;
+		// pipeline
+		
+		try {
+			hostname = InetAddress.getLocalHost().getCanonicalHostName().toLowerCase();
+		} catch (Exception e) {
 		}
 		
 		// pipeline
 		IDataCursor pipelineCursor = pipeline.getCursor();
-		IDataUtil.put( pipelineCursor, "result", serverPort );
+		IDataUtil.put(pipelineCursor, "result", hostname);
 		pipelineCursor.destroy();
+		
+			
 		// --- <<IS-END>> ---
 
                 

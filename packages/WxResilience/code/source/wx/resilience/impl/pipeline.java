@@ -113,10 +113,10 @@ public final class pipeline
 
 
 
-	public static final void savePipelineToFile (IData pipeline)
+	public static final void implSavePipelineToFile (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(savePipelineToFile)>> ---
+		// --- <<IS-START(implSavePipelineToFile)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:required pipelineFileName
 		// [i] field:1:optional ignoredKeys

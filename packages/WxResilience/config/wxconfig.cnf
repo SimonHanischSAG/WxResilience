@@ -7,6 +7,8 @@ wx.config.env.TEST=../../../config/packages/WxResilience/wxconfig-TEST.cnf
 wx.config.env.QA=../../../config/packages/WxResilience/wxconfig-QA.cnf
 wx.config.env.PROD=../../../config/packages/WxResilience/wxconfig-PROD.cnf
 
+wx.config.incl=auto-setup.xml
+
 ################################################################################
 # General
 ################################################################################
@@ -33,3 +35,10 @@ maxRetryAttemptsBeforeCancelRetry=20000
 
 # Configure an uuid temporarily in order to break an (endless) retry loop:
 #break.retry.loop.for.id=987987987
+
+################################################################################
+# Status Message
+################################################################################
+status.connectionAliasName=DEFAULT_IS_JMS_CONNECTION
+status.destinationName=StatusTopic
+status.destinationType=TOPIC

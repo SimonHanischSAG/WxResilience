@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<autoConfig>
+	    <messaging>
+	        <um>
+	            <hosts>${um.admin.hosts}</hosts>
+	            <username>${um.admin.username}</username>
+	            <password>${um.admin.password}</password>
+				<initialContextFactory>com.pcbsys.nirvana.nSpace.NirvanaContextFactory</initialContextFactory>
+
+				<jmsConnectionFactory>
+				    <name>um_local</name>
+				    <connectionFactoryType>ConnectionFactory</connectionFactoryType>
+				    <connectionURL>${um.connectionURL}</connectionURL>
+				    <autoCreateResource>false</autoCreateResource>
+				</jmsConnectionFactory>
+
+                <topic>
+                    <name>status</name>
+                    <useJMSEngine>true</useJMSEngine>
+                    <storageProperties>
+                        <autoMaintanence>true</autoMaintanence>
+                    </storageProperties>
+                </topic>
+            </um>
+        </messaging>
+    </autoConfig>
+</config>
