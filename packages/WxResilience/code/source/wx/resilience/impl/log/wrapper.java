@@ -28,6 +28,19 @@ public final class wrapper
 
 
 
+	public static final void addPrefixAndSuffix (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(addPrefixAndSuffix)>> ---
+		// @sigtype java 3.5
+		addPrefixAndSuffixImpl(new IDataMap(pipeline));
+		// --- <<IS-END>> ---
+
+                
+	}
+
+
+
 	public static final void logDebugLog (IData pipeline)
         throws ServiceException
 	{
@@ -37,7 +50,7 @@ public final class wrapper
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
 		// Add suffixes and prefixes:
-		addPrefixAndSuffix(pipeMap);
+		addPrefixAndSuffixImpl(pipeMap);
 		
 		try{
 			Service.doInvoke( "pub.flow", "debugLog", pipeline );
@@ -47,6 +60,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} 
+			
 			
 		// --- <<IS-END>> ---
 
@@ -64,7 +78,7 @@ public final class wrapper
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
 		// Add suffixes and prefixes:
-		addPrefixAndSuffix(pipeMap);
+		addPrefixAndSuffixImpl(pipeMap);
 		
 		// Rename for WxLog
 		renameVariable(pipeMap, "message", "text");
@@ -104,7 +118,7 @@ public final class wrapper
 		IDataMap pipeMap = new IDataMap(pipeline);
 		
 		// Add suffixes and prefixes:
-		addPrefixAndSuffix(pipeMap);
+		addPrefixAndSuffixImpl(pipeMap);
 		
 		// Rename for WxLog2
 		renameVariable(pipeMap, "message", "logMessage");
@@ -151,7 +165,7 @@ public final class wrapper
 		map.put(variableName, variable);
 	}
 	
-	private static void addPrefixAndSuffix(IDataMap pipeMap) {
+	private static void addPrefixAndSuffixImpl(IDataMap pipeMap) {
 		
 		IData metaData = pipeMap.getAsIData("metaData");
 		if (metaData != null) {

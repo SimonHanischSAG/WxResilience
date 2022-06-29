@@ -8,6 +8,8 @@ logging.service.env=wx.resilience.impl.log.wrapper:logDebugLog
 logging.service.env=wx.resilience.impl.log.wrapper:logWxLog
 # Log service for WxLog2 (log4j)
 logging.service.env=wx.resilience.impl.log.wrapper:logWxLog2
+# Log service for WxSplunk
+logging.service.env=wx.resilience.impl.log.wrapper:logWxSplunk
 
 um.admin.hosts=nsp://localhost:9000
 um.admin.username=
