@@ -90,14 +90,14 @@
 	<location name="abc">
 		<exception type="all" callerType="JMS" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" errorMessageRegex=".*JMS.*" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.996">
 			<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
-		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+		    <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 		</exception>
 	</location>-->
 	 <!-- Minimally configured example for location exception:
 	<location name="abc">
 		<exception type="all" errorToBeThrown="NONE" exceptionHandlingId="WxResilience.jms.997">
 			<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
-		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+		    <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 		</exception>
 	</location>-->
 	
@@ -108,11 +108,11 @@
                     <location name="sendJmsWxMessage">
                         <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.001">
                             <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
-		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
                         </exception>
                         <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.002">
                             <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
-		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
                         </exception>
                     </location>
 			    </location>
