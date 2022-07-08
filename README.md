@@ -85,7 +85,6 @@ The persistent way: Copy the related key(s) from "C:\SoftwareAG105\IntegrationSe
 
 Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
 
-
 <h2>How to build resilient services</h2>
 
 To see the suggestion how to build a resilient service take a look on:
@@ -127,7 +126,6 @@ Measuring the duration, final logging and rethrowing an error if necessary (base
 
 
 <h2>Special features of error handling</h2>
-
 
 <h3>ExceptionHandling.xml</h3>
 
@@ -185,3 +183,29 @@ Sometimes there is the need to drop a message within your code (maybe deep in a 
 wx.resilience.pub.resilience:throwDocumentDiscardedException
 
 WxResilience will catch this error, write a proper logging and do not rethrow any error.
+
+<h3>Status messages</h3>
+
+You can configure under wxconfig-<env>.cnf:
+status.publishStatusError.enabled=true
+
+Furthermore you have to setup a topic "StatusTopic" under DEFAULT_IS_JMS_CONNECTION.
+
+Then all ExceptionHandlings which are using
+
+<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+
+will publish a JMS messages containing the most important information about the error. It is published as WxMessage in JSON. 
+HINT: In the containing metaData <b>SOURCE AND DESTINATION ARE SWITCHED!</b> This can be used directly in external systems to retrieve a status about their original messages using JMSMessage/properties/destination (= original sender).
+
+Furthermore you can use 
+
+wx.resilience.pub.resilience:publishStatus
+
+to publish your own status information using your desired type (Completed, Information, CompletedWithWarning, Retried, Failed, Discarded).
+
+Finally you can allow the external systems to send such messages by there own. In that case the external system A can send a message over IS to the external system B. System B can acknowledge that by a status "Completed". System A can receive and process that. If the message is failing in IS system A would receive an status "Failed" from IS using the same technique.
+
+
+
+
