@@ -44,6 +44,7 @@ maxRetryAttemptsBeforeCancelRetry=20000
 status.connectionAliasName=DEFAULT_IS_JMS_CONNECTION
 status.destinationName=StatusTopic
 status.destinationType=TOPIC
+#status.publishErrorStatus.enabled=true
 
 # max pipeline length for sending to status topic
 status.pipeline.maxLength=2048000
