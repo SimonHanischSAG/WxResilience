@@ -721,6 +721,7 @@
           <value name="field_dim">0</value>
           <value name="field_opt">true</value>
           <array name="field_options" type="value" depth="1">
+            <value>true</value>
           </array>
           <value name="nillable">true</value>
           <value name="form_qualified">false</value>

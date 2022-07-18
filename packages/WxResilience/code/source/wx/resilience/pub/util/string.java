@@ -49,6 +49,44 @@ public final class string
 
 
 
+    public static final Values multipleConcat (Values in)
+    {
+        Values out = in;
+		// --- <<IS-START(multipleConcat)>> ---
+		// @sigtype java 3.0
+		// [i] field:0:required inString1
+		// [i] field:0:required inString2
+		// [i] field:0:required inString3
+		// [i] field:0:required inString4
+		// [i] field:0:required inString5
+		// [i] field:0:required inString6
+		// [i] field:0:required inString7
+		// [i] field:0:required inString8
+		// [i] field:0:required inString9
+		// [i] field:0:required inString10
+		// [o] field:0:required value
+		String str1 = checkNull(in.getString("inString1"));
+		String str2 = checkNull(in.getString("inString2"));
+		String str3 = checkNull(in.getString("inString3"));
+		String str4 = checkNull(in.getString("inString4"));
+		String str5 = checkNull(in.getString("inString5"));
+		String str6 = checkNull(in.getString("inString6"));
+		String str7 = checkNull(in.getString("inString7"));
+		String str8 = checkNull(in.getString("inString8"));
+		String str9 = checkNull(in.getString("inString9"));
+		String str10 = checkNull(in.getString("inString10"));
+		StringBuilder sb = new StringBuilder(); 
+		
+		String outStr = sb.append(str1).append(str2).append(str3).append(str4).append(str5).append(str6).append(str7).append(str8).append(str9).append(str10).toString();
+		
+		out.put("value", outStr);
+		
+		// --- <<IS-END>> ---
+        return out;
+                
+	}
+
+
 
 	public static final void substringNullSave (IData pipeline)
         throws ServiceException
@@ -92,6 +130,7 @@ public final class string
 		IDataUtil.put( outputCursor, "value", outString );
 		outputCursor.destroy();
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -110,74 +149,9 @@ public final class string
 	    return inputString;
 	}
 	
-	private static String shortenType(String type){
-		type = type.replaceAll("^ZWPD", "Z");
-		type = type.replaceAll("^ZWP", "Z");
-		type = type.replaceAll("^WPD", "");
-		type = type.replaceAll("^WP", "");
-		type = type.replaceAll("_", "");
-		type = type.replaceAll("1", "");
-		type = type.replaceAll("2", "");
-		type = type.replaceAll("3", "");
-		type = type.replaceAll("4", "");
-		type = type.replaceAll("5", "");
-		type = type.replaceAll("6", "");
-		type = type.replaceAll("7", "");
-		type = type.replaceAll("8", "");
-		type = type.replaceAll("9", "");
-		type = type.replaceAll("0", "");
-		type = type.toLowerCase();
-		return type;
-	}
 	
-	private static String join(String[] list, String joinString) {
-	   if (list == null || list.length == 0) {
-		   return "";
-	   }
-	   
-	   StringBuilder sb = new StringBuilder();	   
-	   boolean first = true;
-	   for (String item : list) {
-	      if (first) {
-	         first = false;
-	      }
-	      else {
-	         sb.append(joinString);
-	      }
-	      sb.append(item);
-	   }
-	   
-	   return sb.toString();
-	}	
-	
-	private static String createMesType(String IDocType){
-		IDocType = IDocType.replaceAll("1", "");
-		IDocType = IDocType.replaceAll("2", "");
-		IDocType = IDocType.replaceAll("3", "");
-		IDocType = IDocType.replaceAll("4", "");
-		IDocType = IDocType.replaceAll("5", "");
-		IDocType = IDocType.replaceAll("6", "");
-		IDocType = IDocType.replaceAll("7", "");
-		IDocType = IDocType.replaceAll("8", "");
-		IDocType = IDocType.replaceAll("9", "");
-		IDocType = IDocType.replaceAll("0", "");
-		return IDocType;
-	}
 		
-	
-	private static boolean isrfc(IData doc){
-		boolean isrfc = false;
-		if ( doc != null)
-		{
-			IDataCursor docCursor = doc.getCursor();
-			if (IDataUtil.getString( docCursor, "$rfcname" )!=null){
-				isrfc = true;
-			}
-			docCursor.destroy();
-		}
-		return isrfc;
-	}
-			
+		
 	// --- <<IS-END-SHARED>> ---
 }
 
