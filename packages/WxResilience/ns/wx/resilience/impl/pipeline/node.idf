@@ -171,7 +171,4 @@ CgkNCgkNCg==</value>
     <value>com.wm.lang.xml.Node</value>
     <value>com.softwareag.util.IDataMap</value>
   </array>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
-  </array>
 </Values>

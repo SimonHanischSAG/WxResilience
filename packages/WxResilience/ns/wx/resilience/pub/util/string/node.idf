@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Values version="2.0">
-  <value name="shared">LyoqCiAqIFVzZWQgYnkgIm11bHRpQ29uY2F0IgogKiAKICovCnByaXZhdGUgc3RhdGljIFN0cmlu
-ZyBjaGVja051bGwoU3RyaW5nIGlucHV0U3RyaW5nKQp7CiAgaWYgKGlucHV0U3RyaW5nID09IG51
-bGwpCiAgICByZXR1cm4gIiI7CiAgZWxzZQogICAgcmV0dXJuIGlucHV0U3RyaW5nOwp9CgoKCQoJ
-</value>
+  <value name="shared">LyoqDQogKiBVc2VkIGJ5ICJtdWx0aUNvbmNhdCINCiAqIA0KICovDQpwcml2YXRlIHN0YXRpYyBT
+dHJpbmcgY2hlY2tOdWxsKFN0cmluZyBpbnB1dFN0cmluZykNCnsNCiAgaWYgKGlucHV0U3RyaW5n
+ID09IG51bGwpDQogICAgcmV0dXJuICIiOw0KICBlbHNlDQogICAgcmV0dXJuIGlucHV0U3RyaW5n
+Ow0KfQ0KDQoNCgkNCgkNCg==</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
     <value>com.softwareag.util.IDataMap</value>
@@ -32,8 +32,5 @@ bGwpCiAgICByZXR1cm4gIiI7CiAgZWxzZQogICAgcmV0dXJuIGlucHV0U3RyaW5nOwp9CgoKCQoJ
     <value>java.nio.charset.UnsupportedCharsetException</value>
     <value>java.util.Collections</value>
     <value>java.util.HashMap</value>
-  </array>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
   </array>
 </Values>
