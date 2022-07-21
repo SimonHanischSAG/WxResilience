@@ -33,6 +33,9 @@ public final class wrapper
 	{
 		// --- <<IS-START(addPrefixAndSuffix)>> ---
 		// @sigtype java 3.5
+		// [i] recref:0:required metaData wx.resilience.doc:metaData
+		// [i] field:0:required message
+		// [o] field:0:required message
 		addPrefixAndSuffixImpl(new IDataMap(pipeline));
 		// --- <<IS-END>> ---
 
