@@ -16,7 +16,7 @@
 				</jmsConnectionFactory>
 
                 <topic>
-                    <name>status</name>
+                    <name>StatusTopic</name>
                     <useJMSEngine>true</useJMSEngine>
                     <storageProperties>
                         <autoMaintanence>true</autoMaintanence>
