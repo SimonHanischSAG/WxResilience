@@ -75,6 +75,7 @@ public final class status
 		cursor.destroy();
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -91,7 +92,7 @@ public final class status
 	 * should be kept.
 	 * @param size A DocumentSize-Object to calculate the size of the document.
 	 * @return Whether the value should be kept or not. The caller is responsible for removing the value.
-	 * @throws schwarz.common.icl.utils.document.applyWhitelist_SVC.DocumentSize.DocumentSizeTooBigException 
+	 * @throws wx.resilience.impl.status.applyWhitelist_SVC.DocumentSize.DocumentSizeTooBigException 
 	 */
 	private static boolean applyWhitelist(String key, Object value, List<Class<?>> whitelist, DocumentSize size)
 			throws DocumentSize.TooBigException {
@@ -285,6 +286,7 @@ public final class status
 	}
 	
 	
+		
 	// --- <<IS-END-SHARED>> ---
 }
 

@@ -4,7 +4,7 @@
   <record name="record" javaclass="com.wm.util.Values">
     <value name="node_type">record</value>
     <value name="node_nsName">wx.resilience.doc.error.ws:errorResponse</value>
-    <value name="node_pkg">SchwarzIclBase</value>
+    <value name="node_pkg">WxResilience</value>
     <value name="node_comment"></value>
     <value name="is_public">false</value>
     <value name="field_type">record</value>
