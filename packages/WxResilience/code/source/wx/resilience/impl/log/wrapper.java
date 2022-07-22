@@ -3,6 +3,7 @@ package wx.resilience.impl.log;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
+import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
@@ -55,14 +56,15 @@ public final class wrapper
 		// Add suffixes and prefixes:
 		addPrefixAndSuffixImpl(pipeMap);
 		
-		try{
+		JournalLogger.log(4, JournalLogger.FAC_FLOW_SVC, JournalLogger.getISLevel(pipeMap.getAsString("level")), pipeMap.getAsString("function"), pipeMap.getAsString("message"));
+		/*try{
 			Service.doInvoke( "pub.flow", "debugLog", pipeline );
 		} catch(ISRuntimeException anISRuntimeException) {
 			throw anISRuntimeException;		} catch(ServiceException aServiceException) {
 			throw aServiceException;
 		} catch( Exception anException){
 			throw new ServiceException(anException);
-		} 
+		} */
 			
 			
 		// --- <<IS-END>> ---

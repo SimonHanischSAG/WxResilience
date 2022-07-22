@@ -3,6 +3,7 @@ package wx.resilience.pub.util;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
+import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
@@ -104,7 +105,7 @@ public final class pipeline
 			Object object = iDataMap.get(key);
 			
 			/*if (object instanceof MapMessage) {
-				log(object.getClass().getCanonicalName());
+				debugLogInfo(object.getClass().getCanonicalName());
 				MapMessage mapMessage = (MapMessage) object;
 				try {
 					Enumeration names = mapMessage.getMapNames();
@@ -320,18 +321,15 @@ public final class pipeline
 		return (Node) node;
 	}
 	
-	public static void log(String message) {
-		// input
-		IData input = IDataFactory.create();
-		IDataCursor inputCursor = input.getCursor();
-		IDataUtil.put(inputCursor, "message", message);
-		inputCursor.destroy();
+	private static final String LOG_FUNCTION = "WxResilience";
+	private static void debugLogError(String message) {
+	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.ERROR, LOG_FUNCTION, message);
+	}
 	
-		try {
-			Service.doInvoke("pub.flow", "debugLog", input);
-		} catch (Exception e) {
-		}
-	}	
+	private static void debugLogInfo(String message) {
+	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, LOG_FUNCTION, message);
+	}
+	
 		
 		
 		

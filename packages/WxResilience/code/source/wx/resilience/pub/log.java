@@ -3,6 +3,7 @@ package wx.resilience.pub;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
+import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
@@ -63,7 +64,7 @@ public final class log
 			for (String loggingService : loggingServices) {
 				NSName nsName = NSName.create(loggingService);
 				try {
-					//log("invoke: " + nsName.toString());
+					//debugLogInfo("invoke: " + nsName.toString());
 					IData strippedPipelineCloned = IDataUtil.deepClone(strippedPipeline);
 					Service.doInvoke(nsName, strippedPipelineCloned);
 				} catch(Exception e) {}
@@ -150,18 +151,14 @@ public final class log
 		}
 	}
 		
-	public static void log(String message) {
-		// input
-		IData input = IDataFactory.create();
-		IDataCursor inputCursor = input.getCursor();
-		IDataUtil.put(inputCursor, "message", message);
-		inputCursor.destroy();
+	private static final String LOG_FUNCTION = "WxResilience";
+	private static void debugLogError(String message) {
+	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.ERROR, LOG_FUNCTION, message);
+	}
 	
-		try {
-			Service.doInvoke("pub.flow", "debugLog", input);
-		} catch (Exception e) {
-		}
-	}	
+	private static void debugLogInfo(String message) {
+	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, LOG_FUNCTION, message);
+	}
 	
 	
 	private static final String ADR_DELIM = "_";
