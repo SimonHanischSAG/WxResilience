@@ -3,7 +3,6 @@ package wx.resilience.impl.log;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
-import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;

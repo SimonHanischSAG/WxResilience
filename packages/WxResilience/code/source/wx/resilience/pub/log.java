@@ -3,7 +3,6 @@ package wx.resilience.pub;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
-import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
@@ -64,7 +63,7 @@ public final class log
 			for (String loggingService : loggingServices) {
 				NSName nsName = NSName.create(loggingService);
 				try {
-					//debugLogInfo("invoke: " + nsName.toString());
+					//log("invoke: " + nsName.toString());
 					IData strippedPipelineCloned = IDataUtil.deepClone(strippedPipeline);
 					Service.doInvoke(nsName, strippedPipelineCloned);
 				} catch(Exception e) {}

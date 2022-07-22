@@ -3,7 +3,6 @@ package wx.resilience.impl;
 // -----( IS Java Code Template v1.2
 
 import com.wm.data.*;
-import com.wm.util.JournalLogger;
 import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
@@ -397,7 +396,7 @@ public final class pipeline
 	private static void debugLogInfo(String message) {
 	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, LOG_FUNCTION, message);
 	}
-
+	
 		
 		
 		
