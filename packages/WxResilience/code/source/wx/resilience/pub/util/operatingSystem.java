@@ -8,8 +8,6 @@ import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
 import java.net.InetAddress;
-import com.wm.app.b2b.server.ListenerAdmin;
-import com.wm.app.b2b.server.ServerListenerIf;
 // --- <<IS-END-IMPORTS>> ---
 
 public final class operatingSystem
@@ -33,7 +31,7 @@ public final class operatingSystem
 	{
 		// --- <<IS-START(getHostname)>> ---
 		// @sigtype java 3.5
-		// [o] field:0:required hostname
+		// [o] field:0:required result
 		String hostname = null;
 		// pipeline
 		
@@ -46,8 +44,6 @@ public final class operatingSystem
 		IDataCursor pipelineCursor = pipeline.getCursor();
 		IDataUtil.put(pipelineCursor, "result", hostname);
 		pipelineCursor.destroy();
-		
-			
 		// --- <<IS-END>> ---
 
                 
