@@ -29,9 +29,10 @@ ZXRBc1N0cmluZygia2V5Iik7DQoJCQkJU3RyaW5nIHZhbHVlID0gcHJvcGVydHlNYXAuZ2V0QXNT
 dHJpbmcoInZhbHVlIik7DQoJCQkJYnVpbGRlci5hcHBlbmQoInwiKS5hcHBlbmQoa2V5KS5hcHBl
 bmQoIjoiKS5hcHBlbmQodmFsdWUpOw0KCQkJfQkNCgkJCWJ1aWxkZXIuYXBwZW5kKCJ8Iik7DQoJ
 CX0NCgkJDQoJCXBpcGVNYXAucHV0KCJtZXNzYWdlIiwgYnVpbGRlci50b1N0cmluZygpKTsNCgl9
-DQp9DQoNCg0KCQ0KCQ0KCQ0KCQ0KCQ0K</value>
+DQp9DQoNCg0KCQ0KCQ0KCQ0KCQ0KCQ0KCQ0K</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
+    <value>com.wm.util.JournalLogger</value>
     <value>com.softwareag.is.log.Log</value>
     <value>com.softwareag.util.IDataMap</value>
     <value>com.wm.app.b2b.server.ISRuntimeException</value>

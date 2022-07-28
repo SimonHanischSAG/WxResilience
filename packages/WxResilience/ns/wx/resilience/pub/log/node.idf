@@ -39,9 +39,10 @@ dXJuYWxMb2dnZXIuRkFDX0ZMT1dfU1ZDLCBKb3VybmFsTG9nZ2VyLklORk8sIExPR19GVU5DVElP
 TiwgbWVzc2FnZSk7DQp9DQoNCg0KcHJpdmF0ZSBzdGF0aWMgZmluYWwgU3RyaW5nIEFEUl9ERUxJ
 TSA9ICJfIjsNCnByaXZhdGUgc3RhdGljIGZpbmFsIFN0cmluZyBCSV9ERUxJTSA9ICJ8IjsNCnBy
 aXZhdGUgc3RhdGljIGZpbmFsIFN0cmluZyBLRVlfREVMSU0gPSAiOiI7DQoJDQoJDQoJDQoJDQoJ
-DQo=</value>
+DQoJDQo=</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
+    <value>com.wm.util.JournalLogger</value>
     <value>com.wm.lang.ns.NSName</value>
     <value>com.softwareag.util.IDataMap</value>
     <value>com.wm.app.b2b.server.ISRuntimeException</value>

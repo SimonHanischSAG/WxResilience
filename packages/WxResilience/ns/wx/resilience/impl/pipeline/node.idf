@@ -143,9 +143,10 @@ dXJuYWxMb2dnZXIuRkFDX0ZMT1dfU1ZDLCBKb3VybmFsTG9nZ2VyLkVSUk9SLCBMT0dfRlVOQ1RJ
 T04sIG1lc3NhZ2UpOw0KfQ0KDQpwcml2YXRlIHN0YXRpYyB2b2lkIGRlYnVnTG9nSW5mbyhTdHJp
 bmcgbWVzc2FnZSkgew0KICAgIEpvdXJuYWxMb2dnZXIubG9nKDQsICBKb3VybmFsTG9nZ2VyLkZB
 Q19GTE9XX1NWQywgSm91cm5hbExvZ2dlci5JTkZPLCBMT0dfRlVOQ1RJT04sIG1lc3NhZ2UpOw0K
-fQ0KDQoJDQoJDQoJDQo=</value>
+fQ0KDQoJDQoJDQoJDQoJDQo=</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
+    <value>com.wm.util.JournalLogger</value>
     <value>com.wm.util.coder.IDataXMLCoder</value>
     <value>com.wm.app.b2b.server.InvokeState</value>
     <value>java.io.BufferedOutputStream</value>

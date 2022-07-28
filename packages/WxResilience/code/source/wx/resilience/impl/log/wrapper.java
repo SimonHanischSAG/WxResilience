@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.JournalLogger;
 import com.softwareag.is.log.Log;
 import com.softwareag.util.IDataMap;
 import com.wm.app.b2b.server.ISRuntimeException;
@@ -64,6 +65,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} */
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -207,6 +209,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

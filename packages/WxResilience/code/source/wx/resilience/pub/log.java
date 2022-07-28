@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.JournalLogger;
 import com.wm.lang.ns.NSName;
 import com.softwareag.util.IDataMap;
 import com.wm.app.b2b.server.ISRuntimeException;
@@ -69,6 +70,7 @@ public final class log
 				} catch(Exception e) {}
 			}
 		}
+			
 			
 			
 			
@@ -163,6 +165,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 		

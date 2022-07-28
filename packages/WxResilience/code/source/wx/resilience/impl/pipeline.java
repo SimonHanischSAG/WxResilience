@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.JournalLogger;
 import com.wm.util.coder.IDataXMLCoder;
 import com.wm.app.b2b.server.InvokeState;
 import java.io.BufferedOutputStream;
@@ -104,6 +105,7 @@ public final class pipeline
 		sb.append(".xml");
 		IDataUtil.put(crsr, "pipelineFileName", sb.toString());
 		
+			
 			
 			
 		// --- <<IS-END>> ---
@@ -397,6 +399,7 @@ public final class pipeline
 	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, LOG_FUNCTION, message);
 	}
 	
+		
 		
 		
 		
