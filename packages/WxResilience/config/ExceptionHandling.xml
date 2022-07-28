@@ -118,5 +118,33 @@
 			    </location>
 			</location>
 		</location>
+		<location name="config">
+			<location name="pub">	 
+				<location name="getValue">	 
+					<!-- WxConfig -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="did not return any value. Check if key is defined or encrypted value set" maxRetryAttempts="1" exceptionHandlingId="WxResilience.wxconfig.001">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+					<!-- WxConfigLight -->
+					<exception callerType="JMS"  type="all" errorToBeThrown="FATAL" errorMessageContains="does not exist" maxRetryAttempts="1" exceptionHandlingId="WxResilience.wxconfig.002">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+				</location>
+				<location name="getValueList">	 
+					<!-- WxConfig -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="did not return any value. Check if key is defined or encrypted value set" maxRetryAttempts="1" exceptionHandlingId="IWxResilience.wxconfig.003">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+					<!-- WxConfigLight -->
+					<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="does not exist" maxRetryAttempts="1" exceptionHandlingId="IWxResilience.wxconfig.004">
+						<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+					</exception>
+				</location>
+			</location>
+		</location>
 	</location>
 </exceptionHandling>
