@@ -186,7 +186,7 @@ WxResilience will catch this error, write a proper logging and do not rethrow an
 
 <h3>Status messages</h3>
 
-You can configure under wxconfig-<env>.cnf:
+You can configure under wxconfig-&lt;env&gt;.cnf:
 status.publishStatusError.enabled=true
 
 Furthermore you have to setup a topic "StatusTopic" under DEFAULT_IS_JMS_CONNECTION.
