@@ -49,6 +49,7 @@ public final class invokeChainProcessor
 		}
 		
 		 		
+			
 		// --- <<IS-END>> ---
 
                 
@@ -91,11 +92,7 @@ public final class invokeChainProcessor
 			baseServiceName = baseService.getNSName().getFullName();
 			
 			boolean executeWxResilienceServices = false;
-			if (!baseServiceName.startsWith("wx.resilience.") &&
-					!"wm.server.web:DocCacheClear".equals(baseServiceName) &&
-					!"wm.server.flowdebugger:start".equals(baseServiceName) &&
-					!"wm.server.flowdebugger:execute".equals(baseServiceName) &&
-					!"wm.server.ns:nodeExists".equals(baseServiceName)) {
+			if (!baseServiceName.startsWith("wx.resilience.") && !baseServiceName.startsWith("wm.")) {
 				if (isTop) {
 					executeWxResilienceServices = true;
 				}
@@ -191,6 +188,7 @@ public final class invokeChainProcessor
 		JournalLogger.log(4, JournalLogger.FAC_FLOW_SVC, JournalLogger.ERROR, "WxResilienceProcessor", message);
 	}
 	
+		
 		
 	// --- <<IS-END-SHARED>> ---
 }

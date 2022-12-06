@@ -569,7 +569,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -644,7 +644,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -654,7 +654,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:metaData" TO="/wxMetaData;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData" TO="/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
 <MAPDELETE FIELD="/ifcname;1;0">
@@ -710,7 +710,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>

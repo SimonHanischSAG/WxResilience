@@ -44,7 +44,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -217,7 +217,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -338,7 +338,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -462,7 +462,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -647,7 +647,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -832,7 +832,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1014,7 +1014,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1222,7 +1222,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1438,7 +1438,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1595,7 +1595,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1730,7 +1730,7 @@
 </MAP>
 </MAPINVOKE>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData/uuid;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/id;1;0">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData/uuid;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/id;1;0">
 </MAPCOPY>
 
 <MAPCOPY FROM="/errorMessage;1;0" TO="/errors;4;1;pub.rest.jsonapi:errorTemplate/title;1;0">
@@ -1801,7 +1801,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1985,7 +1985,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -2069,7 +2069,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -2333,7 +2333,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -2453,7 +2453,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
@@ -2575,7 +2575,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -2653,7 +2653,7 @@
 <MAPDELETE FIELD="/genericErrorMessage;1;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:metaData">
+<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 </MAP>
 </SEQUENCE>

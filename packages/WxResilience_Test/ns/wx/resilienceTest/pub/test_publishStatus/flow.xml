@@ -10,7 +10,7 @@
 
   <!-- nodes -->
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.metaData:initializeMetaData" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.metaData:initializeWxMetaData" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT>initialize metaData using that service or map from input (e.g. message from trigger)</COMMENT>
 
   <!-- nodes -->

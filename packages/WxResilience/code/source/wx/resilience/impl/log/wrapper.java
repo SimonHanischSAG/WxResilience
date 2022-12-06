@@ -34,7 +34,7 @@ public final class wrapper
 	{
 		// --- <<IS-START(addPrefixAndSuffix)>> ---
 		// @sigtype java 3.5
-		// [i] recref:0:required metaData wx.resilience.doc:metaData
+		// [i] recref:0:required wxMetaData wx.resilience.doc:wxMetaData
 		// [i] field:0:required message
 		// [o] field:0:required message
 		addPrefixAndSuffixImpl(new IDataMap(pipeline));
@@ -65,6 +65,7 @@ public final class wrapper
 		} catch( Exception anException){
 			throw new ServiceException(anException);
 		} */
+			
 			
 			
 			
@@ -173,23 +174,26 @@ public final class wrapper
 	
 	private static void addPrefixAndSuffixImpl(IDataMap pipeMap) {
 		
-		IData metaData = pipeMap.getAsIData("metaData");
+		IData metaData = pipeMap.getAsIData("wxMetaData");
 		if (metaData != null) {
 			// prefix:
 			StringBuilder builder = new StringBuilder();
+			builder.append(pipeMap.getAsString("message"));
+	
 			IDataMap metaDataMap = new IDataMap(metaData);
 	
-			String uuid = metaDataMap.getAsString("uuid");
+			String contextID = metaDataMap.getAsString("contextID");
+			String correlationID = metaDataMap.getAsString("correlationID");
 			String type = metaDataMap.getAsString("type");
 			String source = metaDataMap.getAsString("source");
 			String destination = metaDataMap.getAsString("destination");
 			
-			builder.append("source:").append(source);
+			builder.append("|source:").append(source);
 			builder.append("|destination:").append(destination);
 			builder.append("|type:").append(type);
-			builder.append("|uuid:").append(uuid).append("| ");
+			builder.append("|correlationID:").append(correlationID);
+			builder.append("|contextID:").append(contextID).append("|");
 			
-			builder.append(pipeMap.getAsString("message"));
 	
 			// suffix:
 			IData[] customProperties = metaDataMap.getAsIDataArray("customProperties");
@@ -209,6 +213,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

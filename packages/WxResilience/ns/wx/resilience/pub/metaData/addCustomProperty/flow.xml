@@ -38,7 +38,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -96,7 +96,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -137,7 +137,7 @@
 <MAPCOPY FROM="/customProperty;4;0;wx.resilience.doc:customProperties" TO="/fromItem;2;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData/customProperties;4;1;wx.resilience.doc:customProperties" TO="/toList;2;1">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties" TO="/toList;2;1">
 </MAPCOPY>
 </MAP>
 
@@ -145,7 +145,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/toList;2;1" TO="/metaData;4;0;wx.resilience.doc:metaData/customProperties;4;1;wx.resilience.doc:customProperties">
+<MAPCOPY FROM="/toList;2;1" TO="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>

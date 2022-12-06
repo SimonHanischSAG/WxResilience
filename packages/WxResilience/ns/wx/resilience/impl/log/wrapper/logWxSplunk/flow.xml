@@ -454,7 +454,7 @@
                 <value name="form_qualified">false</value>
                 <value name="is_global">false</value>
                 <value name="modifiable">true</value>
-                <value name="rec_ref">wx.resilience.doc:metaData</value>
+                <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
               </record>
             </array>
             <value name="rec_closed">true</value>
@@ -809,7 +809,7 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/metaData;2;0" TO="/splunkEvent;2;0/event;2;0/metaData;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/metaData;2;0" TO="/splunkEvent;2;0/event;2;0/metaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
 <MAPCOPY FROM="/levelInput;1;0" TO="/splunkEvent;2;0/event;2;0/level;1;0">
@@ -1194,7 +1194,7 @@
 <MAPDELETE FIELD="/splunkEvent;2;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData(0);4;0;wx.resilience.doc:metaData">
+<MAPDELETE FIELD="/metaData(0);4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/level;1;0">

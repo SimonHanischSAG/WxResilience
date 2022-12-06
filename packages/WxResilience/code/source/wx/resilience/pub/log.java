@@ -75,6 +75,7 @@ public final class log
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -107,7 +108,7 @@ public final class log
 			"message", 
 			"function", 
 			"level", 
-			"metaData"
+			"wxMetaData"
 		};
 	
 	private static void initLogging() throws ServiceException {
@@ -165,6 +166,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 		

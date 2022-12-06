@@ -50,7 +50,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -59,7 +59,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -136,6 +136,26 @@
         </record>
         <value name="is_public">false</value>
         <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -183,7 +203,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -192,7 +212,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -269,6 +289,26 @@
         </record>
         <value name="is_public">false</value>
         <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -359,7 +399,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -368,7 +408,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -445,6 +485,26 @@
         </record>
         <value name="is_public">false</value>
         <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -732,7 +792,7 @@ Generic message:           "%genericErrorMessage%"</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -741,7 +801,7 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -818,6 +878,26 @@ Generic message:           "%genericErrorMessage%"</value>
         </record>
         <value name="is_public">false</value>
         <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -951,7 +1031,7 @@ Generic message:           "%genericErrorMessage%"</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -960,7 +1040,7 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -1059,6 +1139,26 @@ Generic message:           "%genericErrorMessage%"</value>
         </record>
         <value name="is_public">false</value>
         <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -1204,7 +1304,7 @@ Generic message:           "%genericErrorMessage%"</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -1213,162 +1313,7 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">false</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
-        <value name="is_public">false</value>
-        <value name="field_name">printBusinessObject</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="field_opt">true</value>
-        <array name="field_options" type="value" depth="1">
-          <value>true</value>
-          <value>false</value>
-        </array>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
-        <value name="is_public">false</value>
-        <value name="field_name">businessObject</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="field_opt">true</value>
-        <value name="wrapper_type">IData</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="rec_closed">true</value>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
-        <value name="is_public">false</value>
-        <value name="field_name">handledErrorInfo</value>
-        <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <value name="rec_closed">true</value>
-        <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc.error:handledError</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
-        <value name="is_public">false</value>
-        <value name="field_name">genericErrorMessage</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="field_opt">true</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-    </array>
-    <value name="modifiable">true</value>
-  </record>
-</Values>
-</MAPSOURCE>
-
-  <!-- nodes -->
-
-<MAPCOPY FROM="/businessObject;2;0" TO="/document;2;0">
-</MAPCOPY>
-</MAP>
-
-<MAP MODE="OUTPUT">
-  <MAPTARGET>
-
-<Values version="2.0">
-  <record name="xml" javaclass="com.wm.util.Values">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <value name="nillable">true</value>
-    <value name="form_qualified">false</value>
-    <value name="is_global">false</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">document</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">genericErrorMessageForOutput</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
-        <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
-        <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <value name="rec_closed">true</value>
-        <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1457,10 +1402,194 @@ Generic message:           "%genericErrorMessage%"</value>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
         <value name="is_public">false</value>
-        <value name="field_name">jsonString</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/businessObject;2;0" TO="/document;2;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">document</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">genericErrorMessageForOutput</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">wxMetaData</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">printBusinessObject</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">businessObject</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">handledErrorInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledError</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -1470,6 +1599,17 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
         <value name="field_name">businessObjectString</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">jsonString</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1560,7 +1700,7 @@ Generic message:           "%genericErrorMessage%"</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -1569,7 +1709,7 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1666,6 +1806,26 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
       </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -1704,7 +1864,7 @@ Generic message:           "%genericErrorMessage%"</value>
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -1713,7 +1873,7 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -1811,6 +1971,26 @@ Generic message:           "%genericErrorMessage%"</value>
         <value name="is_global">false</value>
       </record>
       <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
@@ -1895,7 +2075,7 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -1904,7 +2084,7 @@ Failed business object (as JSON):
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2001,6 +2181,26 @@ Failed business object (as JSON):
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
       </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -2092,7 +2292,7 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -2101,7 +2301,7 @@ Failed business object (as JSON):
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2205,6 +2405,26 @@ Failed business object (as JSON):
         <value name="field_name">callStackAsString</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2345,7 +2565,7 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -2354,7 +2574,7 @@ Failed business object (as JSON):
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2458,6 +2678,26 @@ Failed business object (as JSON):
         <value name="field_name">callStackAsString</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2574,7 +2814,7 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -2583,7 +2823,7 @@ Failed business object (as JSON):
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2687,6 +2927,26 @@ Failed business object (as JSON):
         <value name="field_name">callStackAsString</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2767,7 +3027,7 @@ Failed business object (as JSON):
 </INVOKE>
 </LOOP>
 
-<INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.log:logError" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+<INVOKE TIMEOUT="" SERVICE="wx.resilience.pub.log:log" VALIDATE-IN="$none" VALIDATE-OUT="$none">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -2817,6 +3077,26 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
+        <value name="field_name">function</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
         <value name="field_name">level</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
@@ -2843,7 +3123,7 @@ Failed business object (as JSON):
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -2874,135 +3154,6 @@ Failed business object (as JSON):
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-    </array>
-    <value name="modifiable">true</value>
-  </record>
-</Values>
-</MAPSOURCE>
-
-  <!-- nodes -->
-
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/level;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">Error</value>
-  <record name="type" javaclass="com.wm.util.Values">
-    <value name="node_type">field</value>
-    <value name="node_subtype">unknown</value>
-    <value name="node_comment"></value>
-    <record name="node_hints" javaclass="com.wm.util.Values">
-      <value name="field_usereditable">true</value>
-      <value name="field_largerEditor">false</value>
-      <value name="field_password">false</value>
-    </record>
-    <value name="is_public">false</value>
-    <value name="field_name">level</value>
-    <value name="field_type">string</value>
-    <value name="field_dim">0</value>
-    <value name="field_opt">true</value>
-    <array name="field_options" type="value" depth="1">
-      <value>Fatal</value>
-      <value>Error</value>
-      <value>Warn</value>
-      <value>Info</value>
-      <value>Debug</value>
-      <value>Trace</value>
-      <value>Off</value>
-    </array>
-    <value name="nillable">true</value>
-    <value name="form_qualified">false</value>
-    <value name="is_global">false</value>
-  </record>
-</Values>
-</DATA>
-</MAPSET>
-
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/message;1;0">
-  <DATA ENCODING="XMLValues" I18N="true">
-
-<Values version="2.0">
-  <value name="xml">Error occurred for uuid %metaData/uuid% and type %metaData/type%:
-
-Message:                   "%handledErrorInfo/errorMessage%"%genericErrorMessageForOutput%
-Type:                      "%handledErrorInfo/errorType%"
-
-Caller type:               %handledErrorInfo/callerType%
-
-Location:
-Top service error:         "%handledErrorInfo/topServiceError/errorLocation%", FlowStep: "%handledErrorInfo/topServiceError/errorFlowStep%"
-Handled service error:     "%handledErrorInfo/handledServiceError/errorLocation%", FlowStep: "%handledErrorInfo/handledServiceError/errorFlowStep%"
-Application service error: "%handledErrorInfo/applicationServiceError/errorLocation%", FlowStep: "%handledErrorInfo/applicationServiceError/errorFlowStep%"
-Root service error:        "%handledErrorInfo/rootServiceError/errorLocation%", FlowStep: "%handledErrorInfo/rootServiceError/errorFlowStep%"
-
-Exception handling ID:     %handledErrorInfo/errorCode%
-Retry count:               %handledErrorInfo/retryCount%
-Max retry attempts:        %handledErrorInfo/maxRetryAttempts%
-Exception to be thrown:    %handledErrorInfo/errorToBeThrown%
-
-Full call stack:
-%callStackAsString%%businessObjectAsString%</value>
-  <record name="type" javaclass="com.wm.util.Values">
-    <value name="node_type">field</value>
-    <value name="node_subtype">unknown</value>
-    <value name="node_comment"></value>
-    <record name="node_hints" javaclass="com.wm.util.Values">
-      <value name="field_usereditable">true</value>
-      <value name="field_largerEditor">false</value>
-      <value name="field_password">false</value>
-    </record>
-    <value name="is_public">false</value>
-    <value name="field_name">message</value>
-    <value name="field_type">string</value>
-    <value name="field_dim">0</value>
-    <value name="field_opt">true</value>
-    <array name="field_options" type="value" depth="1">
-    </array>
-    <value name="nillable">true</value>
-    <value name="form_qualified">false</value>
-    <value name="is_global">false</value>
-  </record>
-</Values>
-</DATA>
-</MAPSET>
-</MAP>
-
-<MAP MODE="OUTPUT">
-  <MAPTARGET>
-
-<Values version="2.0">
-  <record name="xml" javaclass="com.wm.util.Values">
-    <value name="node_type">record</value>
-    <value name="node_subtype">unknown</value>
-    <value name="is_public">false</value>
-    <value name="field_type">record</value>
-    <value name="field_dim">0</value>
-    <value name="nillable">true</value>
-    <value name="form_qualified">false</value>
-    <value name="is_global">false</value>
-    <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">message</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">level</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
@@ -3023,7 +3174,7 @@ Full call stack:
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -3032,7 +3183,7 @@ Full call stack:
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -3143,6 +3294,339 @@ Full call stack:
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">outputStringList</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/level;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Error</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">field</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">true</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="is_public">false</value>
+    <value name="field_name">level</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>Fatal</value>
+      <value>Error</value>
+      <value>Warn</value>
+      <value>Info</value>
+      <value>Debug</value>
+      <value>Trace</value>
+      <value>Off</value>
+    </array>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="true" GLOBALVARIABLES="false" FIELD="/message;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Error occurred:
+
+Message:                   "%handledErrorInfo/errorMessage%"%genericErrorMessageForOutput%
+Type:                      "%handledErrorInfo/errorType%"
+
+Caller type:               %handledErrorInfo/callerType%
+
+Location:
+Top service error:         "%handledErrorInfo/topServiceError/errorLocation%", FlowStep: "%handledErrorInfo/topServiceError/errorFlowStep%"
+Handled service error:     "%handledErrorInfo/handledServiceError/errorLocation%", FlowStep: "%handledErrorInfo/handledServiceError/errorFlowStep%"
+Application service error: "%handledErrorInfo/applicationServiceError/errorLocation%", FlowStep: "%handledErrorInfo/applicationServiceError/errorFlowStep%"
+Root service error:        "%handledErrorInfo/rootServiceError/errorLocation%", FlowStep: "%handledErrorInfo/rootServiceError/errorFlowStep%"
+
+Exception handling ID:     %handledErrorInfo/errorCode%
+Retry count:               %handledErrorInfo/retryCount%
+Max retry attempts:        %handledErrorInfo/maxRetryAttempts%
+Exception to be thrown:    %handledErrorInfo/errorToBeThrown%
+
+Full call stack:
+%callStackAsString%%businessObjectAsString%
+</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">field</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">true</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="is_public">false</value>
+    <value name="field_name">message</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+    </array>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPCOPY FROM="/@WxResilience.logging.function@;1;0" TO="/function;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">message</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">function</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">level</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">genericErrorMessageForOutput</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">wxMetaData</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">printBusinessObject</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">businessObject</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">handledErrorInfo</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilience.doc.error:handledError</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">genericErrorMessage</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">businessObjectAsString</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">callStackAsString</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">@WxResilience.logging.function@</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">field</value>
+        <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
         <value name="field_name">outputStringList</value>
         <value name="field_type">string</value>
@@ -3192,6 +3676,9 @@ Full call stack:
 </MAPDELETE>
 
 <MAPDELETE FIELD="/callStackAsString;1;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/function;1;0">
 </MAPDELETE>
 </MAP>
 </INVOKE>

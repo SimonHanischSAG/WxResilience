@@ -678,7 +678,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
@@ -738,7 +738,7 @@
 <MAPDELETE FIELD="/metaData;2;0">
 </MAPDELETE>
 
-<MAPCOPY FROM="/clonedObject;3;0" TO="/metaDataCloned;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/clonedObject;3;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 </MAP>
 </INVOKE>
@@ -922,7 +922,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1081,7 +1081,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1091,7 +1091,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:metaData/source;1;0" TO="/source;1;0">
+<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0" TO="/source;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -1260,7 +1260,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1430,7 +1430,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1440,7 +1440,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:metaData/destination;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:metaData/source;1;0">
+<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -1598,7 +1598,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1768,7 +1768,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -1778,7 +1778,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/source;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:metaData/destination;1;0">
+<MAPCOPY FROM="/source;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0">
 </MAPCOPY>
 
 <MAPDELETE FIELD="/source;1;0">
@@ -1825,7 +1825,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2004,7 +2004,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2042,10 +2042,10 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:metaData" TO="/metaData;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/metaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:metaData/type;1;0" TO="/customProperty;4;0;wx.resilience.doc:customProperties/value;1;0">
+<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0" TO="/customProperty;4;0;wx.resilience.doc:customProperties/value;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -2074,7 +2074,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2228,7 +2228,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2267,7 +2267,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2280,10 +2280,10 @@
 <MAPDELETE FIELD="/customProperty;4;0;wx.resilience.doc:customProperties">
 </MAPDELETE>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData" TO="/metaDataCloned;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
-<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:metaData">
+<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 </MAP>
 </INVOKE>
@@ -2348,7 +2348,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2507,7 +2507,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -2591,12 +2591,12 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/UUID;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:metaData/uuid;1;0">
+<MAPCOPY FROM="/UUID;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/uuid;1;0">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>
 
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/metaDataCloned;4;0;wx.resilience.doc:metaData/type;1;0">
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
@@ -2711,7 +2711,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -3334,7 +3334,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -3437,7 +3437,7 @@
 <MAPCOPY FROM="/statusDestination;2;0/destinationType;1;0" TO="/destinationType;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:metaData" TO="/JMSMessage;2;0/body;2;0/data;2;0/metaData;2;0">
+<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/JMSMessage;2;0/body;2;0/data;2;0/metaData;2;0">
 </MAPCOPY>
 </MAP>
 
@@ -3602,7 +3602,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -3794,7 +3794,7 @@
 
   <!-- nodes -->
 
-<MAPDELETE FIELD="/metaDataCloned;4;0;wx.resilience.doc:metaData">
+<MAPDELETE FIELD="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 
 <MAPDELETE FIELD="/status;4;0;wx.resilience.doc:status">

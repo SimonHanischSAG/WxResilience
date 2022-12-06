@@ -68,7 +68,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -206,7 +206,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -274,7 +274,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">unknown</value>
@@ -295,7 +295,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:metaData/customProperties;4;0;wx.resilience.doc:customProperties/value;1;0" TO="/value;1;0">
+<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;0;wx.resilience.doc:customProperties/value;1;0" TO="/value;1;0">
 </MAPCOPY>
 
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/exists;1;0">
@@ -422,7 +422,7 @@
         <value name="is_global">false</value>
         <value name="rec_closed">true</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>

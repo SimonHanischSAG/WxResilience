@@ -108,9 +108,7 @@ public final class errorHandling
 		// --- <<IS-START(getCallingService)>> ---
 		// @sigtype java 3.5
 		// [i] field:0:optional level
-		// [o] record:0:required document
-		// [o] field:0:required attributeName
-		// [o] object:0:optional attributeValue
+		// [o] field:0:required callingServiceName
 		IDataCursor cursor = pipeline.getCursor();
 		String level = IDataUtil.getString(cursor, "level");
 		int lev; 
@@ -120,13 +118,18 @@ public final class errorHandling
 		catch (Exception e) {
 			lev = 2;
 		}
-		NSService currentSvc = Service.getServiceEntry();
-		Stack<?> callStack = InvokeState.getCurrentState().getCallStack();
-		int index = callStack.indexOf(currentSvc);
-		if (index > 1 && lev <= index) {
-			IDataUtil.put(cursor, "callingServiceName", ((NSService) callStack.elementAt(index - lev)).toString());
+		if (lev == 2) {
+			IDataUtil.put(cursor, "callingServiceName", Service.getParentServiceName());
+		} else {
+			NSService currentSvc = Service.getServiceEntry();
+			Stack<?> callStack = InvokeState.getCurrentState().getCallStack();
+			int index = callStack.indexOf(currentSvc);
+			if (index > 1 && lev <= index) {
+				IDataUtil.put(cursor, "callingServiceName", ((NSService) callStack.elementAt(index - lev)).toString());
+			}
 		}
 		cursor.destroy();
+			
 		// --- <<IS-END>> ---
 
                 
@@ -173,6 +176,7 @@ public final class errorHandling
 		// [i] recref:0:required exceptionInfo pub.event:exceptionInfo
 		// [i] field:0:optional genericErrorMessage
 		// [i] record:0:optional businessObject
+		// [i] field:0:optional @WxResilience.logging.function@
 		// [o] field:0:required errorToBeThrown
 		// [o] field:0:optional errorCode
 		logDebug("handleErrorSvc: -->");
@@ -472,6 +476,13 @@ public final class errorHandling
 						GENERIC_ERROR_MESSAGE_ID, IDataUtil.getString(
 								pipelineCursor,
 								GENERIC_ERROR_MESSAGE_ID));
+				
+				String function = IDataUtil.getString(pipelineCursor, LOGGING_FUNCTION);		
+				if (function != null) {
+					IDataUtil.put(serviceInputCursor, EHD_ATTRIBUTE_FUNCTION, function);
+				}
+		
+		
 					
 				// execute all handling
 				logDebug("handleErrorSvc: Ready to invoke error handlers");
@@ -526,6 +537,7 @@ public final class errorHandling
 		
 		pipelineCursor.destroy();
 		logDebug("handleErrorSvc: <--");
+			
 			
 			
 			
@@ -747,7 +759,6 @@ public final class errorHandling
 		
 		private static HashMap<String, String> createGenericValueMap(ExceptionHandlingInfo handling, boolean breakRetryLoop) {
 			HashMap<String, String> genericValueMap = new HashMap<String, String>();
-	
 			// evaluate errorToBeThrown:
 			String errorToBeThrown = handling.getErrorToBeThrown();
 			
@@ -1387,6 +1398,7 @@ public final class errorHandling
 		private static final String EHD_ATTRIBUTE_HANDLING= "handling";
 		private static final String EHD_ATTRIBUTE_MAX_RETRY_ATTEMPTS = "maxRetryAttempts";
 		private static final String EHD_ATTRIBUTE_RETRY_COUNT = "retryCount";
+		private static final String EHD_ATTRIBUTE_FUNCTION = "@WxResilience.logging.function@";
 		private static final String EHD_PRINT_BUSINESS_OBJECT_ID = "printBusinessObject";
 	
 		// *******************************************************************
@@ -1446,7 +1458,8 @@ public final class errorHandling
 		// *******************************************************************
 		// --------------------EXCEPTION HANDLING DEFINITION------------------
 		// *******************************************************************
-		private static final String METADATA_ID = "metaData";
+		private static final String METADATA_ID = "wxMetaData";
+		private static final String LOGGING_FUNCTION = "@WxResilience.logging.function@";
 		private static final String UID_ID = "uuid";
 	
 		// *******************************************************************
@@ -1484,6 +1497,7 @@ public final class errorHandling
 		private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
 	
 	
+		
 		
 		
 		

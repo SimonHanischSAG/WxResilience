@@ -284,7 +284,7 @@
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:metaData</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
       </record>
     </array>
     <value name="modifiable">true</value>
@@ -345,7 +345,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/metaData;2;0" TO="/metaData;4;0;wx.resilience.doc:metaData">
+<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/metaData;2;0" TO="/metaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 </MAP>
 </FLOW>
