@@ -80,7 +80,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -187,7 +187,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -231,7 +231,6 @@
     <value name="field_name">getCallingServiceInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -239,19 +238,11 @@
       <record javaclass="com.wm.util.Values">
         <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
         <value name="is_public">false</value>
         <value name="field_name">level</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -447,7 +438,7 @@
                 <value name="node_type">record</value>
                 <value name="node_subtype">unknown</value>
                 <value name="is_public">false</value>
-                <value name="field_name">metaData</value>
+                <value name="field_name">wxMetaData</value>
                 <value name="field_type">recref</value>
                 <value name="field_dim">0</value>
                 <value name="nillable">true</value>
@@ -594,7 +585,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -632,29 +623,9 @@
               <value name="field_password">false</value>
             </record>
             <value name="is_public">false</value>
-            <value name="field_name">uuid</value>
+            <value name="field_name">correlationID</value>
             <value name="field_type">string</value>
             <value name="field_dim">0</value>
-            <array name="field_options" type="value" depth="1">
-            </array>
-            <value name="nillable">true</value>
-            <value name="form_qualified">false</value>
-            <value name="is_global">false</value>
-          </record>
-          <record javaclass="com.wm.util.Values">
-            <value name="node_type">record</value>
-            <value name="node_subtype">unknown</value>
-            <value name="node_comment"></value>
-            <record name="node_hints" javaclass="com.wm.util.Values">
-              <value name="field_usereditable">true</value>
-              <value name="field_largerEditor">false</value>
-              <value name="field_password">false</value>
-            </record>
-            <value name="is_public">false</value>
-            <value name="field_name">correlationUuid</value>
-            <value name="field_type">string</value>
-            <value name="field_dim">0</value>
-            <value name="field_opt">true</value>
             <array name="field_options" type="value" depth="1">
             </array>
             <value name="nillable">true</value>
@@ -746,20 +717,12 @@
         <value name="modifiable">true</value>
       </record>
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
         <value name="is_public">false</value>
         <value name="field_name">callingServiceName</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -809,10 +772,10 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/metaData;2;0" TO="/splunkEvent;2;0/event;2;0/metaData;4;0;wx.resilience.doc:wxMetaData">
+<MAPCOPY FROM="/levelInput;1;0" TO="/splunkEvent;2;0/event;2;0/level;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/levelInput;1;0" TO="/splunkEvent;2;0/event;2;0/level;1;0">
+<MAPCOPY FROM="/wxMetaData;2;0" TO="/splunkEvent;2;0/event;2;0/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 </MAP>
 </INVOKE>
@@ -832,20 +795,6 @@
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
     <array name="rec_fields" type="record" depth="1">
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
     </array>
     <value name="modifiable">true</value>
   </record>
@@ -999,7 +948,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="field_opt">true</value>
@@ -1037,29 +986,9 @@
               <value name="field_password">false</value>
             </record>
             <value name="is_public">false</value>
-            <value name="field_name">uuid</value>
+            <value name="field_name">correlationID</value>
             <value name="field_type">string</value>
             <value name="field_dim">0</value>
-            <array name="field_options" type="value" depth="1">
-            </array>
-            <value name="nillable">true</value>
-            <value name="form_qualified">false</value>
-            <value name="is_global">false</value>
-          </record>
-          <record javaclass="com.wm.util.Values">
-            <value name="node_type">record</value>
-            <value name="node_subtype">unknown</value>
-            <value name="node_comment"></value>
-            <record name="node_hints" javaclass="com.wm.util.Values">
-              <value name="field_usereditable">true</value>
-              <value name="field_largerEditor">false</value>
-              <value name="field_password">false</value>
-            </record>
-            <value name="is_public">false</value>
-            <value name="field_name">correlationUuid</value>
-            <value name="field_type">string</value>
-            <value name="field_dim">0</value>
-            <value name="field_opt">true</value>
             <array name="field_options" type="value" depth="1">
             </array>
             <value name="nillable">true</value>
@@ -1151,34 +1080,12 @@
         <value name="modifiable">true</value>
       </record>
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
         <value name="is_public">false</value>
         <value name="field_name">callingServiceName</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -1194,9 +1101,6 @@
 <MAPDELETE FIELD="/splunkEvent;2;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData(0);4;0;wx.resilience.doc:wxMetaData">
-</MAPDELETE>
-
 <MAPDELETE FIELD="/level;1;0">
 </MAPDELETE>
 
@@ -1209,10 +1113,10 @@
 <MAPDELETE FIELD="/levelInput;1;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData(1);2;0">
+<MAPDELETE FIELD="/callingServiceName;1;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/callingServiceName;1;0">
+<MAPDELETE FIELD="/wxMetaData;2;0">
 </MAPDELETE>
 </MAP>
 </FLOW>

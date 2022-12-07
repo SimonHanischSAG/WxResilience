@@ -59,7 +59,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -117,7 +117,7 @@
 </MAPSET>
 </MAP>
 
-<LOOP TIMEOUT="" IN-ARRAY="/metaData/customProperties">
+<LOOP TIMEOUT="" IN-ARRAY="/wxMetaData/customProperties">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -127,7 +127,7 @@
 
   <!-- nodes -->
 
-<SEQUENCE NAME="%metaData/customProperties/key% == %key%" TIMEOUT="" EXIT-ON="FAILURE">
+<SEQUENCE NAME="%wxMetaData/customProperties/key% == %key%" TIMEOUT="" EXIT-ON="FAILURE">
   <COMMENT></COMMENT>
 
   <!-- nodes -->
@@ -197,7 +197,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -265,7 +265,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -295,9 +295,6 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;0;wx.resilience.doc:customProperties/value;1;0" TO="/value;1;0">
-</MAPCOPY>
-
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/exists;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
@@ -317,6 +314,9 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;0;wx.resilience.doc:customProperties/value;1;0" TO="/value;1;0">
+</MAPCOPY>
 </MAP>
 
 <EXIT SIGNAL="SUCCESS" FAILURE-MESSAGE="">
@@ -413,7 +413,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>

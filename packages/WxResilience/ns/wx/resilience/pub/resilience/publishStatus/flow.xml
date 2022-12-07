@@ -63,7 +63,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -100,29 +100,9 @@
               <value name="field_password">false</value>
             </record>
             <value name="is_public">false</value>
-            <value name="field_name">uuid</value>
+            <value name="field_name">correlationID</value>
             <value name="field_type">string</value>
             <value name="field_dim">0</value>
-            <array name="field_options" type="value" depth="1">
-            </array>
-            <value name="nillable">true</value>
-            <value name="form_qualified">false</value>
-            <value name="is_global">false</value>
-          </record>
-          <record javaclass="com.wm.util.Values">
-            <value name="node_type">record</value>
-            <value name="node_subtype">unknown</value>
-            <value name="node_comment"></value>
-            <record name="node_hints" javaclass="com.wm.util.Values">
-              <value name="field_usereditable">true</value>
-              <value name="field_largerEditor">false</value>
-              <value name="field_password">false</value>
-            </record>
-            <value name="is_public">false</value>
-            <value name="field_name">correlationUuid</value>
-            <value name="field_type">string</value>
-            <value name="field_dim">0</value>
-            <value name="field_opt">true</value>
             <array name="field_options" type="value" depth="1">
             </array>
             <value name="nillable">true</value>
@@ -350,7 +330,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaData;2;0" TO="/originalObject;3;0">
+<MAPCOPY FROM="/wxMetaData;2;0" TO="/originalObject;3;0">
 </MAPCOPY>
 </MAP>
 
@@ -388,7 +368,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -425,29 +405,9 @@
               <value name="field_password">false</value>
             </record>
             <value name="is_public">false</value>
-            <value name="field_name">uuid</value>
+            <value name="field_name">correlationID</value>
             <value name="field_type">string</value>
             <value name="field_dim">0</value>
-            <array name="field_options" type="value" depth="1">
-            </array>
-            <value name="nillable">true</value>
-            <value name="form_qualified">false</value>
-            <value name="is_global">false</value>
-          </record>
-          <record javaclass="com.wm.util.Values">
-            <value name="node_type">record</value>
-            <value name="node_subtype">unknown</value>
-            <value name="node_comment"></value>
-            <record name="node_hints" javaclass="com.wm.util.Values">
-              <value name="field_usereditable">true</value>
-              <value name="field_largerEditor">false</value>
-              <value name="field_password">false</value>
-            </record>
-            <value name="is_public">false</value>
-            <value name="field_name">correlationUuid</value>
-            <value name="field_type">string</value>
-            <value name="field_dim">0</value>
-            <value name="field_opt">true</value>
             <array name="field_options" type="value" depth="1">
             </array>
             <value name="nillable">true</value>
@@ -671,7 +631,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -735,11 +695,11 @@
 <MAPDELETE FIELD="/originalObject;3;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData;2;0">
-</MAPDELETE>
-
-<MAPCOPY FROM="/clonedObject;3;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData">
+<MAPCOPY FROM="/clonedObject;3;0" TO="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
+
+<MAPDELETE FIELD="/wxMetaData;2;0">
+</MAPDELETE>
 </MAP>
 </INVOKE>
 
@@ -915,7 +875,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1074,7 +1034,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1091,7 +1051,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0" TO="/source;1;0">
+<MAPCOPY FROM="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0" TO="/source;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -1253,7 +1213,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1423,7 +1383,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1440,7 +1400,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0">
+<MAPCOPY FROM="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0" TO="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/source;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -1591,7 +1551,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1761,7 +1721,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -1777,12 +1737,12 @@
 </MAPSOURCE>
 
   <!-- nodes -->
-
-<MAPCOPY FROM="/source;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0">
-</MAPCOPY>
 
 <MAPDELETE FIELD="/source;1;0">
 </MAPDELETE>
+
+<MAPCOPY FROM="/source;1;0" TO="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/destination;1;0">
+</MAPCOPY>
 </MAP>
 </SEQUENCE>
 </BRANCH>
@@ -1816,7 +1776,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -1997,7 +1957,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2042,10 +2002,10 @@
 </DATA>
 </MAPSET>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/metaData;4;0;wx.resilience.doc:wxMetaData">
+<MAPCOPY FROM="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0" TO="/customProperty;4;0;wx.resilience.doc:customProperties/value;1;0">
+<MAPCOPY FROM="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0" TO="/customProperty;4;0;wx.resilience.doc:customProperties/value;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -2067,7 +2027,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2088,6 +2048,20 @@
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
         <value name="rec_ref">wx.resilience.doc:customProperties</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">wxMetaData</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
       </record>
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
@@ -2221,7 +2195,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2258,7 +2232,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -2280,10 +2254,13 @@
 <MAPDELETE FIELD="/customProperty;4;0;wx.resilience.doc:customProperties">
 </MAPDELETE>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData" TO="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 
-<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:wxMetaData">
+<MAPDELETE FIELD="/wxMetaData(1);2;0">
+</MAPDELETE>
+
+<MAPDELETE FIELD="/wxMetaData(0);4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 </MAP>
 </INVOKE>
@@ -2341,7 +2318,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2500,7 +2477,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2580,23 +2557,22 @@
 <MAPCOPY FROM="/type;1;0" TO="/status;4;0;wx.resilience.doc:status/type;1;0">
 </MAPCOPY>
 
-<MAPINVOKE SERVICE="pub.utils:generateUUID" VALIDATE-IN="$none" VALIDATE-OUT="$none" INVOKE-ORDER="0">
+<MAPDELETE FIELD="/businessObject;2;0">
+</MAPDELETE>
 
-  <!-- nodes -->
+<MAPDELETE FIELD="/handledErrorInfo;4;0;wx.resilience.doc.error:handledError">
+</MAPDELETE>
 
-<MAP MODE="INVOKEINPUT">
-</MAP>
+<MAPDELETE FIELD="/type;1;0">
+</MAPDELETE>
 
-<MAP MODE="INVOKEOUTPUT">
+<MAPDELETE FIELD="/message;1;0">
+</MAPDELETE>
 
-  <!-- nodes -->
+<MAPDELETE FIELD="/code;1;0">
+</MAPDELETE>
 
-<MAPCOPY FROM="/UUID;1;0" TO="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/uuid;1;0">
-</MAPCOPY>
-</MAP>
-</MAPINVOKE>
-
-<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0">
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData/type;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
 <Values version="2.0">
@@ -2623,21 +2599,6 @@
 </Values>
 </DATA>
 </MAPSET>
-
-<MAPDELETE FIELD="/businessObject;2;0">
-</MAPDELETE>
-
-<MAPDELETE FIELD="/handledErrorInfo;4;0;wx.resilience.doc.error:handledError">
-</MAPDELETE>
-
-<MAPDELETE FIELD="/type;1;0">
-</MAPDELETE>
-
-<MAPDELETE FIELD="/message;1;0">
-</MAPDELETE>
-
-<MAPDELETE FIELD="/code;1;0">
-</MAPDELETE>
 </MAP>
 
 <INVOKE TIMEOUT="" SERVICE="wx.resilience.impl.status:getStatusDestination" VALIDATE-IN="$none" VALIDATE-OUT="$none">
@@ -2704,7 +2665,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -2972,7 +2933,7 @@
                       <value name="field_password">false</value>
                     </record>
                     <value name="is_public">false</value>
-                    <value name="field_name">metaData</value>
+                    <value name="field_name">wxMetaData</value>
                     <value name="field_type">record</value>
                     <value name="field_dim">0</value>
                     <value name="wrapper_type">IData</value>
@@ -3009,29 +2970,9 @@
                           <value name="field_password">false</value>
                         </record>
                         <value name="is_public">false</value>
-                        <value name="field_name">uuid</value>
+                        <value name="field_name">correlationID</value>
                         <value name="field_type">string</value>
                         <value name="field_dim">0</value>
-                        <array name="field_options" type="value" depth="1">
-                        </array>
-                        <value name="nillable">true</value>
-                        <value name="form_qualified">false</value>
-                        <value name="is_global">false</value>
-                      </record>
-                      <record javaclass="com.wm.util.Values">
-                        <value name="node_type">record</value>
-                        <value name="node_subtype">unknown</value>
-                        <value name="node_comment"></value>
-                        <record name="node_hints" javaclass="com.wm.util.Values">
-                          <value name="field_usereditable">true</value>
-                          <value name="field_largerEditor">false</value>
-                          <value name="field_password">false</value>
-                        </record>
-                        <value name="is_public">false</value>
-                        <value name="field_name">correlationUuid</value>
-                        <value name="field_type">string</value>
-                        <value name="field_dim">0</value>
-                        <value name="field_opt">true</value>
                         <array name="field_options" type="value" depth="1">
                         </array>
                         <value name="nillable">true</value>
@@ -3327,7 +3268,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaDataCloned</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -3437,7 +3378,7 @@
 <MAPCOPY FROM="/statusDestination;2;0/destinationType;1;0" TO="/destinationType;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/JMSMessage;2;0/body;2;0/data;2;0/metaData;2;0">
+<MAPCOPY FROM="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData" TO="/JMSMessage;2;0/body;2;0/data;2;0/wxMetaData;2;0">
 </MAPCOPY>
 </MAP>
 
@@ -3596,6 +3537,19 @@
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
         <value name="field_name">metaDataCloned</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">wxMetaDataCloned</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>

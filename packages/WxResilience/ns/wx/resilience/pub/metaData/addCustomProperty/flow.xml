@@ -29,7 +29,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -87,7 +87,7 @@
           <value name="field_password">false</value>
         </record>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="wrapper_type">IData</value>
@@ -137,7 +137,7 @@
 <MAPCOPY FROM="/customProperty;4;0;wx.resilience.doc:customProperties" TO="/fromItem;2;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties" TO="/toList;2;1">
+<MAPCOPY FROM="/wxMetaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties" TO="/toList;2;1">
 </MAPCOPY>
 </MAP>
 
@@ -145,7 +145,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/toList;2;1" TO="/metaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties">
+<MAPCOPY FROM="/toList;2;1" TO="/wxMetaData;4;0;wx.resilience.doc:wxMetaData/customProperties;4;1;wx.resilience.doc:customProperties">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>

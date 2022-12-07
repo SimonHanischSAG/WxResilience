@@ -569,7 +569,7 @@ Generic message:           "%genericErrorMessage%"</value>
 
   <!-- nodes -->
 
-<SEQUENCE NAME="%printBusinessObject% == &#39;true&#39; &amp;&amp; %businessObject% != $null &amp;&amp; %metaData/confidential% != &#39;true&#39;" TIMEOUT="" EXIT-ON="FAILURE">
+<SEQUENCE NAME="%printBusinessObject% == &#39;true&#39; &amp;&amp; %businessObject% != $null &amp;&amp; %wxMetaData/confidential% != &#39;true&#39;" TIMEOUT="" EXIT-ON="FAILURE">
   <COMMENT></COMMENT>
 
   <!-- nodes -->

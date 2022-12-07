@@ -166,7 +166,6 @@
     <value name="field_name">getCallingServiceOutput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -3878,19 +3877,6 @@
       <record javaclass="com.wm.util.Values">
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
-        <value name="field_type">recref</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <value name="modifiable">true</value>
-        <value name="rec_ref">wx.resilience.doc:wxMetaData</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
         <value name="node_comment"></value>
         <record name="node_hints" javaclass="com.wm.util.Values">
           <value name="field_largerEditor">false</value>
@@ -3954,10 +3940,10 @@
 <MAPDELETE FIELD="/lastError;4;0;pub.event:exceptionInfo">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/metaData;4;0;wx.resilience.doc:wxMetaData">
+<MAPDELETE FIELD="/@WxResilience.logging.function@;1;0">
 </MAPDELETE>
 
-<MAPDELETE FIELD="/@WxResilience.logging.function@;1;0">
+<MAPDELETE FIELD="/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPDELETE>
 </MAP>
 </FLOW>
