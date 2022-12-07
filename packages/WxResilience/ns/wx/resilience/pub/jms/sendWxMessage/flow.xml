@@ -562,7 +562,7 @@
                       <value name="field_password">false</value>
                     </record>
                     <value name="is_public">false</value>
-                    <value name="field_name">metaData</value>
+                    <value name="field_name">wxMetaData</value>
                     <value name="field_type">record</value>
                     <value name="field_dim">0</value>
                     <value name="wrapper_type">IData</value>
@@ -599,29 +599,9 @@
                           <value name="field_password">false</value>
                         </record>
                         <value name="is_public">false</value>
-                        <value name="field_name">uuid</value>
+                        <value name="field_name">correlationID</value>
                         <value name="field_type">string</value>
                         <value name="field_dim">0</value>
-                        <array name="field_options" type="value" depth="1">
-                        </array>
-                        <value name="nillable">true</value>
-                        <value name="form_qualified">false</value>
-                        <value name="is_global">false</value>
-                      </record>
-                      <record javaclass="com.wm.util.Values">
-                        <value name="node_type">record</value>
-                        <value name="node_subtype">unknown</value>
-                        <value name="node_comment"></value>
-                        <record name="node_hints" javaclass="com.wm.util.Values">
-                          <value name="field_usereditable">true</value>
-                          <value name="field_largerEditor">false</value>
-                          <value name="field_password">false</value>
-                        </record>
-                        <value name="is_public">false</value>
-                        <value name="field_name">correlationUuid</value>
-                        <value name="field_type">string</value>
-                        <value name="field_dim">0</value>
-                        <value name="field_opt">true</value>
                         <array name="field_options" type="value" depth="1">
                         </array>
                         <value name="nillable">true</value>
@@ -1078,7 +1058,7 @@
                       <value name="field_password">false</value>
                     </record>
                     <value name="is_public">false</value>
-                    <value name="field_name">metaData</value>
+                    <value name="field_name">wxMetaData</value>
                     <value name="field_type">record</value>
                     <value name="field_dim">0</value>
                     <value name="wrapper_type">IData</value>
@@ -1115,29 +1095,9 @@
                           <value name="field_password">false</value>
                         </record>
                         <value name="is_public">false</value>
-                        <value name="field_name">uuid</value>
+                        <value name="field_name">correlationID</value>
                         <value name="field_type">string</value>
                         <value name="field_dim">0</value>
-                        <array name="field_options" type="value" depth="1">
-                        </array>
-                        <value name="nillable">true</value>
-                        <value name="form_qualified">false</value>
-                        <value name="is_global">false</value>
-                      </record>
-                      <record javaclass="com.wm.util.Values">
-                        <value name="node_type">record</value>
-                        <value name="node_subtype">unknown</value>
-                        <value name="node_comment"></value>
-                        <record name="node_hints" javaclass="com.wm.util.Values">
-                          <value name="field_usereditable">true</value>
-                          <value name="field_largerEditor">false</value>
-                          <value name="field_password">false</value>
-                        </record>
-                        <value name="is_public">false</value>
-                        <value name="field_name">correlationUuid</value>
-                        <value name="field_type">string</value>
-                        <value name="field_dim">0</value>
-                        <value name="field_opt">true</value>
                         <array name="field_options" type="value" depth="1">
                         </array>
                         <value name="nillable">true</value>
@@ -1435,9 +1395,6 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/JMSMessage;2;0/body;2;0/data;2;0/metaData;2;0/tracingHops;2;1" TO="/tracingHops;4;1;wx.resilience.doc:tracingHop">
-</MAPCOPY>
-
 <MAPCOPY FROM="/connectionAliasName;1;0" TO="/connectionAliasName;1;0">
 </MAPCOPY>
 
@@ -1446,13 +1403,16 @@
 
 <MAPCOPY FROM="/destinationType;1;0" TO="/destinationType;1;0">
 </MAPCOPY>
+
+<MAPCOPY FROM="/JMSMessage;2;0/body;2;0/data;2;0/wxMetaData;2;0/tracingHops;2;1" TO="/tracingHops;4;1;wx.resilience.doc:tracingHop">
+</MAPCOPY>
 </MAP>
 
 <MAP MODE="INVOKEOUTPUT">
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/tracingHops;4;1;wx.resilience.doc:tracingHop" TO="/JMSMessage;2;0/body;2;0/data;2;0/metaData;2;0/tracingHops;2;1">
+<MAPCOPY FROM="/tracingHops;4;1;wx.resilience.doc:tracingHop" TO="/JMSMessage;2;0/body;2;0/data;2;0/wxMetaData;2;0/tracingHops;2;1">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>
@@ -1474,7 +1434,6 @@
     <value name="field_name">sendInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -1541,7 +1500,6 @@
         <value name="field_name">JMSMessage</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -1945,7 +1903,6 @@
     <value name="field_name">sendOutput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>

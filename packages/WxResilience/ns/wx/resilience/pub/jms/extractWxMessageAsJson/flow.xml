@@ -277,7 +277,7 @@
         <value name="node_type">record</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">metaData</value>
+        <value name="field_name">wxMetaData</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -345,7 +345,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/metaData;2;0" TO="/metaData;4;0;wx.resilience.doc:wxMetaData">
+<MAPCOPY FROM="/wxMessage;4;0;wx.resilience.doc:wxMessage/wxMetaData;2;0" TO="/wxMetaData;4;0;wx.resilience.doc:wxMetaData">
 </MAPCOPY>
 </MAP>
 </FLOW>
