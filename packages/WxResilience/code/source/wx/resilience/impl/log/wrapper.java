@@ -109,6 +109,7 @@ public final class wrapper
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -182,7 +183,6 @@ public final class wrapper
 	
 			IDataMap metaDataMap = new IDataMap(metaData);
 	
-			String contextID = metaDataMap.getAsString("contextID");
 			String correlationID = metaDataMap.getAsString("correlationID");
 			String type = metaDataMap.getAsString("type");
 			String source = metaDataMap.getAsString("source");
@@ -191,8 +191,7 @@ public final class wrapper
 			builder.append("|source:").append(source);
 			builder.append("|destination:").append(destination);
 			builder.append("|type:").append(type);
-			builder.append("|correlationID:").append(correlationID);
-			builder.append("|contextID:").append(contextID).append("|");
+			builder.append("|correlationID:").append(correlationID).append("|");
 			
 	
 			// suffix:
@@ -213,6 +212,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		
