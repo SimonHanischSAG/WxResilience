@@ -110,6 +110,7 @@ public final class wrapper
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -188,8 +189,12 @@ public final class wrapper
 			String source = metaDataMap.getAsString("source");
 			String destination = metaDataMap.getAsString("destination");
 			
-			builder.append("|source:").append(source);
-			builder.append("|destination:").append(destination);
+			if (source != null) {
+				builder.append("|source:").append(source);
+			}
+			if (destination != null) {
+				builder.append("|destination:").append(destination);
+			}
 			builder.append("|type:").append(type);
 			builder.append("|correlationID:").append(correlationID).append("|");
 			
@@ -212,6 +217,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

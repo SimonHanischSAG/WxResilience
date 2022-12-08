@@ -7,7 +7,9 @@
   <record name="startup_services" javaclass="com.wm.util.Values">
     <null name="wx.resilience.admin:startup"/>
   </record>
-  <null name="shutdown_services"/>
+  <record name="shutdown_services" javaclass="com.wm.util.Values">
+    <null name="wx.resilience.admin:shutdown"/>
+  </record>
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WxConfig">*.*</value>

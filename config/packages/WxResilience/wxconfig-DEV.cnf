@@ -13,6 +13,19 @@ logging.service.env=wx.resilience.impl.log.wrapper:logWxSplunk
 
 
 ################################################################################
+# metaData conversion
+################################################################################
+metaData.conversion.service.ifcname=wx.resilienceDemoInvokeChain.pub
+metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
+
+
+################################################################################
+# WxResilience in InvokeChain instead of implementing in top-level-service
+################################################################################
+invokeChainProcessor.enabled=false
+
+
+################################################################################
 # Access to UM
 ################################################################################
 um.admin.hosts=nsp://localhost:9000
