@@ -87,26 +87,17 @@ Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
 
 <h2>How to build resilient services</h2>
 
-To see the suggestion how to build a resilient service take a look on:
+There are two ways to use WxResilience in your top level services:
+1. Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true. It will run the predefined services (see below) outside of your top-level-service.
+2. Implement try-catch-blocks in your top level services using the predefined services directly (see below).
 
-WxResilience_Test/wx.resilienceTest.pub:genericTopLevelService
+The first option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all systems and can be deactivated or configured. The second option provides you more control for which services and how it will work. But it requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilience_Test/wx.resilienceTest.pub:genericTopLevelService
 
-It contains 4 important helper services which you should use like this in every top level service:
+It is possible to mix both options as there is a check not to run the services twice for one top-level-service call. 
 
-<h3>wx.resilience.pub.metaData:initializeMetaData</h3>
+<h3>Predefined services for start / end logging and exception handling</h3>
 
-This service generates the so-called "metaData". These metaData will be reused for logging (also for errors) and can also help you to establish generic standards in your implementation. These are the fields:
-
-<ul>
-  <li>creationTimestamp: When the metaData were generated</li>
-  <li>uuid: Identifies the related data/message</li>
-  <li>correlationUuid: [optional] Identifies a correlated data/message (e.g. a related previous message)</li>
-  <li>type: Defines the type of the data, e.g. order, masterDataUpdate, ...</li>
-  <li>source: Where the handled data comes from</li>
-  <li>destination: [optional] Where should the handled data go</li>
-  <li>confidential: [optional] Is the data confidential -> data will not be written/sent somewhere else</li>
-  <li>customProperties: [optional] Put your own key/value pairs for identifying your business message in logging or implementing generic handlings  based on these properties</li>
-</ul>
+There are the following 3 helper services which are executed automatically in option 1 or which you should use in every top level service in option 2:
 
 <h3>wx.resilience.pub.resilience:preProcessForTopLevelService</h3>
 
@@ -124,6 +115,32 @@ Finally the service will set the standardized outputs "errors" respectively "err
 
 Measuring the duration, final logging and rethrowing an error if necessary (based on output of handleError).
 
+<h3>Additional service for better logging</h3>
+
+For better logging you should give the predefined service some generic insights into your data (some meta-data). The suggestion is to use the predefined wxMetaData for this. If you have already such a document lying on your pipeline you can provide WxResilience a service how it can convert your metaData into wxMetaData during runtime:
+
+<h3>wx.resilience.pub.metaData:initializeWxMetaData</h3>
+
+This service generates the so-called "wxMetaData". These wxMetaData will be reused for logging (also for errors) and can also help you to establish generic standards in your implementation if you forward wxMetaData as part of a so-called wxMessage to the next step. These are the fields:
+
+<ul>
+  <li>creationTimestamp: When the metaData were generated</li>
+  <li>correlationId: Identifies a correlated data/message. Will be set automatically from **JMSMessageID** (JMS) or **X-Correlation-ID** (HTTP) if available. Otherwise it is generated</li>
+  <li>type: Defines the type of the data, e.g. order, masterDataUpdate, ...</li>
+  <li>source: Where the handled data comes from</li>
+  <li>destination: [optional] Where should the handled data go</li>
+  <li>confidential: [optional] Is the data confidential -> data will not be written/sent somewhere else</li>
+  <li>customProperties: [optional] Put your own key/value pairs for identifying your business message in logging or implementing generic handlings  based on these properties</li>
+</ul>
+
+<h3>metaData.conversion</h3>
+
+Provide a service with output wxMetaData and configure it like this:
+<pre><code>
+metaData.conversion.service.ifcname=wx.resilienceDemoInvokeChain.pub
+metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
+</code></pre>
+WxResilience will then use that service an map your metaData on demand to wxMetaData like you have implemented this.
 
 <h2>Special features of error handling</h2>
 
