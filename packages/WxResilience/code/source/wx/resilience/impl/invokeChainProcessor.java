@@ -58,9 +58,11 @@ public final class invokeChainProcessor
 	{
 		// --- <<IS-START(registerWxResilience)>> ---
 		// @sigtype java 3.5
+		// [i] field:1:required invokeChain.blacklist
 		if (processor == null) {
 			InvokeManager invokeManager = InvokeManager.getDefault();
-			processor = new WxResilienceProcessor();
+			IDataMap pipeMap = new IDataMap(pipeline);
+			processor = new WxResilienceProcessor(pipeMap.getAsStringArray("invokeChain.blacklist"));
 			invokeManager.registerProcessor(processor);
 			logInfo("WxResilienceProcessor registered in InvokeChain");
 		} else {
@@ -102,6 +104,16 @@ public final class invokeChainProcessor
 	
 	public static class WxResilienceProcessor implements InvokeChainProcessor {
 	
+		private String[] invokeChainBlacklist;
+		
+		public WxResilienceProcessor(String[] invokeChainBlacklist) {
+			if (invokeChainBlacklist != null) {
+				this.invokeChainBlacklist = invokeChainBlacklist;
+			} else {
+				this.invokeChainBlacklist = new String[0];
+			}
+		}
+	
 		@Override
 		public void process(Iterator chain, BaseService baseService, IData pipeline, ServiceStatus status)
 				throws ServerException {
@@ -111,15 +123,15 @@ public final class invokeChainProcessor
 			boolean isTop = status.isTopService();		
 			baseServiceName = baseService.getNSName().getFullName();
 			
-			
-			
 			boolean executeWxResilienceServices = false;
-			if (!baseServiceName.startsWith("wx.resilience.") && !baseServiceName.startsWith("wm.")) {
-				if (isTop) {
-					executeWxResilienceServices = true;
+			if (isTop) {
+				for (String entry : invokeChainBlacklist) {
+					if (!baseServiceName.startsWith(entry) && !baseServiceName.startsWith("wm.")) {
+						break;
+					}
 				}
-			}
-			
+				executeWxResilienceServices = true;
+			}			
 			
 			// we have to make sure that the servcie invocation chain is not cut
 			if (chain.hasNext()) {

@@ -38,6 +38,7 @@ maxRetryAttemptsBeforeCancelRetry=20000
 # Configure an uuid temporarily in order to break an (endless) retry loop:
 #break.retry.loop.for.id=987987987
 
+
 ################################################################################
 # Status Message
 ################################################################################
@@ -51,3 +52,14 @@ status.pipeline.maxLength=2048000
 # A list of Java-Classes that should be included in the pipeline when publishing StatusMessages
 # status.pipeline.whitelist=
 # status.pipeline.whitelist=
+
+
+################################################################################
+# WxResilience in InvokeChain instead of implementing in top-level-service: 
+# Blacklist for which service it must not be executed:
+################################################################################
+invokeChain.blacklist=wm.
+invokeChain.blacklist=wx.config.
+invokeChain.blacklist=wx.resilience.
+invokeChain.blacklist=wx.interceptor.
+
