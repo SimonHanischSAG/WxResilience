@@ -14,6 +14,7 @@ import com.wm.app.b2b.server.ISRuntimeException;
 import com.wm.app.b2b.server.invoke.InvokeChainProcessor;
 import com.wm.app.b2b.server.invoke.InvokeManager;
 import com.wm.app.b2b.server.invoke.ServiceStatus;
+import java.util.Arrays;
 import java.util.Iterator;
 import com.softwareag.util.IDataMap;
 // --- <<IS-END-IMPORTS>> ---
@@ -62,9 +63,10 @@ public final class invokeChainProcessor
 		if (processor == null) {
 			InvokeManager invokeManager = InvokeManager.getDefault();
 			IDataMap pipeMap = new IDataMap(pipeline);
-			processor = new WxResilienceProcessor(pipeMap.getAsStringArray("invokeChain.blacklist"));
+			String[] blacklist = pipeMap.getAsStringArray("invokeChain.blacklist");
+			processor = new WxResilienceProcessor(blacklist);
 			invokeManager.registerProcessor(processor);
-			logInfo("WxResilienceProcessor registered in InvokeChain");
+			logInfo("WxResilienceProcessor registered in InvokeChain using blacklist: " + Arrays.toString(blacklist));
 		} else {
 			logInfo("WxResilienceProcessor already registered in InvokeChain");
 		}
@@ -125,12 +127,13 @@ public final class invokeChainProcessor
 			
 			boolean executeWxResilienceServices = false;
 			if (isTop) {
+				executeWxResilienceServices = true;
 				for (String entry : invokeChainBlacklist) {
-					if (!baseServiceName.startsWith(entry) && !baseServiceName.startsWith("wm.")) {
+					if (baseServiceName.startsWith(entry)) {
+						executeWxResilienceServices = false;
 						break;
 					}
 				}
-				executeWxResilienceServices = true;
 			}			
 			
 			// we have to make sure that the servcie invocation chain is not cut
