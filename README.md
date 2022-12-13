@@ -1,5 +1,5 @@
 <h1>WxResilience</h1>
-webMethods IntegrationServer package for implementing resilient and robust services.
+webMethods IntegrationServer package for implementing resilient and robust services using a standardized logging out-of-the-box.
 
 WxResilience is hereby the "productive" package on which you may create a package dependency. WxResilience_Test contains both tests and examples how to work with WxResilience.
 
