@@ -115,6 +115,16 @@
                             <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
                         </exception>
                     </location>
+                    <location name="sendJmsWxMessageAsJson">
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.003">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.004">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                    </location>
 			    </location>
 			</location>
 		</location>
@@ -144,6 +154,20 @@
 						<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 					</exception>
 				</location>
+			</location>
+		</location>
+	</location>
+	<location name="pub">
+		<location name="jms">
+			<location name="send">	 
+				<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.005">
+					<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+					<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+				</exception>
+				<exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.006">
+					<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+					<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+				</exception>
 			</location>
 		</location>
 	</location>

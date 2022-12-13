@@ -15,7 +15,7 @@ logging.service.env=wx.resilience.impl.log.wrapper:logWxSplunk
 ################################################################################
 # metaData conversion
 ################################################################################
-metaData.conversion.service.ifcname=wx.resilienceDemoInvokeChain.pub
+metaData.conversion.service.ifcname=wx.resilienceDemoMetaData.pub
 metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
 
 

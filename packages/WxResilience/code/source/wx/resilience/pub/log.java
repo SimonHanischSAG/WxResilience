@@ -7,8 +7,10 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.app.b2b.server.ns.Namespace;
 import com.wm.util.JournalLogger;
 import com.wm.lang.ns.NSName;
+import com.wm.lang.ns.NSService;
 import com.softwareag.util.IDataMap;
 import com.wm.app.b2b.server.ISRuntimeException;
 // --- <<IS-END-IMPORTS>> ---
@@ -61,6 +63,16 @@ public final class log
 			IData strippedPipeline = IDataFactory.create();
 			IDataMap strippedMap = new IDataMap(strippedPipeline);
 			stripPipeline(pipeMap, strippedMap);
+			
+			String function = strippedMap.getAsString("function");
+			if (function == null || function.equals("")) {
+				String serviceName = Service.getParentServiceName();
+		    	if (serviceName != null) {
+		        	NSService nsService = (NSService) Namespace.current().getNode(serviceName);
+		        	strippedMap.put("function", nsService.getPackage().getName());
+		    	}
+			}
+			
 			for (String loggingService : loggingServices) {
 				NSName nsName = NSName.create(loggingService);
 				try {
@@ -70,6 +82,7 @@ public final class log
 				} catch(Exception e) {}
 			}
 		}
+			
 			
 			
 			
@@ -166,6 +179,7 @@ public final class log
 	private static final String ADR_DELIM = "_";
 	private static final String BI_DELIM = "|";
 	private static final String KEY_DELIM = ":";
+		
 		
 		
 		
