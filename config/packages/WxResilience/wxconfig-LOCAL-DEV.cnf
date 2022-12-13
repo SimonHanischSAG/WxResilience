@@ -15,7 +15,7 @@ logging.service.env=wx.resilience.impl.log.wrapper:logDebugLog
 ################################################################################
 # metaData conversion
 ################################################################################
-metaData.conversion.service.ifcname=wxresilienceDemoMetaData.pub
+metaData.conversion.service.ifcname=wx.resilienceDemoMetaData.pub
 metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
 
 
