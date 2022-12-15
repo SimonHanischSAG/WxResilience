@@ -22,7 +22,7 @@ metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
 ################################################################################
 # WxResilience in InvokeChain instead of implementing in top-level-service
 ################################################################################
-invokeChainProcessor.enabled=true
+invokeChainProcessor.enabled=false
 
 
 ################################################################################
