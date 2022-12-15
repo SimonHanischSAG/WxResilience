@@ -1,9 +1,9 @@
 <h1>WxResilience</h1>
 webMethods IntegrationServer package for implementing resilient and robust services using a standardized logging out-of-the-box.
 
-WxResilience is hereby the "productive" package on which you may create a package dependency. WxResilience_Test contains both tests and examples how to work with WxResilience.
+WxResilience is hereby the "productive" package on which you may create a package dependency. The other packages are containing both tests and examples how to work with WxResilience.
 
-It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally together with the official packages WxLog or WxLog2.
+It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally together with packages for logging like WxLog, WxLog2 or WxSplunk.
 
 <b>MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template for this package and make it public.</b>
 
@@ -12,21 +12,24 @@ It is designed for usage together with the official packages WxConfig (or the fr
 <h3>Provide WxConfig or WxConfigLight</h3>
 compare with above
 
-<h3>Deploy/checkout WxResilience/WxResilience_Test</h3>
+<h3>Deploy/checkout WxResilience etc.</h3>
 
 Check under releases for a proper release and deploy it. Otherwise you can check out the latest version from GIT and create a link like this:
 
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience F:\\GIT-Repos\\WxResilience\\packages\\WxResilience
-mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience                F:\\GIT-Repos\\WxResilience\\packages\\WxResilience
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilience_Test           F:\\GIT-Repos\\WxResilience\\packages\\WxResilience_Test
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilienceDemoFlow        F:\\GIT-Repos\\WxResilience\\packages\\WxResilienceDemoFlow
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilienceDemoInvokeChain F:\\GIT-Repos\\WxResilience\\packages\\WxResilienceDemoInvokeChain
+mklink /J F:\\SoftwareAG\\IntegrationServer\\instances\\default\\packages\\WxResilienceDemoMetaData    F:\\GIT-Repos\\WxResilience\\packages\\WxResilienceDemoMetaData
 
 <h4>Build & Reload</h4>
 
 If you checkout the sources from GitHub you have to compile the source, e.g. with:
 
 C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience
-C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilience_Test
+C:\SoftwareAG\IntegrationServer\instances\default\bin\jcode.bat makeall WxResilienceDemoInvokeChain
 
-Reload WxResilience
+Reload WxResilience and WxResilienceDemoInvokeChain
 
 <h3>Validate</h3>
 
@@ -87,11 +90,16 @@ Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\WxResilience.log"
 
 <h2>How to build resilient services</h2>
 
-There are two ways to use WxResilience in your top level services:
-1. Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true. It will run the predefined services (see below) outside of your top-level-service.
-2. Implement try-catch-blocks in your top level services using the predefined services directly (see below).
+There are two options to use WxResilience in your top level services:
+1. Automatically from InvokeChain
+2. Per code in your top-level-services
 
-The first option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all systems and can be deactivated or configured. The second option provides you more control for which services and how it will work. But it requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilience_Test/wx.resilienceTest.pub:genericTopLevelService
+Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked.
+2. 
+
+In Detail:
+1. Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked. This option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all top-level-services and can be deactivated or configured.
+2. Implement try-catch-blocks in your top level services using the predefined services directly (see below). This option provides you more control for which services and how it will work. But this option requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilienceDemoFlow/wx.resilienceDemoFlow.pub:test_top
 
 It is possible to mix both options as there is a check not to run the services twice for one top-level-service call. 
 
