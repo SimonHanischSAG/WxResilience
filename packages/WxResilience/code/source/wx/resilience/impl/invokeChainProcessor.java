@@ -60,19 +60,25 @@ public final class invokeChainProcessor
 		// --- <<IS-START(registerWxResilience)>> ---
 		// @sigtype java 3.5
 		// [i] field:1:required invokeChain.blacklist
-		if (processor == null) {
-			InvokeManager invokeManager = InvokeManager.getDefault();
-			IDataMap pipeMap = new IDataMap(pipeline);
-			String[] blacklist = pipeMap.getAsStringArray("invokeChain.blacklist");
-			processor = new WxResilienceProcessor(blacklist);
-			invokeManager.registerProcessor(processor);
-			logInfo("WxResilienceProcessor registered in InvokeChain using blacklist: " + Arrays.toString(blacklist));
-		} else {
-			logInfo("WxResilienceProcessor already registered in InvokeChain");
-		}
+		// [o] field:0:required message
+		InvokeManager invokeManager = InvokeManager.getDefault();
+		IDataMap pipeMap = new IDataMap(pipeline);
+		String[] blacklist = pipeMap.getAsStringArray("invokeChain.blacklist");
+		WxResilienceProcessor newProcessor = new WxResilienceProcessor(blacklist);
+		String message = "";
 		
-		 		
-			
+		if (processor != null) {
+			invokeManager.unregisterProcessor(processor);			
+			invokeManager.registerProcessor(newProcessor);
+			processor = newProcessor;
+			message = "WxResilienceProcessor re-registered to InvokeChain using blacklist: " + Arrays.toString(blacklist);
+		} else {
+			invokeManager.registerProcessor(newProcessor);
+			processor = newProcessor;
+			message = "WxResilienceProcessor registered in InvokeChain using blacklist: " + Arrays.toString(blacklist);
+		}
+		logInfo(message);
+		pipeMap.put("message", message);
 			
 		// --- <<IS-END>> ---
 
@@ -86,15 +92,20 @@ public final class invokeChainProcessor
 	{
 		// --- <<IS-START(unregisterWxResilience)>> ---
 		// @sigtype java 3.5
+		String message = "";
 		if (processor != null) {
 			InvokeManager invokeManager = InvokeManager.getDefault();
 			
 			invokeManager.unregisterProcessor(processor);
-			logInfo("WxResilienceProcessor unregistered from InvokeChain");
+			message = "WxResilienceProcessor unregistered from InvokeChain";
 			processor = null;
 		} else {
-			logInfo("WxResilienceProcessor already unregistered from InvokeChain");
+			message = "WxResilienceProcessor already unregistered from InvokeChain";
 		}
+		logInfo(message);
+		IDataMap pipeMap = new IDataMap(pipeline);
+		pipeMap.put("message", message);
+			
 		// --- <<IS-END>> ---
 
                 
@@ -134,14 +145,19 @@ public final class invokeChainProcessor
 						break;
 					}
 				}
-			}			
-			
+			}		
+			//if (isTop || executeWxResilienceServices)
+				//logDebug(baseServiceName + ": " + isTop + "," + executeWxResilienceServices);
 			// we have to make sure that the servcie invocation chain is not cut
 			if (chain.hasNext()) {
 				try {
 					if (executeWxResilienceServices) {
 						try {
+							pipeMap.put("@WxResilience.started.from.InvokeChain@", "true");
+							//logDebug("pipe1: " + pipeline.getClass().hashCode());
 							executeService("wx.resilience.pub.resilience", "preProcessForTopLevelService", pipeline, baseServiceName);
+							//logDebug("pipe2: " + pipeline.getClass().hashCode());
+							//pipeMap = new IDataMap(pipeline);
 						} catch(Exception e) {
 							logError("Error in preProcessForTopLevelService: " + e);
 						}
@@ -149,11 +165,14 @@ public final class invokeChainProcessor
 	
 					//logDebug("Before original Service");
 					
+					//logDebug("pipe3: " + pipeline.getClass().hashCode());
 					((InvokeChainProcessor) chain.next()).process(chain, baseService, pipeline, status);
+					//logDebug("pipe4: " + pipeline.getClass().hashCode());
 					
 					//logDebug("After original Service");
 					
 				} catch (Exception originalException) {
+					//pipeMap = new IDataMap(pipeline);
 					if (executeWxResilienceServices) {
 						boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
 						//logDebug("wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
@@ -163,6 +182,7 @@ public final class invokeChainProcessor
 							IData lastError = null;
 							try {
 								executeService("pub.flow", "getLastError", pipeline, baseServiceName);						
+								//pipeMap = new IDataMap(pipeline);
 								
 								lastError = pipeMap.getAsIData("lastError");
 								if (lastError == null) {
@@ -196,23 +216,29 @@ public final class invokeChainProcessor
 					}
 				
 				} finally {
+					//pipeMap = new IDataMap(pipeline);
 					if (executeWxResilienceServices) {
 						boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
-						//logDebug("wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
+						//logDebug(baseServiceName + " wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
 						if (!wxResiliencePostProcessExecuted) {
+							pipeMap.put("@WxResilience.started.from.InvokeChain@", "true");
+							//logDebug("pipe5: " + pipeline.getClass().hashCode());
 							executeService("wx.resilience.pub.resilience", "postProcessForTopLevelService", pipeline, baseServiceName);
+							//logDebug("pipe6: " + pipeline.getClass().hashCode());
+							//pipeMap = new IDataMap(pipeline);
 						}
+						pipeMap.remove("@WxResilience.postProcess.executed@");
 					}
 				}
 			}
 		}
 	}
 	
-	private static void executeService(String ifc, String svc, IData pipeline, String currentServiceName) throws ServerException, ISRuntimeException {
+	private static IData executeService(String ifc, String svc, IData pipeline, String currentServiceName) throws ServerException, ISRuntimeException {
 		// Avoid endless loop in case of broken erroneous service:
 		if (!(ifc + ":" + svc).equals(currentServiceName)) {
 			try {
-				Service.doInvoke(ifc, svc, pipeline);
+				return Service.doInvoke(ifc, svc, pipeline);
 			} catch (ISRuntimeException e) {
 				throw e;
 			} catch (ServerException e) {
@@ -220,6 +246,8 @@ public final class invokeChainProcessor
 			} catch (Exception e) {
 				throw new ServiceException(e);
 			}
+		} else {
+			return pipeline;
 		}
 	}
 	

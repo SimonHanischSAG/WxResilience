@@ -1,0 +1,28 @@
+<exceptionHandling xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../WxResilience/config/ExceptionHandling.xsd">
+	<location name="wx">
+		<location name="resilienceDemoFlow">
+			<location name="impl">	 
+               <location name="subServiceWithHandleError">
+                    <exception type="all" errorToBeThrown="FATAL" errorMessageRegex=".*rr.*" exceptionHandlingId="WxResilience_Test.sub.001" printBusinessObject="true">
+                        <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                        <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                    </exception>
+                </location>
+			</location>
+			<location name="pub">	 
+                <location name="test_handleError">
+                    <exception type="all" errorToBeThrown="FATAL" exceptionHandlingId="WxResilience_Test.top.001" printBusinessObject="true">
+                        <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                        <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                    </exception>
+                </location>
+                <location name="test_handleErrorNestedService">
+                    <exception type="all" errorToBeThrown="NONE" errorMessageContains="Error" exceptionHandlingId="WxResilience_Test.top.002" printBusinessObject="true">
+                        <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                        <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                    </exception>
+                </location>
+			</location>
+		</location>
+	</location>
+</exceptionHandling>

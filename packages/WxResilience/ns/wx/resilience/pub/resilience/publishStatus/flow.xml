@@ -3768,6 +3768,9 @@
 
 <MAPDELETE FIELD="/destinationType;1;0">
 </MAPDELETE>
+
+<MAPDELETE FIELD="/wxMetaDataCloned;4;0;wx.resilience.doc:wxMetaData">
+</MAPDELETE>
 </MAP>
 </INVOKE>
 </FLOW>
