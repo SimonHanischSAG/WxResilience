@@ -148,7 +148,7 @@ Provide a service with output wxMetaData and configure it like this:
 metaData.conversion.service.ifcname=wx.resilienceDemoInvokeChain.pub
 metaData.conversion.service.svcname=mapMyMetaDataToWxMetaData
 </code></pre>
-WxResilience will then use that service an map your metaData on demand to wxMetaData like you have implemented this.
+WxResilience will then use that service an map your metaData on demand to wxMetaData depending onk how you have implemented this service. (Compare with example service  WxResilienceDemoMetaData/wx.resilienceDemoMetaData.pub:mapMyMetaDataToWxMetaData)
 
 <h2>Special features of error handling</h2>
 
