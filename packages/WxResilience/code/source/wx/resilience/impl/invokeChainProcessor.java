@@ -92,6 +92,7 @@ public final class invokeChainProcessor
 	{
 		// --- <<IS-START(unregisterWxResilience)>> ---
 		// @sigtype java 3.5
+		// [o] field:0:required message
 		String message = "";
 		if (processor != null) {
 			InvokeManager invokeManager = InvokeManager.getDefault();
