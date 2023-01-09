@@ -7,6 +7,7 @@ import com.wm.util.Values;
 import com.wm.app.b2b.server.Service;
 import com.wm.app.b2b.server.ServiceException;
 // --- <<IS-START-IMPORTS>> ---
+import com.wm.util.JournalLogger;
 import java.util.Map.Entry;
 import java.util.Set;
 import com.softwareag.util.IDataMap;
@@ -41,12 +42,24 @@ public final class resilience
 		// [o] field:0:required contextID
 		IDataMap pipeMap = new IDataMap(pipeline);
 		String[] auditContext = ServerAPI.getAuditContext();
-		if (auditContext != null && auditContext.length > 0) {
-			pipeMap.put("contextID", auditContext[0]);
+		/*for (String string : auditContext) {
+			debugLogInfo(string);
+		}*/
+		if (auditContext != null && auditContext.length >= 2) {
+			pipeMap.put("contextID", auditContext[1]);
 		}
+			
 		// --- <<IS-END>> ---
 
                 
 	}
+
+	// --- <<IS-START-SHARED>> ---
+	private static final String LOG_FUNCTION = "WxResilience";
+	
+	private static void debugLogInfo(String message) {
+	    JournalLogger.log(4,  JournalLogger.FAC_FLOW_SVC, JournalLogger.INFO, LOG_FUNCTION, message);
+	}	
+	// --- <<IS-END-SHARED>> ---
 }
 
