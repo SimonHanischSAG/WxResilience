@@ -134,6 +134,7 @@ This service generates the so-called "wxMetaData". These wxMetaData will be reus
 <ul>
   <li>creationTimestamp: When the metaData were generated</li>
   <li>correlationId: Identifies a correlated data/message. Will be set automatically from **JMSMessageID** (JMS) or **X-Correlation-ID** (HTTP) if available. Otherwise it is generated</li>
+  <li>uuid: A generated ID for each physical message. Different uuids can belong to one correlationId</li>
   <li>type: Defines the type of the data, e.g. order, masterDataUpdate, ...</li>
   <li>source: Where the handled data comes from</li>
   <li>destination: [optional] Where should the handled data go</li>
