@@ -1721,7 +1721,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/JMSMessage;2;0/body;2;0/data;2;0" TO="/document;2;0">
+<MAPCOPY FROM="/JMSMessage;2;0/body;2;0/data;2;0" TO="/document;2;0/wxMessage;4;0;wx.resilience.doc:wxMessage">
 </MAPCOPY>
 </MAP>
 

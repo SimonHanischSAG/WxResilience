@@ -10,7 +10,7 @@
 
   <!-- nodes -->
 
-<MAP NAME="/^{/" TIMEOUT="" MODE="STANDALONE">
+<MAP NAME="/^\{/" TIMEOUT="" MODE="STANDALONE">
   <COMMENT></COMMENT>
   <MAPTARGET>
 
@@ -225,7 +225,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/document;2;0" TO="/wxMessage;4;0;wx.resilience.doc:wxMessage">
+<MAPCOPY FROM="/document;2;0/wxMessage;4;0;wx.resilience.doc:wxMessage" TO="/wxMessage;4;0;wx.resilience.doc:wxMessage">
 </MAPCOPY>
 </MAP>
 </MAPINVOKE>
