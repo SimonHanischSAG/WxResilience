@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="step10" targetNamespace="http://eur.ad.sag/wx.resilienceE2EMDemo.ws:step10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://eur.ad.sag/wx.resilienceE2EMDemo.ws:step10" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://eur.ad.sag/wx.resilienceE2EMDemo.ws:step10" xmlns:tns="http://eur.ad.sag/wx.resilienceE2EMDemo.ws:step10" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="step10" type="tns:step10"/>
+          <xsd:complexType name="step10">
+            <xsd:sequence>
+              <xsd:element name="data" nillable="true" type="tns:data"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="data">
+            <xsd:sequence>
+              <xsd:element name="var" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="step10_PortType_step10">
+    <wsdl:part name="parameters" element="tns:step10">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="step10_PortType">
+    <wsdl:operation name="step10">
+      <wsdl:input message="tns:step10_PortType_step10">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wx_resilienceE2EMDemo_ws_step10_Binder" type="tns:step10_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="step10">
+      <soap:operation soapAction="wx_resilienceE2EMDemo_ws_step10_Binder_step10" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wx.resilienceE2EMDemo.ws.step10">
+    <wsdl:port name="wx_resilienceE2EMDemo_ws_step10_Port" binding="tns:wx_resilienceE2EMDemo_ws_step10_Binder">
+      <soap:address location="http://daeigcs62184.eur.ad.sag:5555/ws/wx.resilienceE2EMDemo.ws:step10/wx_resilienceE2EMDemo_ws_step10_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

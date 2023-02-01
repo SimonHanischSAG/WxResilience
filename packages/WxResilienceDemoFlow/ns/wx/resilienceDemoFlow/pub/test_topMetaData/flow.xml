@@ -73,6 +73,12 @@
     <value name="sender">mySender</value>
     <value name="receiver">myReceiver</value>
     <value name="messageType">myMessageType</value>
+    <array name="props" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="field">f2</value>
+        <value name="val">5678</value>
+      </record>
+    </array>
   </record>
 </Values>
 </DATA>

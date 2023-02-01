@@ -47,6 +47,7 @@ public final class invokeChainProcessor
 		} else {
 			pipeMap.put("invokeChainProcessorRunning", "false");
 		}
+			
 		// --- <<IS-END>> ---
 
                 
@@ -79,6 +80,7 @@ public final class invokeChainProcessor
 		}
 		logInfo(message);
 		pipeMap.put("message", message);
+			
 			
 		// --- <<IS-END>> ---
 
@@ -154,9 +156,8 @@ public final class invokeChainProcessor
 				try {
 					if (executeWxResilienceServices) {
 						try {
-							pipeMap.put("@WxResilience.started.from.InvokeChain@", "true");
 							//logDebug("pipe1: " + pipeline.getClass().hashCode());
-							executeService("wx.resilience.pub.resilience", "preProcessForTopLevelService", pipeline, baseServiceName);
+							executeService("wx.resilience.impl.invokeChainProcessor", "preProcessForTopLevelService", pipeline, baseServiceName);
 							//logDebug("pipe2: " + pipeline.getClass().hashCode());
 							//pipeMap = new IDataMap(pipeline);
 						} catch(Exception e) {
@@ -218,11 +219,10 @@ public final class invokeChainProcessor
 				
 				} finally {
 					//pipeMap = new IDataMap(pipeline);
-					if (executeWxResilienceServices) {
-						boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
+					boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
+					if (!wxResiliencePostProcessExecuted) {
+						if (executeWxResilienceServices) {
 						//logDebug(baseServiceName + " wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
-						if (!wxResiliencePostProcessExecuted) {
-							pipeMap.put("@WxResilience.started.from.InvokeChain@", "true");
 							//logDebug("pipe5: " + pipeline.getClass().hashCode());
 							executeService("wx.resilience.pub.resilience", "postProcessForTopLevelService", pipeline, baseServiceName);
 							//logDebug("pipe6: " + pipeline.getClass().hashCode());
@@ -264,6 +264,7 @@ public final class invokeChainProcessor
 		JournalLogger.log(4, JournalLogger.FAC_FLOW_SVC, JournalLogger.ERROR, "WxResilienceProcessor", message);
 	}
 	
+		
 		
 		
 		

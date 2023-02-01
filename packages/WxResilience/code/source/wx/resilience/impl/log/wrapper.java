@@ -69,6 +69,7 @@ public final class wrapper
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -195,7 +196,9 @@ public final class wrapper
 			if (destination != null) {
 				builder.append("|destination:").append(destination);
 			}
-			builder.append("|type:").append(type);
+			if (type != null) {
+				builder.append("|type:").append(type);
+			}
 			builder.append("|correlationID:").append(correlationID).append("|");
 			
 	
@@ -217,6 +220,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

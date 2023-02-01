@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">wx.resilienceE2EMDemo.impl.step10Consumer_.docTypes:docTypeRef_tns_step10</value>
+    <value name="node_pkg">WxResilienceE2EMDemo</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">0ccfcdbb247f40bb8c22cb2842ec3534</value>
+    <value name="docTypeDomain">56be08e262d04b4fb643754c6e3c8612</value>
+    <value name="originURI">http://daeigcs62184.eur.ad.sag:5555/ws/wx.resilienceE2EMDemo.ws:step10?WSDL</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">data</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">wx.resilienceE2EMDemo.impl.step10Consumer_.docTypes:docTypeRef_tns_data</value>
+      </record>
+    </array>
+    <record name="schemaType" javaclass="com.wm.util.Values">
+      <value name="xmlns">http://eur.ad.sag/wx.resilienceE2EMDemo.ws:step10</value>
+      <value name="ncName">step10</value>
+    </record>
+    <value name="schemaRegistered">true</value>
+    <value name="modifiable">false</value>
+    <value name="parentWsd">wx.resilienceE2EMDemo.impl:step10Consumer</value>
+  </record>
+</Values>

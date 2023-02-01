@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Values version="2.0">
+  <value name="shared">cHJpdmF0ZSBzdGF0aWMgZmluYWwgU3RyaW5nIExPR19GVU5DVElPTiA9ICJXeFJlc2lsaWVuY2Ui
+Ow0KDQpwcml2YXRlIHN0YXRpYyB2b2lkIGRlYnVnTG9nSW5mbyhTdHJpbmcgbWVzc2FnZSkgew0K
+ICAgIEpvdXJuYWxMb2dnZXIubG9nKDQsICBKb3VybmFsTG9nZ2VyLkZBQ19GTE9XX1NWQywgSm91
+cm5hbExvZ2dlci5JTkZPLCBMT0dfRlVOQ1RJT04sIG1lc3NhZ2UpOw0KfQkNCg==</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
     <value>com.wm.util.JournalLogger</value>
@@ -12,12 +16,5 @@
     <value>com.wm.data.IData</value>
     <value>com.wm.data.IDataCursor</value>
     <value>com.wm.data.IDataUtil</value>
-  </array>
-  <value name="shared">cHJpdmF0ZSBzdGF0aWMgZmluYWwgU3RyaW5nIExPR19GVU5DVElPTiA9ICJXeFJlc2lsaWVuY2Ui
-OwoKcHJpdmF0ZSBzdGF0aWMgdm9pZCBkZWJ1Z0xvZ0luZm8oU3RyaW5nIG1lc3NhZ2UpIHsKICAg
-IEpvdXJuYWxMb2dnZXIubG9nKDQsICBKb3VybmFsTG9nZ2VyLkZBQ19GTE9XX1NWQywgSm91cm5h
-bExvZ2dlci5JTkZPLCBMT0dfRlVOQ1RJT04sIG1lc3NhZ2UpOwp9CQ==</value>
-  <value name="extends"></value>
-  <array name="implements" type="value" depth="1">
   </array>
 </Values>

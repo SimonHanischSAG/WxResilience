@@ -20,7 +20,7 @@
   <!-- nodes -->
 
 <MAP NAME="true" TIMEOUT="" MODE="STANDALONE">
-  <COMMENT>set @WxResilience.postProcess.executed@ = true only if InvokeChain is active</COMMENT>
+  <COMMENT>set @WxResilience.postProcess.executed@ = true in order to avoid second execution only if InvokeChain is active</COMMENT>
   <MAPTARGET>
 
 <Values version="2.0">
@@ -136,20 +136,12 @@
         <value name="is_global">false</value>
       </record>
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
         <value name="is_public">false</value>
         <value name="field_name">invokeChainProcessorRunning</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -354,20 +346,12 @@
         <value name="is_global">false</value>
       </record>
       <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
+        <value name="node_type">field</value>
         <value name="node_subtype">unknown</value>
-        <value name="node_comment"></value>
-        <record name="node_hints" javaclass="com.wm.util.Values">
-          <value name="field_usereditable">true</value>
-          <value name="field_largerEditor">false</value>
-          <value name="field_password">false</value>
-        </record>
         <value name="is_public">false</value>
         <value name="field_name">invokeChainProcessorRunning</value>
         <value name="field_type">string</value>
         <value name="field_dim">0</value>
-        <array name="field_options" type="value" depth="1">
-        </array>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -6222,17 +6206,6 @@
         <value name="node_type">unknown</value>
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
-        <value name="field_name">@WxResilience.started.from.InvokeChain@</value>
-        <value name="field_type">string</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">unknown</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
         <value name="field_name">@WxResilience.postProcess.executed@</value>
         <value name="field_type">object</value>
         <value name="field_dim">0</value>
@@ -6268,9 +6241,6 @@
 </MAPDELETE>
 
 <MAPDELETE FIELD="/@WxResilience.preProcess.startTimestamp@;3.9;0">
-</MAPDELETE>
-
-<MAPDELETE FIELD="/@WxResilience.started.from.InvokeChain@;1;0">
 </MAPDELETE>
 </MAP>
 </FLOW>
