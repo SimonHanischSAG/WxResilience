@@ -134,101 +134,119 @@ public final class invokeChainProcessor
 		public void process(Iterator chain, BaseService baseService, IData pipeline, ServiceStatus status)
 				throws ServerException {
 	
+			String baseServiceName = baseService.getNSName().getFullName();
 			IDataMap pipeMap = new IDataMap(pipeline);
-			String baseServiceName = "";
-			boolean isTop = status.isTopService();		
-			baseServiceName = baseService.getNSName().getFullName();
 			
-			boolean executeWxResilienceServices = false;
-			if (isTop) {
-				executeWxResilienceServices = true;
-				for (String entry : invokeChainBlacklist) {
-					if (baseServiceName.startsWith(entry)) {
-						executeWxResilienceServices = false;
-						break;
-					}
-				}
-			}		
-			//if (isTop || executeWxResilienceServices)
-				//logDebug(baseServiceName + ": " + isTop + "," + executeWxResilienceServices);
-			// we have to make sure that the servcie invocation chain is not cut
-			if (chain.hasNext()) {
-				try {
-					if (executeWxResilienceServices) {
-						try {
-							//logDebug("pipe1: " + pipeline.getClass().hashCode());
-							executeService("wx.resilience.impl.invokeChainProcessor", "preProcessForTopLevelService", pipeline, baseServiceName);
-							//logDebug("pipe2: " + pipeline.getClass().hashCode());
-							//pipeMap = new IDataMap(pipeline);
-						} catch(Exception e) {
-							logError("Error in preProcessForTopLevelService: " + e);
+			boolean wxResilienceServiceRedirected = pipeMap.getAsBoolean(REDIRECTED);
+			boolean redirected = false;
+			if (!wxResilienceServiceRedirected) {
+				if ("pub.jms:send".equals(baseServiceName)) {
+					logDebug("pub.jms:send redirected");
+					pipeMap.put(REDIRECTED, true);
+					executeService("wx.resilience.pub.jms", "send", pipeline, baseServiceName);
+					pipeMap.remove(REDIRECTED);
+					redirected = true;
+				} else if ("pub.client:http".equals(baseServiceName)) {
+					logDebug("wx.resilience.pub.http");
+					pipeMap.put(REDIRECTED, true);
+					executeService("wx.resilience.pub.http", "http", pipeline, baseServiceName);
+					pipeMap.remove(REDIRECTED);
+					redirected = true;
+				} 
+			}
+			if (!redirected) {
+				boolean isTop = status.isTopService();		
+				boolean executeWxResilienceServices = false;
+				if (isTop) {
+					executeWxResilienceServices = true;
+					for (String entry : invokeChainBlacklist) {
+						if (baseServiceName.startsWith(entry)) {
+							executeWxResilienceServices = false;
+							break;
 						}
 					}
-	
-					//logDebug("Before original Service");
-					
-					//logDebug("pipe3: " + pipeline.getClass().hashCode());
-					((InvokeChainProcessor) chain.next()).process(chain, baseService, pipeline, status);
-					//logDebug("pipe4: " + pipeline.getClass().hashCode());
-					
-					//logDebug("After original Service");
-					
-				} catch (Exception originalException) {
-					//pipeMap = new IDataMap(pipeline);
-					if (executeWxResilienceServices) {
-						boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
-						//logDebug("wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
-						if (!wxResiliencePostProcessExecuted) {
-							logError("Handle error");
-									
-							IData lastError = null;
+				}		
+				//if (isTop || executeWxResilienceServices)
+					//logDebug(baseServiceName + ": " + isTop + "," + executeWxResilienceServices);
+				// we have to make sure that the servcie invocation chain is not cut
+				if (chain.hasNext()) {
+					try {
+						if (executeWxResilienceServices) {
 							try {
-								executeService("pub.flow", "getLastError", pipeline, baseServiceName);						
+								//logDebug("pipe1: " + pipeline.getClass().hashCode());
+								executeService("wx.resilience.impl.invokeChainProcessor", "preProcessForTopLevelService", pipeline, baseServiceName);
+								//logDebug("pipe2: " + pipeline.getClass().hashCode());
 								//pipeMap = new IDataMap(pipeline);
-								
-								lastError = pipeMap.getAsIData("lastError");
-								if (lastError == null) {
+							} catch(Exception e) {
+								logError("Error in preProcessForTopLevelService: " + e);
+							}
+						}
+		
+						//logDebug("Before original Service");
+						
+						//logDebug("pipe3: " + pipeline.getClass().hashCode());
+						((InvokeChainProcessor) chain.next()).process(chain, baseService, pipeline, status);
+						//logDebug("pipe4: " + pipeline.getClass().hashCode());
+						
+						//logDebug("After original Service");
+						
+					} catch (Exception originalException) {
+						//pipeMap = new IDataMap(pipeline);
+						if (executeWxResilienceServices) {
+							boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean(POSTPROCESS_EXECUTED);
+							//logDebug("wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
+							if (!wxResiliencePostProcessExecuted) {
+								logError("Handle error");
+										
+								IData lastError = null;
+								try {
+									executeService("pub.flow", "getLastError", pipeline, baseServiceName);						
+									//pipeMap = new IDataMap(pipeline);
+									
+									lastError = pipeMap.getAsIData("lastError");
+									if (lastError == null) {
+										lastError = IDataFactory.create();
+										IDataMap lastErrorMap = new IDataMap(lastError);
+										lastErrorMap.put("error", originalException.getLocalizedMessage());
+										lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
+										pipeMap.put("lastError", lastError);
+									}
+								} catch (Exception e) {
+									logError("Could not call getLastError");
 									lastError = IDataFactory.create();
 									IDataMap lastErrorMap = new IDataMap(lastError);
 									lastErrorMap.put("error", originalException.getLocalizedMessage());
 									lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
 									pipeMap.put("lastError", lastError);
 								}
-							} catch (Exception e) {
-								logError("Could not call getLastError");
-								lastError = IDataFactory.create();
-								IDataMap lastErrorMap = new IDataMap(lastError);
-								lastErrorMap.put("error", originalException.getLocalizedMessage());
-								lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
-								pipeMap.put("lastError", lastError);
-							}
-		
-							try {
-								executeService("wx.resilience.pub.resilience", "handleError", pipeline, baseServiceName);
-							} catch (Exception e) {
-								logError("Error in handleError: " + e);
-							}
+			
+								try {
+									executeService("wx.resilience.pub.resilience", "handleError", pipeline, baseServiceName);
+								} catch (Exception e) {
+									logError("Error in handleError: " + e);
+								}
+							} else {
+								// Error already handled in Flow
+								throw originalException;
+							} 
 						} else {
-							// Error already handled in Flow
+							//logDebug("execute");
 							throw originalException;
-						} 
-					} else {
-						//logDebug("execute");
-						throw originalException;
-					}
-				
-				} finally {
-					//pipeMap = new IDataMap(pipeline);
-					boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean("@WxResilience.postProcess.executed@");
-					if (!wxResiliencePostProcessExecuted) {
-						if (executeWxResilienceServices) {
-						//logDebug(baseServiceName + " wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
-							//logDebug("pipe5: " + pipeline.getClass().hashCode());
-							executeService("wx.resilience.pub.resilience", "postProcessForTopLevelService", pipeline, baseServiceName);
-							//logDebug("pipe6: " + pipeline.getClass().hashCode());
-							//pipeMap = new IDataMap(pipeline);
 						}
-						pipeMap.remove("@WxResilience.postProcess.executed@");
+					
+					} finally {
+						//pipeMap = new IDataMap(pipeline);
+						boolean wxResiliencePostProcessExecuted = pipeMap.getAsBoolean(POSTPROCESS_EXECUTED);
+						if (!wxResiliencePostProcessExecuted) {
+							if (executeWxResilienceServices) {
+							//logDebug(baseServiceName + " wxResiliencePostProcessExecuted: " + wxResiliencePostProcessExecuted);
+								//logDebug("pipe5: " + pipeline.getClass().hashCode());
+								executeService("wx.resilience.pub.resilience", "postProcessForTopLevelService", pipeline, baseServiceName);
+								//logDebug("pipe6: " + pipeline.getClass().hashCode());
+								//pipeMap = new IDataMap(pipeline);
+							}
+							pipeMap.remove(POSTPROCESS_EXECUTED);
+						}
 					}
 				}
 			}
@@ -265,8 +283,9 @@ public final class invokeChainProcessor
 	}
 	
 		
-		
-		
+	private static final String REDIRECTED = "@WxResilience.service.redirected@";
+	private static final String POSTPROCESS_EXECUTED = "@WxResilience.postProcess.executed@";
+	
 		
 	// --- <<IS-END-SHARED>> ---
 }

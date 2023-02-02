@@ -25,12 +25,13 @@ public final class impl
 
 
 
-	public static final void testJavaException (IData pipeline)
+	public static final void javaException (IData pipeline)
         throws ServiceException
 	{
-		// --- <<IS-START(testJavaException)>> ---
+		// --- <<IS-START(javaException)>> ---
 		// @sigtype java 3.5
-		throw new ServiceException("Error!");
+		String s = null;
+		s.getBytes();
 		// --- <<IS-END>> ---
 
                 
