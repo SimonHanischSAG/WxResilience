@@ -141,13 +141,13 @@ public final class invokeChainProcessor
 			boolean redirected = false;
 			if (!wxResilienceServiceRedirected) {
 				if ("pub.jms:send".equals(baseServiceName)) {
-					logDebug("pub.jms:send redirected");
+					//logDebug("pub.jms:send redirected");
 					pipeMap.put(REDIRECTED, true);
 					executeService("wx.resilience.pub.jms", "send", pipeline, baseServiceName);
 					pipeMap.remove(REDIRECTED);
 					redirected = true;
 				} else if ("pub.client:http".equals(baseServiceName)) {
-					logDebug("wx.resilience.pub.http");
+					//logDebug("wx.resilience.pub.http");
 					pipeMap.put(REDIRECTED, true);
 					executeService("wx.resilience.pub.http", "http", pipeline, baseServiceName);
 					pipeMap.remove(REDIRECTED);
