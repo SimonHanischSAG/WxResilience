@@ -190,7 +190,7 @@ public final class invokeChainProcessor
 								if (lastError == null) {
 									lastError = IDataFactory.create();
 									IDataMap lastErrorMap = new IDataMap(lastError);
-									lastErrorMap.put("error", originalException.getCause());
+									lastErrorMap.put("error", originalException.getLocalizedMessage());
 									lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
 									pipeMap.put("lastError", lastError);
 								}
