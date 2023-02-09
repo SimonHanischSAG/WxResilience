@@ -115,7 +115,17 @@
 		<location name="resilience">
 			<location name="pub">	 
                 <location name="jms">
-                    <location name="sendJmsWxMessage">
+                    <location name="send">
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.007">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                        <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="MessageProducerImpl.send failed" maxRetryAttempts="-1" exceptionHandlingId="IWxResilience.jms.008">
+                            <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+                            <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+                        </exception>
+                    </location>
+                   <location name="sendJmsWxMessage">
                         <exception callerType="JMS" type="all" errorToBeThrown="FATAL" errorMessageContains="is disabled" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.jms.001">
                             <handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
                             <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
