@@ -65,8 +65,13 @@
 		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 	</globalException>
 	<!-- Global fallbacks for all callerTypes -->
-	<!-- Handle unknown services for 2 hours (only working for InvokeChain -->
+	<!-- Handle unknown services for 2 hours (only working for InvokeChain) -->
 	<globalException type="all" callerType="JMS" errorMessageRegex=".*Service .* invoking unknown service .* at .*. The service may have been renamed, moved or disabled." errorToBeThrown="FATAL" maxRetryAttempts="720" exceptionHandlingId="WxResilience.global.054">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<!-- Handle uncompiled services for 2 minutes -->
+	<globalException type="all" callerType="JMS" errorMessageContains="is not operational. To run this service, first recompile the Java source." errorToBeThrown="FATAL" maxRetryAttempts="12" exceptionHandlingId="WxResilience.global.055">
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
 		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 	</globalException> 
