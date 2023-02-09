@@ -48,6 +48,7 @@ public final class invokeChainProcessor
 			pipeMap.put("invokeChainProcessorRunning", "false");
 		}
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -138,21 +139,45 @@ public final class invokeChainProcessor
 			IDataMap pipeMap = new IDataMap(pipeline);
 			
 			boolean wxResilienceServiceRedirected = pipeMap.getAsBoolean(REDIRECTED);
+			boolean wxResilienceServiceWrapped = pipeMap.getAsBoolean(WRAPPED);
 			boolean redirected = false;
-			if (!wxResilienceServiceRedirected) {
-				if ("pub.jms:send".equals(baseServiceName)) {
-					//logDebug("pub.jms:send redirected");
-					pipeMap.put(REDIRECTED, true);
-					executeService("wx.resilience.pub.jms", "send", pipeline, baseServiceName);
-					pipeMap.remove(REDIRECTED);
-					redirected = true;
-				} else if ("pub.client:http".equals(baseServiceName)) {
-					//logDebug("wx.resilience.pub.http");
-					pipeMap.put(REDIRECTED, true);
-					executeService("wx.resilience.pub.http", "http", pipeline, baseServiceName);
-					pipeMap.remove(REDIRECTED);
-					redirected = true;
-				} 
+			boolean wrapped = false;
+	
+			if (!wxResilienceServiceWrapped) {
+				// Avoid redirecting for services where the wrapper was already invoked manually
+				if ("wx.resilience.pub.http:http".equals(baseServiceName)) {
+					pipeMap.put(WRAPPED, true);
+					wrapped = true;
+				} else if ("wx.resilience.pub.http:http".equals(baseServiceName)) {
+					pipeMap.put(WRAPPED, true);
+					wrapped = true;
+				} else if ("wx.resilience.pub.jms:send".equals(baseServiceName)) {
+					pipeMap.put(WRAPPED, true);
+					wrapped = true;
+				} else if ("wx.resilience.pub.jms:sendWxMessage".equals(baseServiceName)) {
+					pipeMap.put(WRAPPED, true);
+					wrapped = true;
+				} else if ("wx.resilience.pub.jms:sendWxMessageAsJson".equals(baseServiceName)) {
+					pipeMap.put(WRAPPED, true);
+					wrapped = true;
+				} else {
+					// Avoid endless redirecting
+					if (!wxResilienceServiceRedirected) {
+						if ("pub.jms:send".equals(baseServiceName)) {
+							//logDebug("pub.jms:send redirected");
+							pipeMap.put(REDIRECTED, true);
+							executeService("wx.resilience.pub.jms", "send", pipeline, baseServiceName);
+							pipeMap.remove(REDIRECTED);
+							redirected = true;
+						} else if ("pub.client:http".equals(baseServiceName)) {
+							//logDebug("wx.resilience.pub.http");
+							pipeMap.put(REDIRECTED, true);
+							executeService("wx.resilience.pub.http", "http", pipeline, baseServiceName);
+							pipeMap.remove(REDIRECTED);
+							redirected = true;
+						}
+					}
+				}
 			}
 			if (!redirected) {
 				boolean isTop = status.isTopService();		
@@ -165,7 +190,7 @@ public final class invokeChainProcessor
 							break;
 						}
 					}
-				}		
+				}
 				//if (isTop || executeWxResilienceServices)
 					//logDebug(baseServiceName + ": " + isTop + "," + executeWxResilienceServices);
 				// we have to make sure that the servcie invocation chain is not cut
@@ -250,6 +275,9 @@ public final class invokeChainProcessor
 					}
 				}
 			}
+			if (wrapped) {
+				pipeMap.remove(WRAPPED);
+			}
 		}
 	}
 	
@@ -284,8 +312,10 @@ public final class invokeChainProcessor
 	
 		
 	private static final String REDIRECTED = "@WxResilience.service.redirected@";
+	private static final String WRAPPED = "@WxResilience.service.wrapped@";
 	private static final String POSTPROCESS_EXECUTED = "@WxResilience.postProcess.executed@";
 	
+		
 		
 	// --- <<IS-END-SHARED>> ---
 }
