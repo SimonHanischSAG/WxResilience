@@ -99,10 +99,14 @@ Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run t
 
 In Detail:
 1. Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked. This option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all top-level-services and can be deactivated or configured.
+Restrictions: The InvokeChain-technique is not working during debugging!
 2. Implement try-catch-blocks in your top level services using the predefined services directly (see below). This option provides you more control for which services and how it will work. But this option requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilienceDemoFlow/wx.resilienceDemoFlow.pub:test_top
 
 It is possible to mix both options as there is a check not to run the services twice for one top-level-service call. 
 
+<h4>correlationId - customContextId</h4>
+preProcessForTopLevelService is reading the JMSCorrelationID (JMS) respectively the X-Correlation-ID (HTTP) from callers, stores it in wxMetaData/correlationId and use it for setCustomContextID (visible in Monitor/E2EM). Finally these IDs are forwarded via JMS and HTTP if you use the related wrapper services in WxResilience or autmatically, if you use the InvokeChain.
+ 
 <h3>Predefined services for start / end logging and exception handling</h3>
 
 There are the following 3 helper services which are executed automatically in option 1 or which you should use in every top level service in option 2:
