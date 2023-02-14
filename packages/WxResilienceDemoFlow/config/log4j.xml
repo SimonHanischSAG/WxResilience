@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Optional definition for usage of WxLog2 -->
+
+
+<!DOCTYPE log4j:configuration SYSTEM "../../WxConfig/code/jars/log4j.dtd">
+<log4j:configuration>
+  <appender name="WxResilienceDemoFlow"
+    class="org.apache.log4j.RollingFileAppender">
+      <param name="MaxFileSize" value="10MB" />
+      <param name="MaxBackupIndex" value="10" />
+      <param name="Append" value="true" />
+      <param name="File" value="./logs/WxResilienceDemoFlow.log" />
+      <param name="threshold" value="info"/>
+      <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%d %-5p - %m%n" />
+      </layout>
+  </appender>
+
+  <category name="WxResilienceDemoFlow">
+    <appender-ref ref="WxResilienceDemoFlow"/>
+  </category>
+
+</log4j:configuration>
