@@ -83,6 +83,7 @@ public final class invokeChainProcessor
 		pipeMap.put("message", message);
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -230,18 +231,12 @@ public final class invokeChainProcessor
 									
 									lastError = pipeMap.getAsIData("lastError");
 									if (lastError == null) {
-										lastError = IDataFactory.create();
-										IDataMap lastErrorMap = new IDataMap(lastError);
-										lastErrorMap.put("error", originalException.getLocalizedMessage());
-										lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
+										lastError = createLastErrorFromException(originalException);
 										pipeMap.put("lastError", lastError);
 									}
 								} catch (Exception e) {
 									logError("Could not call getLastError");
-									lastError = IDataFactory.create();
-									IDataMap lastErrorMap = new IDataMap(lastError);
-									lastErrorMap.put("error", originalException.getLocalizedMessage());
-									lastErrorMap.put("errorType", originalException.getClass().getCanonicalName());
+									lastError = createLastErrorFromException(originalException);
 									pipeMap.put("lastError", lastError);
 								}
 			
@@ -278,6 +273,21 @@ public final class invokeChainProcessor
 			if (wrapped) {
 				pipeMap.remove(WRAPPED);
 			}
+		}
+	
+		private IData createLastErrorFromException(Exception originalException) {
+			IData lastError;
+			lastError = IDataFactory.create();
+			IDataMap lastErrorMap = new IDataMap(lastError);
+			Throwable causeException;
+			if (originalException.getCause() != null) {
+				causeException = originalException.getCause();
+			} else {
+				causeException = originalException;
+			}
+			lastErrorMap.put("error", causeException.getLocalizedMessage());
+			lastErrorMap.put("errorType", causeException.getClass().getCanonicalName());
+			return lastError;
 		}
 	}
 	
