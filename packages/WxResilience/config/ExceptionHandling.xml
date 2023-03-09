@@ -20,6 +20,26 @@
 		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
 		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 	</globalException> 
+	<globalException type="java.io.IOException" callerType="JMS" errorMessageContains="Connection refused" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.012">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorMessageContains="timed out" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.013">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="all" callerType="JMS" errorMessageContains="Connection reset" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.014">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.net.NetException" callerType="JMS" errorMessageContains="Server Error: 503 Service Unavailable" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.015">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
+	<globalException type="com.wm.net.NetException" callerType="JMS" errorMessageContains="Server Error: 502 Bad Gateway" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.016">
+		<handling>wx.resilience.pub.resilience.errorHandling:logError</handling>
+		<handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
+	</globalException> 
 	
 	<!-- SAP targets -->
 	<globalException type="com.wm.adapter.sap.error.SAPAdapterConnectionException" callerType="JMS" errorMessageContains="JCO_ERROR_COMMUNICATION" errorToBeThrown="FATAL" maxRetryAttempts="-1" exceptionHandlingId="WxResilience.global.020">
