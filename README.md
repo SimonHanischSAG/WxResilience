@@ -94,12 +94,12 @@ There are two options to use WxResilience in your top level services:
 1. Automatically from InvokeChain
 2. Per code in your top-level-services
 
-In Detail:
+In detail:
 1. Set the key <pre><code>wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true</code></pre> and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked. This option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all top-level-services and can be deactivated or configured.
 Restrictions: The InvokeChain-technique is not working during debugging!
 2. Implement try-catch-blocks in your top level services using the predefined services directly (see below). This option provides you more control for which services and how it will work. But this option requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilienceDemoFlow/wx.resilienceDemoFlow.pub:test_top
 
-It is possible to mix both options as there is a check not to run the services twice for one top-level-service call. 
+It is possible to mix both options as there is a check not to run the services twice for a top-level-service call. 
 
 <h4>correlationId - customContextId</h4>
 preProcessForTopLevelService is reading the JMSCorrelationID (JMS) respectively the X-Correlation-ID (HTTP) from callers, stores it in wxMetaData/correlationId and use it for setCustomContextID (visible in Monitor/E2EM). Finally these IDs are forwarded via JMS and HTTP if you use the related wrapper services in WxResilience or autmatically, if you use the InvokeChain.
@@ -223,7 +223,7 @@ Then all ExceptionHandlings which are using
 <handling>wx.resilience.pub.resilience.errorHandling:publishErrorStatus</handling>
 
 will publish a JMS messages containing the most important information about the error. It is published as WxMessage in JSON. 
-HINT: In the containing metaData <b>SOURCE AND DESTINATION ARE SWITCHED!</b> This can be used directly in external systems to retrieve a status about their original messages using JMSMessage/properties/destination (= original sender).
+HINT: In the containing wxMetaData <b>SOURCE AND DESTINATION ARE SWITCHED!</b> This can be used directly in external systems to retrieve a status about their original messages using JMSMessage/properties/destination (= original sender).
 
 Furthermore you can use 
 
@@ -231,7 +231,7 @@ wx.resilience.pub.resilience:publishStatus
 
 to publish your own status information using your desired type (Completed, Information, CompletedWithWarning, Retried, Failed, Discarded).
 
-Finally you can allow the external systems to send such messages by there own. In that case the external system A can send a message over IS to the external system B. System B can acknowledge that by a status "Completed". System A can receive and process that. If the message is failing in IS system A would receive an status "Failed" from IS using the same technique.
+Finally you can allow the external systems to send such messages by there own as they are sent in JSON (and not IData). In that case the external system A can send a message over IS to the external system B. System B can acknowledge that by a status "Completed". System A can receive and process that. If the message is failing in IS system A would receive an status "Failed" from IS using the same technique.
 
 
 
