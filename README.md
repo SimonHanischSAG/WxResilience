@@ -94,13 +94,8 @@ There are two options to use WxResilience in your top level services:
 1. Automatically from InvokeChain
 2. Per code in your top-level-services
 
-Set the key 
-<pre><code>wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true</code></pre>
-and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked.
-2. 
-
 In Detail:
-1. Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked. This option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all top-level-services and can be deactivated or configured.
+1. Set the key <pre><code>wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true</code></pre> and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked. This option can be choosen if WxResilience is introduced at once on a existing system. It will immediately work for all top-level-services and can be deactivated or configured.
 Restrictions: The InvokeChain-technique is not working during debugging!
 2. Implement try-catch-blocks in your top level services using the predefined services directly (see below). This option provides you more control for which services and how it will work. But this option requires code changes. To see the suggestion how to build a resilient service take a look on: WxResilienceDemoFlow/wx.resilienceDemoFlow.pub:test_top
 
