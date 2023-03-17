@@ -94,7 +94,9 @@ There are two options to use WxResilience in your top level services:
 1. Automatically from InvokeChain
 2. Per code in your top-level-services
 
-Set the key wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked.
+Set the key 
+<pre><code>wxconfig-&lt;env&gt;.cnf/invokeChainProcessor.enabled=true</code></pre>
+and run the startup service of WxResilience. It will run the predefined services (see below) around of your top-level-service as it is registered in the InvokeChain of IntegrationServer before your top-level-service is invoked.
 2. 
 
 In Detail:
