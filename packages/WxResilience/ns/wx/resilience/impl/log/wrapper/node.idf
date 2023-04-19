@@ -30,7 +30,7 @@ eSk7CgkJCQlTdHJpbmcga2V5ID0gcHJvcGVydHlNYXAuZ2V0QXNTdHJpbmcoImtleSIpOwoJCQkJ
 U3RyaW5nIHZhbHVlID0gcHJvcGVydHlNYXAuZ2V0QXNTdHJpbmcoInZhbHVlIik7CgkJCQlidWls
 ZGVyLmFwcGVuZCgifCIpLmFwcGVuZChrZXkpLmFwcGVuZCgiOiIpLmFwcGVuZCh2YWx1ZSk7CgkJ
 CX0JCgkJCWJ1aWxkZXIuYXBwZW5kKCJ8Iik7CgkJfQoJCQoJCXBpcGVNYXAucHV0KCJtZXNzYWdl
-IiwgYnVpbGRlci50b1N0cmluZygpKTsKCX0KfQoKCgkKCQoJCgkKCQoJCgkKCQoJCgk=</value>
+IiwgYnVpbGRlci50b1N0cmluZygpKTsKCX0KfQoKCgkKCQoJCgkKCQoJCgkKCQoJCgkKCQ==</value>
   <value name="encodeutf8">true</value>
   <array name="imports" type="value" depth="1">
     <value>com.wm.util.JournalLogger</value>

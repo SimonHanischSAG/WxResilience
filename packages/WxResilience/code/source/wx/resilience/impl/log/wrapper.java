@@ -162,6 +162,45 @@ public final class wrapper
                 
 	}
 
+
+
+	public static final void logWxLog4j2 (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<IS-START(logWxLog4j2)>> ---
+		// @sigtype java 3.5
+		IDataMap pipeMap = new IDataMap(pipeline);
+		
+		// Add suffixes and prefixes:
+		addPrefixAndSuffixImpl(pipeMap);
+		
+		// Rename for WxLog2
+		//renameVariable(pipeMap, "message", "logMessage");
+		//renameVariable(pipeMap, "function", "logger");
+		/*String level = pipeMap.getAsString("level");
+		if (level == null || level.equals("")) {
+			pipeMap.put("level", "Info");
+		}
+		
+		renameVariable(pipeMap, "level", "severity");
+		toUpper(pipeMap, "severity");*/
+		
+		// output
+		try{
+			// currently, no output defined.
+			Service.doInvoke( "wx.log4j2.pub", "log", pipeline );
+		} catch(ISRuntimeException anISRuntimeException) {
+			throw anISRuntimeException;
+		} catch(ServiceException aServiceException) {
+			throw aServiceException;
+		} catch( Exception anException){
+			throw new ServiceException(anException);
+		} 
+		// --- <<IS-END>> ---
+
+                
+	}
+
 	// --- <<IS-START-SHARED>> ---
 	
 	private static void renameVariable(IDataMap map, String oldName, String newName) {
@@ -220,6 +259,7 @@ public final class wrapper
 	}
 	
 	
+		
 		
 		
 		

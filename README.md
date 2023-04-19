@@ -3,7 +3,7 @@ webMethods IntegrationServer package for implementing resilient and robust servi
 
 WxResilience is hereby the "productive" package on which you may create a package dependency. The other packages are containing both tests and examples how to work with WxResilience.
 
-It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally together with packages for logging like WxLog, WxLog2 or WxSplunk.
+It is designed for usage together with the official packages WxConfig (or the free alternative https://github.com/SimonHanischSAG/WxConfigLight) and optionally together with packages for logging like WxLog4j2, WxLog, WxLog2, WxSplunk or WxLoki.
 
 <b>MANY THANKS TO LIDL AND SCHWARZ IT, who kindly allowed to provide the template for this package and make it public.</b>
 
@@ -41,15 +41,15 @@ Check "C:\SoftwareAG\IntegrationServer\instances\default\logs\server.log" for en
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Initializing error handling framework... 
 2021-10-12 10:47:45 MESZ [ISP.0090.0004I] WxResilience -- Successfully initialized error handling 
 
-<h2>How to use WxResilience together with WxLog and/or WxLog2 (optional configuration)</h2>
+<h2>How to use WxResilience together with WxLog4j2, WxLog and/or WxLog2 (optional configuration)</h2>
 
-Enable specific, different logfiles by usage of WxLog or WxLog2. Therefore:
+Enable specific, different logfiles by usage of WxLog4j2, WxLog or WxLog2. Therefore:
 
-<h3>Install WxLog and/or WxLog2</h3>
+<h3>Install WxLog4j2, WxLog and/or WxLog2</h3>
 
 <h3>Configure specific logging</h3>
 	
-In case of WxLog2 WxResilience is already preconfigured **(but not enabled)**. In case of WxLog you can add the following to wxlog_default.xml:
+In case of WxLog4j2 and WxLog2 WxResilience is already preconfigured **(but not enabled)**. In case of WxLog you can add the following to wxlog_default.xml:
 
 <pre><code>
   &lt;appender name="WxResilience" class="ch.qos.logback.core.FileAppender"&gt;
@@ -78,7 +78,7 @@ In case of WxLog2 WxResilience is already preconfigured **(but not enabled)**. I
 
 </code></pre>
 
-<h3>Enable logging using WxLog/WxLog2</h3>
+<h3>Enable logging using WxLog4j2/WxLog/WxLog2</h3>
 
 The fast/non-persistent way: Enable/comment related key(s) under "C:\SoftwareAG105\IntegrationServer\instances\default\packages\WxResilience\config\wxconfig.cnf"
 

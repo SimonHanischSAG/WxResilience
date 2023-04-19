@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="wx.log4j2">
+	<Appenders>
+		<WxLog4j2RollingFile name="WxResilience_Test" fileName="./logs/WxResilience_Test.log" />
+	</Appenders>
+	<Loggers>
+		<Logger name="WxResilience_Test" level="info" additivity="false">
+			<AppenderRef ref="WxResilience_Test" />
+		</Logger>
+	</Loggers>
+</Configuration>
