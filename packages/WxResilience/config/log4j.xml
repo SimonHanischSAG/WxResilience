@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration SYSTEM "../../WxLog/config/log4j.dtd">
+
 <!-- Optional definition for usage of WxLog2 -->
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
   <appender name="WxResilience"
