@@ -11,7 +11,9 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WxResilience">*.*</value>
+    <value name="WxConfig">*.*</value>
   </record>
   <value name="listACL">Default</value>
   <value name="webappLoad">yes</value>
+  <value name="reloadWithDependentPackage">yes</value>
 </Values>

@@ -12,4 +12,5 @@
   </record>
   <value name="listACL">Default</value>
   <value name="webappLoad">yes</value>
+  <value name="reloadWithDependentPackage">yes</value>
 </Values>

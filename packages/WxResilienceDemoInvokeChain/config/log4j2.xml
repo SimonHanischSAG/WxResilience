@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="wx.log4j2">
+	<Appenders>
+		<WxLog4j2RollingFile name="WxResilienceDemoInvokeChain" fileName="./logs/WxResilienceDemoInvokeChain.log" />
+	</Appenders>
+	<Loggers>
+		<Logger name="WxResilienceDemoInvokeChain" level="info" additivity="false">
+			<AppenderRef ref="WxResilienceDemoInvokeChain" />
+		</Logger>
+	</Loggers>
+</Configuration>
