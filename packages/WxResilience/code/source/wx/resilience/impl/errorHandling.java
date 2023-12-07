@@ -544,6 +544,7 @@ public final class errorHandling
 			
 			
 			
+			
 		// --- <<IS-END>> ---
 
                 
@@ -581,7 +582,7 @@ public final class errorHandling
 	// --- <<IS-START-SHARED>> ---
 	@FunctionalInterface
 	public static interface ExceptionHandlingListener {
-		public void accept(String pServiceName, IData pPipeline);
+		public void accept(String pServiceName, IData pPipeline) throws UnknownServiceException;
 	}
 	
 	@FunctionalInterface
@@ -629,10 +630,13 @@ public final class errorHandling
 	}
 	
 	private static final ExceptionHandlingListener DEFAULT_ERROR_HANDLER = new ExceptionHandlingListener() {
-		public void accept(String s, IData d) {
+		public void accept(String s, IData d) throws UnknownServiceException {
 			logDebug("DefaultErrorHandler: --> " + s);
 			try {
 				Service.doInvoke(NSName.create(s), d);
+			} catch (UnknownServiceException use) {
+				logDebug("DefaultErrorHandler: " + use.getClass().getName() + ", " + use.getMessage());
+				throw use;
 			} catch (Exception e) {
 				logDebug("DefaultErrorHandler: " + e.getClass().getName() + ", " + e.getMessage());
 				throw new UndeclaredThrowableException(e);
@@ -1497,6 +1501,7 @@ public final class errorHandling
 		private static final String ERROR_HANDLING_XML_FILE = "ExceptionHandling.xml";
 	
 	
+		
 		
 		
 		
