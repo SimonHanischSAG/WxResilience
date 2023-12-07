@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removePackageDependencies</value>
+  <array name="sig" type="value" depth="1">
+    <value>[i] field:1:required onPackages</value>
+  </array>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFNYXAgcGlwZWxpbmVNYXAgPSBuZXcgSURhdGFNYXAocGlwZWxpbmUpOw0KU3RyaW5nW10g
+b25QYWNrYWdlcyA9IHBpcGVsaW5lTWFwLmdldEFzU3RyaW5nQXJyYXkoIm9uUGFja2FnZXMiKTsN
+CmRlcGVuZGVuY3lDYWNoZS5jbGVhcigpOw0KDQppZiAob25QYWNrYWdlcyAhPSBudWxsKSB7DQoJ
+UGFja2FnZVtdIHBhY2thZ2VzID0gUGFja2FnZU1hbmFnZXIuZ2V0QWxsUGFja2FnZXMoKTsNCglm
+b3IgKFBhY2thZ2UgY3VycmVudFBhY2thZ2UgOiBwYWNrYWdlcykgew0KCQlpZiAoIWN1cnJlbnRQ
+YWNrYWdlLmdldE5hbWUoKS5zdGFydHNXaXRoKCJXbSIpKSB7DQoJCQlib29sZWFuIHBhY2thZ2VD
+aGFuZ2VkID0gZmFsc2U7DQoJCQlNYW5pZmVzdCBjdXJyZW50TWFuaWZlc3QgPSBjdXJyZW50UGFj
+a2FnZS5nZXRNYW5pZmVzdCgpOw0KCQkJU3RyaW5nW10gcmVxdWlyZXMgPSBjdXJyZW50TWFuaWZl
+c3QuZ2V0UmVxdWlyZXNBc1N0cigpOw0KCQkNCgkJCWlmIChyZXF1aXJlcyAhPSBudWxsKSB7DQoJ
+CQkJZm9yIChTdHJpbmcgcmVxdWlyZSA6IHJlcXVpcmVzKSB7DQoJCQkJCWZvciAoU3RyaW5nIG9u
+UGFja2FnZSA6IG9uUGFja2FnZXMpIHsNCgkJCQkJCWlmIChyZXF1aXJlLmNvbnRhaW5zKG9uUGFj
+a2FnZSkpIHsNCgkJCQkJCQljdXJyZW50TWFuaWZlc3QuZGVsRGVwZW5kZW5jeShyZXF1aXJlKTsN
+CgkJCQkJCQlkZXBlbmRlbmN5Q2FjaGUuYWRkKG5ldyBTdHJpbmdbXXtjdXJyZW50UGFja2FnZS5n
+ZXROYW1lKCksIHJlcXVpcmV9KTsNCgkJCQkJCQlwYWNrYWdlQ2hhbmdlZCA9IHRydWU7DQoJCQkJ
+CQl9DQoJCQkJCX0NCgkJCQl9DQoJCQl9DQoJCQlpZiAocGFja2FnZUNoYW5nZWQpIHsNCgkJCQlj
+dXJyZW50UGFja2FnZS5zZXRNYW5pZmVzdChjdXJyZW50TWFuaWZlc3QpOw0KCQkJfQ0KCQl9DQoJ
+fQ0KfQ0KCQ0KCQ0K</value>
+</Values>

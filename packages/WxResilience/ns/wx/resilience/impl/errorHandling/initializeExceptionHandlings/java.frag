@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">initializeExceptionHandlings</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">bG9nSW5mbygiSW5pdGlhbGl6aW5nIGVycm9yIGhhbmRsaW5nIGZyYW1ld29yay4uLiIpOw0KLy9U
+T0RPDQpGaWxlIGVIREZpbGUgPSBuZXcgRmlsZShTZXJ2ZXJBUEkuZ2V0UGFja2FnZUNvbmZpZ0Rp
+cihXWF9SRVNJTElFTkNFKSArICIvIiArIFNVTU1BUklaRURfRVhDRVBUSU9OX0hBTkRMSU5HX0ZJ
+TEUpOw0KaWYgKCFlSERGaWxlLmlzRmlsZSgpKSB7DQoJY3JlYXRlU3VtbWFyaXplZEV4Y2VwdGlv
+bkhhbmRsaW5nKCk7DQp9DQpmaW5hbCBVUkwgdXJsOw0KdHJ5IHsNCgl1cmwgPSBlSERGaWxlLnRv
+VVJJKCkudG9VUkwoKTsNCn0gY2F0Y2ggKElPRXhjZXB0aW9uIGUpIHsNCgl0aHJvdyBuZXcgU2Vy
+dmljZUV4Y2VwdGlvbihlKTsNCn0NCmZpbmFsIFNBWEJ1aWxkZXIgYnVpbGRlciA9IG5ldyBTQVhC
+dWlsZGVyKCJvcmcuYXBhY2hlLnhlcmNlcy5wYXJzZXJzLlNBWFBhcnNlciIpOw0KaW5pdEhhbmRs
+aW5ncyh1cmwsIGJ1aWxkZXIpOw0KCQ0KCQ0KCQ0K</value>
+</Values>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">logDebugLog</value>
+  <value name="spec">wx.resilience.impl.log.wrapper:logSpec</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFNYXAgcGlwZU1hcCA9IG5ldyBJRGF0YU1hcChwaXBlbGluZSk7DQoNCi8vIEFkZCBzdWZm
+aXhlcyBhbmQgcHJlZml4ZXM6DQphZGRQcmVmaXhBbmRTdWZmaXhJbXBsKHBpcGVNYXApOw0KDQpK
+b3VybmFsTG9nZ2VyLmxvZyg0LCBKb3VybmFsTG9nZ2VyLkZBQ19GTE9XX1NWQywgSm91cm5hbExv
+Z2dlci5nZXRJU0xldmVsKHBpcGVNYXAuZ2V0QXNTdHJpbmcoImxldmVsIikpLCBwaXBlTWFwLmdl
+dEFzU3RyaW5nKCJmdW5jdGlvbiIpLCBwaXBlTWFwLmdldEFzU3RyaW5nKCJtZXNzYWdlIikpOw0K
+Lyp0cnl7DQoJU2VydmljZS5kb0ludm9rZSggInB1Yi5mbG93IiwgImRlYnVnTG9nIiwgcGlwZWxp
+bmUgKTsNCn0gY2F0Y2goSVNSdW50aW1lRXhjZXB0aW9uIGFuSVNSdW50aW1lRXhjZXB0aW9uKSB7
+DQoJdGhyb3cgYW5JU1J1bnRpbWVFeGNlcHRpb247CQl9IGNhdGNoKFNlcnZpY2VFeGNlcHRpb24g
+YVNlcnZpY2VFeGNlcHRpb24pIHsNCgl0aHJvdyBhU2VydmljZUV4Y2VwdGlvbjsNCn0gY2F0Y2go
+IEV4Y2VwdGlvbiBhbkV4Y2VwdGlvbil7DQoJdGhyb3cgbmV3IFNlcnZpY2VFeGNlcHRpb24oYW5F
+eGNlcHRpb24pOw0KfSAqLw0KCQ0KCQ0KCQ0KCQ0KCQ0K</value>
+</Values>

@@ -1,5 +1,2 @@
 **/*.bak
-**/*.class
-**/*.frag
-/classes/
 /bin/

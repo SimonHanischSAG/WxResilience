@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">auditLogCompleteForTopLevelService</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SW52b2tlU3RhdGUgc3RhdGUgPSBJbnZva2VTdGF0ZS5nZXRDdXJyZW50U3RhdGUoKTsNCmlmIChz
+dGF0ZSA9PSBudWxsKSB7DQoJcmV0dXJuOw0KfQ0KSUF1ZGl0UnVudGltZSBhdWRpdFJ1bnRpbWUg
+PSBzdGF0ZS5nZXRBdWRpdFJ1bnRpbWUoKTsNCmlmIChhdWRpdFJ1bnRpbWUgPT0gbnVsbCkgew0K
+CXJldHVybjsNCn0NClN0cmluZ1tdIHN0YWNrID0gYXVkaXRSdW50aW1lLmdldENvbnRleHRTdGFj
+aygpOw0KaWYgKHN0YWNrID09IG51bGwgfHwgc3RhY2subGVuZ3RoIDwgMSkgew0KCXJldHVybjsN
+Cn0NClN0cmluZ1tdIHN0YWNrV2l0aG91dEN1cnJlbnRDb250ZXh0ID0gbmV3IFN0cmluZ1sxXTsN
+CnN0YWNrV2l0aG91dEN1cnJlbnRDb250ZXh0WzBdID0gc3RhY2tbMF07DQphdWRpdFJ1bnRpbWUu
+c2V0Q29udGV4dFN0YWNrKHN0YWNrV2l0aG91dEN1cnJlbnRDb250ZXh0KTsNCk5TU2VydmljZSB0
+b3BTZXJ2aWNlID0gZ2V0Q3VycmVudFRvcExldmVsU2VydmljZSgpOw0KaWYgKHRvcFNlcnZpY2Ug
+PT0gbnVsbCkgew0KCXJldHVybjsNCn0NCkF1ZGl0TG9nTWFuYWdlci5hdWRpdExvZyh0b3BTZXJ2
+aWNlLCBwaXBlbGluZSwgMik7DQphdWRpdFJ1bnRpbWUuc2V0Q29udGV4dFN0YWNrKHN0YWNrKTsN
+Cg0KCQ0K</value>
+</Values>
