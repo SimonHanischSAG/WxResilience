@@ -641,11 +641,11 @@ bmcueG1sIjsNCg0KDQoJDQoJDQoJDQoJDQoJDQoJDQoJDQoJDQoJDQo=</value>
     <value>javax.xml.validation.Schema</value>
     <value>javax.xml.validation.SchemaFactory</value>
     <value>javax.xml.validation.Validator</value>
-    <value>org.jdom.Document</value>
-    <value>org.jdom.Element</value>
-    <value>org.jdom.JDOMException</value>
-    <value>org.jdom.input.SAXBuilder</value>
-    <value>org.jdom.xpath.XPath</value>
+    <value>org.jdom2.Document</value>
+    <value>org.jdom2.Element</value>
+    <value>org.jdom2.JDOMException</value>
+    <value>org.jdom2.input.SAXBuilder</value>
+    <value>org.jdom2.xpath.XPath</value>
     <value>org.xml.sax.SAXException</value>
     <value>com.wm.app.b2b.server.*</value>
     <value>java.lang.reflect.UndeclaredThrowableException</value>

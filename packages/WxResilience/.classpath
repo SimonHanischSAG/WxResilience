@@ -5,6 +5,6 @@
 	<!--<classpathentry kind="var" path="WEBMETHODS_HOME/common/lib/glassfish/gf.javax.jms.jar"/>-->
 	<classpathentry kind="var" path="WEBMETHODS_HOME/common/lib/wm-isclient.jar"/>
 	<classpathentry kind="var" path="WEBMETHODS_HOME/IntegrationServer/lib/wm-isserver.jar"/>
-	<classpathentry kind="var" path="WEBMETHODS_HOME/common/lib/ext/jdom.jar"/>
+	<classpathentry kind="lib" path="code/jars/jdom-2.0.6.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
